@@ -1,0 +1,30 @@
+{
+  "name": "alex-vorontsov",
+  "version": "1.0.0",
+  "private": true,
+  "description": "alex-vorontsov",
+  "author": "naritai",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "babel-plugin-styled-components": "^2.0.7",
+    "gatsby": "^5.3.3",
+    "gatsby-plugin-google-gtag": "^5.3.0",
+    "gatsby-plugin-manifest": "^5.3.1",
+    "gatsby-plugin-sitemap": "^6.3.1",
+    "gatsby-plugin-styled-components": "^6.3.0",
+    "gatsby-source-filesystem": "^5.3.1",
+    "gatsby-transformer-remark": "^6.3.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "styled-components": "^5.3.6"
+  }
+}
