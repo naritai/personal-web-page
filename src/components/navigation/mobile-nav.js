@@ -3,8 +3,9 @@ import styled from 'styled-components';
 import { navLinks } from '@config';
 import { Link } from 'gatsby';
 import BurgerButton from './burger-button';
+import { Helmet } from 'react-helmet';
 
-const Wrapper = styled.div`
+const StyledWrapper = styled.div`
   display: none;
 
   ul {
@@ -18,17 +19,22 @@ const Wrapper = styled.div`
       width: 100%;
       padding-top: 14px;
       padding-bottom: 14px;
-      margin-right: 15px;
       font-size: 0.93em;
-      counter-increment: item 1;
       font-size: clamp(14px, 4vw, 18px);
     }
 
-    li:last-child {
-      margin-right: 0;
+    a {
+      width: 100%;
+      text-align: center;
+      color: rgb(155, 152, 152);
+      text-decoration: none;
+      outline: none;
+      padding: 3px 5px 10px;
+      vertical-align: middle;
+      counter-increment: item 1;
     }
 
-    li::before {
+    a::before {
       content: "0" counter(item) ".";
       display: inline-block;
       margin-right: 5px;
@@ -37,13 +43,6 @@ const Wrapper = styled.div`
       color: #E5C687;
     }
 
-    a {
-      color: rgb(155, 152, 152);
-      text-decoration: none;
-      outline: none;
-      padding: 3px 5px 10px;
-      vertical-align: baseline;
-    }
     a:visited {
       color: rgb(155, 152, 152);
     }
@@ -64,14 +63,14 @@ const Wrapper = styled.div`
   }
 `;
 
-const SideMenu = styled.aside`
+const StyledMobileNav = styled.aside`
   position: fixed;
   height: 100vh;
   width: min(75vw, 3500px);
   padding-top: min(40vh, 100px);
   padding-bottom: 50px;
   flex-direction: column;
-  background-color: #0F1020;
+  background-color: var(--light-bg);
   top: 0;
   right: 0;
   z-index: 10;
@@ -86,20 +85,29 @@ const SideMenu = styled.aside`
 
 
 const MobileNav = ({ activeLink, onLinkClick }) => {
-  const [visible, setVisible] = useState(false);
-  const menuClick = () => setVisible((prevState) => !prevState);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const toggleMenu = () => setMenuOpen((prevState) => !prevState);
+
+  const handleLinkClick = (event) => {
+    onLinkClick(event);
+    setMenuOpen(false);
+  };
 
   return (
-    <Wrapper>
-      <BurgerButton isOpen={visible} onMenuClick={menuClick} />
+    <StyledWrapper>
+      <Helmet>
+        <body className={menuOpen ? 'blur' : ''} />
+      </Helmet>
 
-      <SideMenu visible={visible} data-visible={visible} aria-hidden={!visible} tabindex="-1" id="mobile-menu">
+      <BurgerButton isOpen={menuOpen} onMenuOpen={toggleMenu} />
+
+      <StyledMobileNav visible={menuOpen} data-visible={menuOpen} aria-hidden={!menuOpen} tabindex="-1" id="mobile-menu">
         <ul>
           {
             navLinks && navLinks.map(({ name, url}, i) => (
               <li key={i}>
                 <Link
-                  onClick={onLinkClick}
+                  onClick={handleLinkClick}
                   data-name={name}
                   className={activeLink === name ? 'active' : ''}
                   to={url}>{name}
@@ -108,8 +116,8 @@ const MobileNav = ({ activeLink, onLinkClick }) => {
             ))
           }
         </ul>
-      </SideMenu>
-    </Wrapper>
+      </StyledMobileNav>
+    </StyledWrapper>
   )
 }
 

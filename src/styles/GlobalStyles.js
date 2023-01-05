@@ -37,6 +37,24 @@ const GlobalStyle = createGlobalStyle`
     border-radius: 10px;
   }
 
+  /* Default focus styles.*/
+  :focus {
+    outline: 2px dashed #a42226;
+    outline-offset: 3px;
+  }
+  /*
+    Remove default focus styles for mouse users ONLY if
+    :focus-visible is supported on this platform.
+  */
+  :focus:not(:focus-visible) {
+    outline: none;
+    outline-offset: 0px;
+  }
+  :focus-visible {
+    outline: 2px dashed #a42226;
+    outline-offset: 3px;
+  }
+
   html {
     height: 100vh;
     scroll-behavior: smooth;
@@ -69,17 +87,26 @@ const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
 
     overflow-x: hidden;
+
+    &.blur {
+      overflow: hidden;
+
+      header {
+        background-color: transparent;
+      }
+
+      #content > * {
+        filter: blur(5px) brightness(0.7);
+        transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+        pointer-events: none;
+        user-select: none;
+      }
+    }
   }
 
-  .blur {
-    overflow: hidden;
-  }
-
-  body.blur .main-content {
-    filter: blur(5px) brightness(0.7);
-    transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
-    pointer-events: none;
-    user-select: none;
+  #root {
+    min-height: 100vh;
+    padding-top: calc(var(--nav-height) * 1.2);
   }
 
   main {

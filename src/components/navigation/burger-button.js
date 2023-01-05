@@ -29,7 +29,7 @@ const afterClosed = css`
   transition: var(--ham-after);
 `;
 
-const Wrapper = styled.button`
+const StyledWrapper = styled.button`
   display: block;
   -webkit-box-pack: center;
   justify-content: center;
@@ -52,17 +52,6 @@ const Wrapper = styled.button`
     cursor: pointer;
   }
 
-  /* TODO: move to Global styles and learn what it does */
-  &:focus-visible {
-    outline: 2px dashed #a42226;
-    outline-offset: 3px;
-  }
-
-  &:focus:not(:focus-visible) {
-    outline: none;
-    outline-offset: 0px;
-  }
-
   .hamburger {
     display: inline-block;
     position: relative;
@@ -80,10 +69,10 @@ const Wrapper = styled.button`
     background-color: #a42226;
 
     ${({ isOpen }) => isOpen ? (
-      `transition: transform 0.22s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s;
+      css`transition: transform 0.22s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s;
         transform: rotate(225deg);`
     ) : (
-      `transition: transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19) 0s;
+      css`transition: transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19) 0s;
         transform: rotate(0deg);`
     )}
   }
@@ -113,20 +102,20 @@ const Wrapper = styled.button`
   }
 `;
 
-const BurgerButton = ({ onMenuClick, isOpen }) => {
+const BurgerButton = ({ onMenuOpen, isOpen }) => {
   return (
-    <Wrapper 
+    <StyledWrapper 
       aria-controls="mobile-menu"
       aria-expanded="false"
       aria-label="menu"
       type="button"
       isOpen={isOpen}
-      onClick={onMenuClick}
+      onClick={onMenuOpen}
     >
-      <div class="hamburger">
-        <div class="hamburger-inner"></div>
+      <div className="hamburger">
+        <div className="hamburger-inner"></div>
       </div>
-    </Wrapper>
+    </StyledWrapper>
   )
 }
 

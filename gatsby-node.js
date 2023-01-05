@@ -9,7 +9,8 @@ exports.onCreateWebpackConfig = ({ actions }) => {
         '@pages': path.resolve(__dirname, 'src/pages'),
         '@images': path.resolve(__dirname, 'src/images'),
         '@fonts': path.resolve(__dirname, 'src/fonts'),
-        '@config': path.resolve(__dirname, 'src/config')
+        '@config': path.resolve(__dirname, 'src/config'),
+        '@hooks': path.resolve(__dirname, 'src/hooks')
       }
     }
   });

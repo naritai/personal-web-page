@@ -1,21 +1,20 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import React, { useEffect, useState } from 'react';
+import styled, { css } from 'styled-components';
+import { usePrefersReducedMotion, useScrollDirection } from '@hooks';
 import logo from '@images/logo.svg';
 import { navLinks } from '@config';
 import SiteNav from './site-nav';
 import MobileNav from './mobile-nav';
 
-const Header = styled.header`
+const StyledHeader = styled.header`
   position: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-height: 80px;
-  margin-bottom: 100px;
+  min-height: var(--nav-height);
   top: 0;
   left: 0;
-
   background-color: #000000;
   box-shadow: 0 0 5px rgba(202, 66, 71, 0.5);
   backdrop-filter: blur(10px);
@@ -27,9 +26,28 @@ const Header = styled.header`
     padding: 0 25px;
     font-size: 0.7em;
   }
+
+  @media (prefers-reduced-motion: no-preference) {
+    ${({ scrolledToTop, scrollDirection }) => scrollDirection === 'up' && !scrolledToTop && (
+      css`
+        height: var(--nav-scroll-height);
+        transform: translateY(0px);
+        background-color: rgba(15, 16, 32, 0.75);
+        box-shadow: 0 10px 30px -10px #0F1020;
+        `
+    )}
+
+    ${({ scrolledToTop, scrollDirection }) => scrollDirection === 'down' && !scrolledToTop && (
+      css`
+        height: var(--nav-scroll-height);
+        transform: translateY(calc(var(--nav-scroll-height) * -1));
+        box-shadow: 0 10px 30px -10px #0F1020;
+        `
+    )}
+  }
 `;
 
-const Wrapper = styled.div`
+const StyledWrapper = styled.div`
   position: relative;
   display: flex;
   align-items: center;
@@ -46,7 +64,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const MainNav = styled.nav`
+const StyledMainNav = styled.nav`
   display: flex;
   align-items: center;
   min-height: 70px;
@@ -57,7 +75,7 @@ const MainNav = styled.nav`
   }
 `;
 
-const LogoLink = styled.a`
+const StyledLogoLink = styled.a`
   margin-right: 15px;
   width: 45px;
   height: 35px;
@@ -88,23 +106,42 @@ const LogoLink = styled.a`
 `;
 
 const Nav = () => {
-  const firstLink = navLinks[0].name;
+  const firstLink = (Array.isArray(navLinks) && navLinks)[0].name;
   const [activeLink, setActiveLink] = useState(firstLink);
   const changeActiveLink = (event) => setActiveLink(event.currentTarget.dataset.name);
 
+  const prefersReducedMotion = usePrefersReducedMotion();
+
+  const scrollDirection = useScrollDirection({ initialDirection: 'down' });
+  const [scrolledToTop, setScrolledToTop] = useState(true);
+  const handleScroll = () => {
+    setScrolledToTop(window.pageYOffset < 30);
+  };
+
+  useEffect(() => {
+    if (prefersReducedMotion) {
+      return;
+    }
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    }
+  }, []);
+
   return (
-    <Header>
-      <Wrapper>
-        <MainNav>
-          <LogoLink href="#" aria-label="home" tabindex="-1">
+    <StyledHeader scrolledToTop={scrolledToTop} scrollDirection={scrollDirection}>
+      <StyledWrapper>
+        <StyledMainNav>
+          <StyledLogoLink href="#" aria-label="home" tabindex="-1">
             <img src={logo} alt="Main logo"  width="55" height="45" />
-          </LogoLink>
+          </StyledLogoLink>
 
           <SiteNav activeLink={activeLink} onLinkClick={changeActiveLink} />
           <MobileNav activeLink={activeLink} onLinkClick={changeActiveLink} />
-        </MainNav>
-      </Wrapper>
-    </Header>
+        </StyledMainNav>
+      </StyledWrapper>
+    </StyledHeader>
   )
 }
 

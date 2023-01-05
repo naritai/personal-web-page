@@ -3,12 +3,16 @@ import { css } from "styled-components";
 const variables = css`
   :root {
     --main-bg: #0F1020;
+    --light-bg: #1c1e3b;
     --main-text: #F6F1D1;
     --emphasize: #FFD400;
     --emphasize-soft: #E5C687;
     --selection-bg: #FFD4B2;
     --selection-text: #541212;
     --main-red: #CA4246;
+
+    --nav-height: 80px;
+    --nav-scroll-height: 80px;
 
     --link-general: var(--emphasize-soft);
     --link-active: #8d6820;
