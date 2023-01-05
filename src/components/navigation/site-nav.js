@@ -1,0 +1,79 @@
+import React from 'react';
+import { Link } from 'gatsby';
+import styled from 'styled-components';
+import { navLinks } from '@config';
+
+const Wrapper = styled.div`
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 14px;
+      padding-bottom: 14px;
+      margin-right: 15px;
+      font-size: 0.93em;
+      counter-increment: item 1;
+    }
+
+    li::before {
+      content: "0" counter(item) ".";
+      display: inline-block;
+      margin-right: 5px;
+      text-align: right;
+      color: #E5C687;
+    }
+
+    li:last-child {
+      margin-right: 0;
+    }
+
+    a,
+    a:visited {
+      color: rgb(155, 152, 152);
+      text-decoration: none;
+      outline: none;
+    }
+
+    a:focus,
+    a:hover {
+      color: #E5C687;
+      background: none;
+      border-bottom: none;
+    }
+
+    a.active {
+      color: #E5C687;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
+`;
+
+const SiteNav = ({ onLinkClick, activeLink }) => {
+  return (
+    <Wrapper>
+      <ul>
+        {
+          navLinks && navLinks.map(({ name, url}, i) => (
+            <li key={i}>
+              <Link
+                onClick={onLinkClick}
+                data-name={name}
+                className={activeLink === name ? 'active' : ''}
+                to={url}>{name}
+              </Link>
+            </li>
+          ))
+        }
+      </ul>
+    </Wrapper>
+  )
+}
+
+export default SiteNav;

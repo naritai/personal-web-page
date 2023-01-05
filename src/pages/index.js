@@ -1,21 +1,14 @@
-import * as React from "react";
+import React, { Fragment } from "react";
 import Layout from "../components/layout";
-import GlobalStyle from "../styles/GlobalStyles";
 
 const IndexPage = () => {
   return (
-    <React.Fragment>
-      <GlobalStyle />
-
+    <Fragment>
       <Layout>
-        <div>
-          Layout children!!! (content)
-        </div>
+        {'layout content!!'}
       </Layout>
-    </React.Fragment>
+    </Fragment>
   )
 }
-
-export const Head = () => <title>Home Page</title>
 
 export default IndexPage;

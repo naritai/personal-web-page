@@ -95,24 +95,19 @@ const GlobalStyle = createGlobalStyle`
   a {
     outline: none;
     text-decoration: none;
-  }
 
-  a:link {
-    color: var(--link-general);
-  }
-
-  a:visited {
-    color:var(--link-general);
-  }
-
-  a:focus,
-  a:hover {
-    border-bottom: 1px solid var(--link-focus);
-    border-radius: 2px;
-  }
-
-  a:active {
-    color: var(--link-active);
+    &:link,
+    &:visited {
+      color: var(--link-general);
+    }
+    &:focus,
+    &:hover {
+      border-bottom: 1px solid var(--link-focus);
+      border-radius: 2px;
+    }
+    &:active {
+      color: var(--link-active);
+    }
   }
 
   .horizontal-line {
@@ -152,7 +147,7 @@ const GlobalStyle = createGlobalStyle`
     overflow: hidden;
   }
 
-  .scip-to-content {
+  .skip-to-content {
     color: var(--emphasize);
     background-color: transparent;
     border: 1px solid var(--link-focus);
@@ -172,17 +167,17 @@ const GlobalStyle = createGlobalStyle`
     overflow: hidden;
     z-index: -88;
     outline: none;
-  }
 
-  .scip-to-content:focus {
-    background-color: var(--emphasize);
-    color: var(--link-focus);
-    top: 0px;
-    left: 0px;
-    width: auto;
-    height: auto;
-    overflow: auto;
-    z-index: 88;
+    &:focus {
+      background-color: var(--emphasize);
+      color: var(--link-focus);
+      top: 0px;
+      left: 0px;
+      width: auto;
+      height: auto;
+      overflow: auto;
+      z-index: 88;
+      }
   }
 `;
 
