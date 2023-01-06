@@ -56,7 +56,6 @@ const Head = ({ title, description, pathname, children }) => {
       <meta name="twitter:title" content="Alex Voronetskiy" />
       <meta name="twitter:description" content={seo.title} />
       <meta name="twitter:image" content={seo.image} />
-
       {children}
     </Helmet>
   )

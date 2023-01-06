@@ -82,13 +82,12 @@ const GlobalStyle = createGlobalStyle`
     background-size: cover;
     background-position: top center;  
 
-    font-family: 'SpaceMono', Arial, sans-serif;
-    font-weight: 100;
+    font-family: var(--font-mono);
     font-size: 16px;
+    font-weight: 100;
     color: var(--main-text);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-
     overflow-x: hidden;
 
     &.blur {

@@ -14,6 +14,10 @@ const variables = css`
     --nav-height: 80px;
     --nav-scroll-height: 80px;
 
+    --font-sans: 'Roboto', 'Arial', -apple-system, system-ui, sans-serif;
+    --font-mono: 'SpaceMono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+    --font-promo: 'BebasNeue', 'Arial', -apple-system, system-ui, sans-serif;
+
     --easing: cubic-bezier(0.645, 0.045, 0.355, 1);
     --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 

@@ -71,17 +71,15 @@ const StyledSidebar = styled.aside`
   width: min(75vw, 3500px);
   padding-top: min(40vh, 100px);
   padding-bottom: 50px;
-  flex-direction: column;
   background-color: var(--light-bg);
   top: 0;
   right: 0;
   z-index: 10;
   outline: 0px;
   box-shadow: -10px 0px 30px -15px rgba(2,12,27,0.7);
-  visibility: hidden;
   transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
-  transform: translateX(100vw);
-  ${({ visible }) => visible ? `visibility: visible; transform: translateX(0vw);` : ``};
+  transform: translateX(${({ visible }) => (visible ? 0 : 100)}vw);
+  visibility: ${({ visible }) => visible ? 'visible' : 'hidden'};
 `;
 
 
@@ -176,7 +174,19 @@ const MobileNav = ({ activeLink, onLinkClick }) => {
       </Helmet>
 
       <div ref={wrapperRef}>
-        <BurgerButton ref={buttonRef} isOpen={menuOpen} onMenuOpen={toggleMenu} />
+        <BurgerButton 
+          aria-controls="mobile-menu"
+          aria-expanded={menuOpen}
+          aria-label="menu"
+          type="button"
+          isOpen={menuOpen}
+          onClick={toggleMenu}
+          ref={buttonRef}
+        >
+          <div className="hamburger">
+            <div className="hamburger-inner"></div>
+          </div>
+        </BurgerButton>
 
         <StyledSidebar
           ref={navRef}

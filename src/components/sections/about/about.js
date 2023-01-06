@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import avatar from '@images/avatar.jpg';
-import TypeIt from 'typeit-react';
-import { writeCustomDetails, typewriterOptions } from './typewriter';
+import Details from './details';
 
 const StyledAboutSection = styled.section`
   display: flex;
@@ -199,34 +198,19 @@ const StyledSlogan = styled.p`
 const About = () => {
   return (
     <StyledAboutSection id="about">
-      <div class="about__left-column">
+      <div className="about__left-column">
         <StyledAvatar src={avatar} alt="Main avatar" width="220" height="200" />
         <StyledResumeButton href="/Aleksandr_Vorontsov_CV.pdf" target="_blank" rel="noopener noreferrer" aria-label="Resume">
-          <span class="button-text">Resume</span>
+          <span className="button-text">Resume</span>
         </StyledResumeButton>
       </div>
 
-      <div class="about__right-column">
-        <div class="about__text-wrapper">
+      <div className="about__right-column">
+        <div className="about__text-wrapper">
           <StyledGreeting>Hi, my name is</StyledGreeting>
           <StyledName>Alex vorontsov.</StyledName>
           <StyledSlogan>I craft projects for web.</StyledSlogan>
-
-          <p class="about__details" id="typewrite">
-            <TypeIt getBeforeInit={writeCustomDetails} options={typewriterOptions} />
-          </p>
-          <p class="about__details about__details--mobile">
-            I’m a software engineer with 5+ years of experience.
-            Focused on building robust and accessible products with intuitive UI. 
-            Blog about front-end to <a href="https://t.me/frontendmetoo" aria-label="Telegram blog" target="_blank" rel="noopener noreferrer">t.me/frontendmetoo</a>.
-          </p>
-          <noscript>
-            <p class="about__details">
-              I’m a software developer with 5+ years of experience.
-              Focused on building robust and accessible products with intuitive UI. 
-              Blog about front-end to <a href="https://t.me/frontendmetoo" aria-label="Telegram blog" target="_blank" rel="noopener noreferrer">t.me/frontendmetoo</a>.
-            </p>
-          </noscript>
+          <Details />
         </div>
       </div>
     </StyledAboutSection>

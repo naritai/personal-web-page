@@ -1,4 +1,3 @@
-import React from 'react';
 import styled, { css } from 'styled-components';
 
 const beforeOpen = css`
@@ -29,7 +28,7 @@ const afterClosed = css`
   transition: var(--ham-after);
 `;
 
-const StyledWrapper = styled.button`
+const BurgerButton = styled.button`
   display: block;
   -webkit-box-pack: center;
   justify-content: center;
@@ -101,22 +100,5 @@ const StyledWrapper = styled.button`
     ${({ isOpen }) => isOpen ? afterOpen : afterClosed};
   }
 `;
-
-const BurgerButton = ({ onMenuOpen, isOpen }) => {
-  return (
-    <StyledWrapper 
-      aria-controls="mobile-menu"
-      aria-expanded="false"
-      aria-label="menu"
-      type="button"
-      isOpen={isOpen}
-      onClick={onMenuOpen}
-    >
-      <div className="hamburger">
-        <div className="hamburger-inner"></div>
-      </div>
-    </StyledWrapper>
-  )
-}
 
 export default BurgerButton;

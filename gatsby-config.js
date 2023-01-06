@@ -11,7 +11,6 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-styled-components",
-    "gatsby-plugin-google-gtag",
     "gatsby-plugin-sitemap", 
     {
       resolve: 'gatsby-plugin-manifest',

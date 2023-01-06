@@ -73,7 +73,7 @@ const mixins = {
     letter-spacing: 2.5px;
     font-weight: bold;
     font-size: 3em;
-    font-family: 'BebasNeue';
+    font-family: var(--font-promo);
     white-space: nowrap;
 
     @media only screen and (max-width: 768px) {
