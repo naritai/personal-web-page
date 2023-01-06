@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
-import { usePrefersReducedMotion, useScrollDirection } from '@hooks';
 import logo from '@images/logo.svg';
 import { navLinks } from '@config';
 import SiteNav from './site-nav';
 import MobileNav from './mobile-nav';
+import { useScrollDirection } from '@hooks';
 
 const StyledHeader = styled.header`
   position: fixed;
@@ -106,27 +106,20 @@ const StyledLogoLink = styled.a`
 `;
 
 const Nav = () => {
+
   const firstLink = (Array.isArray(navLinks) && navLinks)[0].name;
   const [activeLink, setActiveLink] = useState(firstLink);
   const changeActiveLink = (event) => setActiveLink(event.currentTarget.dataset.name);
 
-  const prefersReducedMotion = usePrefersReducedMotion();
-
   const scrollDirection = useScrollDirection({ initialDirection: 'down' });
   const [scrolledToTop, setScrolledToTop] = useState(true);
   const handleScroll = () => {
-    setScrolledToTop(window.pageYOffset < 30);
+    setScrolledToTop(window.scrollY < 40);
   };
 
   useEffect(() => {
-    if (prefersReducedMotion) {
-      return;
-    }
-
     window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    }
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (

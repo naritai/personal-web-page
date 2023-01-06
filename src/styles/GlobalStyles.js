@@ -2,8 +2,11 @@ import { createGlobalStyle } from "styled-components";
 import mainBackground from '@images/main-bg.jpg';
 import variables from "./variables";
 import fonts from "./fonts";
+import TransitionStyles from "./TransitionStyles";
+import normalize from 'normalize.css';
 
 const GlobalStyle = createGlobalStyle`
+  ${normalize};
   ${fonts};
   ${variables};
 
@@ -40,7 +43,7 @@ const GlobalStyle = createGlobalStyle`
   /* Default focus styles.*/
   :focus {
     outline: 2px dashed #a42226;
-    outline-offset: 3px;
+    outline-offset: 2px;
   }
   /*
     Remove default focus styles for mouse users ONLY if
@@ -52,7 +55,7 @@ const GlobalStyle = createGlobalStyle`
   }
   :focus-visible {
     outline: 2px dashed #a42226;
-    outline-offset: 3px;
+    outline-offset: 2px;
   }
 
   html {
@@ -106,11 +109,6 @@ const GlobalStyle = createGlobalStyle`
 
   #root {
     min-height: 100vh;
-    padding-top: calc(var(--nav-height) * 1.2);
-  }
-
-  main {
-    padding-top: 150px;
   }
 
   ul {
@@ -141,21 +139,6 @@ const GlobalStyle = createGlobalStyle`
     border-color: var(--main-red);
     border-radius: 2px;
     box-shadow: 0 0 5px rgba(240, 232, 158, 0.5);
-  }
-
-  .main-content {
-    width: min(60%, 960px);
-    margin: 0 auto;
-
-    @media only screen and (max-width: 768px) {
-      width: 100%;
-      padding: 0 25px;
-    }
-
-    @media only screen and (max-width: 1088px) {
-      width: 100%;
-      padding: 0 50px;
-    }
   }
 
   .visually-hidden:not(:focus):not(:active) {
@@ -206,6 +189,15 @@ const GlobalStyle = createGlobalStyle`
       z-index: 88;
       }
   }
+
+  /* Animations */
+  @keyframes fadeInText {
+    100% {
+      opacity: 1;
+    }
+  }
+
+  ${TransitionStyles};
 `;
 
 export default GlobalStyle;

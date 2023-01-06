@@ -3,7 +3,7 @@ import { css } from "styled-components";
 const variables = css`
   :root {
     --main-bg: #0F1020;
-    --light-bg: #1c1e3b;
+    --light-bg: #16172b;
     --main-text: #F6F1D1;
     --emphasize: #FFD400;
     --emphasize-soft: #E5C687;
@@ -13,6 +13,9 @@ const variables = css`
 
     --nav-height: 80px;
     --nav-scroll-height: 80px;
+
+    --easing: cubic-bezier(0.645, 0.045, 0.355, 1);
+    --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 
     --link-general: var(--emphasize-soft);
     --link-active: #8d6820;

@@ -63,5 +63,3 @@ const Head = ({ title, description, pathname, children }) => {
 }
 
 export default Head;
-
-// TODO: refactor to pure gatsby head api (set into pages)

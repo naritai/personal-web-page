@@ -3,7 +3,8 @@ import Head from '@components/head';
 import GlobalStyle from "@styles/GlobalStyles";
 import styled, { ThemeProvider } from 'styled-components';
 import { theme } from '../styles/theme';
-import Nav from './navigation/nav';
+import Nav from './header/nav';
+import Footer from './footer';
 
 const StyledContent = styled.div`
   display: flex;
@@ -29,6 +30,7 @@ const Layout = ({ children }) => {
 
             <div id="content">
               {children}
+              <Footer />
             </div>
           </StyledContent>
         </ThemeProvider>
