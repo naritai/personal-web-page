@@ -112,10 +112,12 @@ const mixins = {
     font-weight: bold;
     font-size: 3em;
     font-family: var(--font-promo);
+    white-space: nowrap;
 
     @media only screen and (max-width: 768px) {
       font-size: 1.9em;
       letter-spacing: 2px;
+      white-space: normal;
     }
   `,
 

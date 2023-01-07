@@ -7,7 +7,7 @@ const StyledHeroSection = styled.section`
   display: flex;
   margin-bottom: 150px;
   margin-top: 150px;
-  min-height: 275px;
+  min-height: 290px;
 
   .hero__left-column {
     margin-right: 20px;
@@ -17,7 +17,7 @@ const StyledHeroSection = styled.section`
   }
 
   .hero__right-column {
-    padding: 5px;
+    padding: 0 5px;
   }
 
   .hero__text-wrapper {
@@ -89,7 +89,7 @@ const StyledAvatar = styled.div`
   .wrapper-img {
     width: 220px;
     height: 200px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     border-radius: 2px;
     filter: grayscale(70%);
     border: 2px solid #E5C687;

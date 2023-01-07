@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
-import logo from '@images/logo.svg';
-import { navLinks } from '@config';
 import SiteNav from './site-nav';
 import MobileNav from './mobile-nav';
 import { useScrollDirection } from '@hooks';
+import { IconLogo } from '../icons/logo';
+import { Link } from 'gatsby';
 
 const StyledHeader = styled.header`
   position: fixed;
@@ -75,7 +75,7 @@ const StyledMainNav = styled.nav`
   }
 `;
 
-const StyledLogoLink = styled.a`
+const StyledLogoWrapper = styled.div`
   margin-right: 15px;
   width: 45px;
   height: 35px;
@@ -86,7 +86,11 @@ const StyledLogoLink = styled.a`
     outline: none;
   }
 
-  img {
+  a:hover {
+    cursor: unset;
+  }
+
+  svg {
     margin: 0;
     padding: 0;
     width: 45px;
@@ -94,21 +98,20 @@ const StyledLogoLink = styled.a`
     user-select: none;
   }
 
-  img:hover {
+  svg:hover {
     transform: scale(1.05);
   }
 
   @media only screen and (max-width: 768px) {
-    img:hover {
+    svg:hover {
       transform: none;
     }
   }
 `;
 
-const Nav = () => {
-
-  const firstLink = (Array.isArray(navLinks) && navLinks)[0].name;
-  const [activeLink, setActiveLink] = useState(firstLink);
+const Nav = ({ isHome } = { isHome: true }) => {
+  const [isMounted, setIsMounted] = useState(!isHome);
+  const [activeLink, setActiveLink] = useState(null);
   const changeActiveLink = (event) => setActiveLink(event.currentTarget.dataset.name);
 
   const scrollDirection = useScrollDirection({ initialDirection: 'down' });
@@ -122,14 +125,19 @@ const Nav = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const Logo = () => (
+    <StyledLogoWrapper>
+      <Link to="/" aria-label="home" tabIndex="-1">
+        <IconLogo />
+      </Link>
+    </StyledLogoWrapper>
+  );
+
   return (
     <StyledHeader scrolledToTop={scrolledToTop} scrollDirection={scrollDirection}>
       <StyledWrapper>
         <StyledMainNav>
-          <StyledLogoLink href="#" aria-label="home" tabindex="-1">
-            <img src={logo} alt="Main logo"  width="55" height="45" />
-          </StyledLogoLink>
-
+          <Logo />
           <SiteNav activeLink={activeLink} onLinkClick={changeActiveLink} />
           <MobileNav activeLink={activeLink} onLinkClick={changeActiveLink} />
         </StyledMainNav>

@@ -5,7 +5,7 @@ import { writeCustomDetails, typewriterOptions } from './typewriter';
 
 const StyledWrapper = styled.div`
   .about__details {
-    max-width: 565px;
+    max-width: 540px;
     line-height: 1.2em;
 
     a {
@@ -19,7 +19,7 @@ const StyledWrapper = styled.div`
 
   @media only screen and (max-width: 1088px) {
     .about__details {
-      max-width: 420px;
+      max-width: 460px;
     }
   }
 

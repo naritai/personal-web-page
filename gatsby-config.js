@@ -24,7 +24,7 @@ module.exports = {
         background_color: '#0F1020',
         theme_color: '#0F1020',
         display: 'minimal-ui',
-        icon: "src/images/logo.svg"
+        icon: `${__dirname}/src/images/favicon.png`
       }
     }, "gatsby-transformer-remark",
     {

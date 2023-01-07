@@ -25,7 +25,7 @@ const writeCustomDetails = (instance) => {
 
 const typewriterOptions = {
   html: true,
-  speed: 50,
+  speed: 30,
   lifeLike: true,
   cursor: true,
   breakLines: true,
