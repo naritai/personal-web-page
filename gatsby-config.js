@@ -11,6 +11,9 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-styled-components",
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
     "gatsby-plugin-sitemap", 
     {
       resolve: 'gatsby-plugin-manifest',
@@ -23,11 +26,19 @@ module.exports = {
         display: 'minimal-ui',
         icon: "src/images/logo.svg"
       }
-    }, "gatsby-transformer-remark", {
+    }, "gatsby-transformer-remark",
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: "images",
+        path: `${__dirname}/src/images`
+      },
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: "pages",
-        path: "./src/pages/"
+        path: `${__dirname}/src/pages`
       },
       __key: "pages"
     }

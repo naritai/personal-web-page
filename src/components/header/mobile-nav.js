@@ -10,6 +10,10 @@ import { KEY_CODES } from '@utils';
 const StyledWrapper = styled.div`
   display: none;
 
+  @media only screen and (max-width: 768px) {
+    display: block;
+  }
+
   ul {
     display: flex;
     flex-wrap: wrap;
@@ -59,16 +63,12 @@ const StyledWrapper = styled.div`
       color: #E5C687;
     }
   }
-
-  @media only screen and (max-width: 768px) {
-    display: block;
-  }
 `;
 
 const StyledSidebar = styled.aside`
   position: fixed;
   height: 100vh;
-  width: min(75vw, 3500px);
+  width: min(75vw, 350px);
   padding-top: min(40vh, 100px);
   padding-bottom: 50px;
   background-color: var(--light-bg);

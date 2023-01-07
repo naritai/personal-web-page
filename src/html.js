@@ -15,10 +15,10 @@ export default function HTML(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-          <link rel="preload" href={SpaceMonoRegularWoff} as="font" type="font/woff" crossorigin="anonymous" />
-          <link rel="preload" href={SpaceMonoRegularWoff2} as="font" type="font/woff2" crossorigin="anonymous" />
-          <link rel="preload" href={BebasNeueRegularWoff} as="font" type="font/woff" crossorigin="anonymous" />
-          <link rel="preload" href={BebasNeueRegularWoff2} as="font" type="font/woff2" crossorigin="anonymous" />
+          <link rel="preload" href={SpaceMonoRegularWoff} as="font" type="font/woff" crossorigin />
+          <link rel="preload" href={SpaceMonoRegularWoff2} as="font" type="font/woff2" crossorigin />
+          <link rel="preload" href={BebasNeueRegularWoff} as="font" type="font/woff" crossorigin />
+          <link rel="preload" href={BebasNeueRegularWoff2} as="font" type="font/woff2" crossorigin />
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>

@@ -1,7 +1,8 @@
 import React, { Fragment } from "react";
 import styled from "styled-components";
-import Layout from "../components/layout";
-import About from "../components/sections/about/about";
+import Layout from "@components/layout";
+import { Hero } from "@components/sections/hero/";
+import { Contact } from '@components/sections/contact';
 
 const StyledMainContainer = styled.main`
   width: min(60%, 960px);
@@ -24,7 +25,8 @@ const IndexPage = () => {
     <Fragment>
       <Layout>
         <StyledMainContainer>
-          <About />
+          <Hero />
+          <Contact />
         </StyledMainContainer>
       </Layout>
     </Fragment>

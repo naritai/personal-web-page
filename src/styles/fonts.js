@@ -2,16 +2,18 @@ import { css } from 'styled-components';
 
 import BebasNeueRegularWoff from '@fonts/BebasNeue/bebas-neue-regular.woff';
 import BebasNeueRegularWoff2 from '@fonts/BebasNeue/bebas-neue-regular.woff2';
+
 import RobotoRegularWoff from '@fonts/Roboto/roboto-regular.woff';
 import RobotoRegularWoff2 from '@fonts/Roboto/roboto-regular.woff2';
 import RobotoBoldrWoff from '@fonts/Roboto/roboto-700.woff';
 import RobotoBoldWoff2 from '@fonts/Roboto/roboto-700.woff2';
+
 import SpaceMonoRegularWoff from '@fonts/SpaceMono/space-mono-regular.woff';
 import SpaceMonoRegularWoff2 from '@fonts/SpaceMono/space-mono-regular.woff2';
-import SpaceMonoItalicWoff from '@fonts/SpaceMono/space-mono-italic.woff';
-import SpaceMonoItalicWoff2 from '@fonts/SpaceMono/space-mono-italic.woff2';
 import SpaceMonoBoldWoff from '@fonts/SpaceMono/space-mono-700.woff';
 import SpaceMonoBoldWoff2 from '@fonts/SpaceMono/space-mono-700.woff2';
+import SpaceMonoItalicWoff from '@fonts/SpaceMono/space-mono-italic.woff';
+import SpaceMonoItalicWoff2 from '@fonts/SpaceMono/space-mono-italic.woff2';
 
 const bebasNeueRegular = {
   400: [BebasNeueRegularWoff, BebasNeueRegularWoff2],

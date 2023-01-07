@@ -2,35 +2,36 @@ import React from 'react';
 import styled from 'styled-components';
 import avatar from '@images/avatar.jpg';
 import Details from './details';
+import { StaticImage } from 'gatsby-plugin-image';
 
-const StyledAboutSection = styled.section`
+const StyledHeroSection = styled.section`
   display: flex;
   margin-bottom: 150px;
   margin-top: 150px;
   min-height: 275px;
 
-  .about__left-column {
+  .hero__left-column {
     margin-right: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  .about__right-column {
+  .hero__right-column {
     padding: 5px;
   }
 
-  .about__text-wrapper {
+  .hero__text-wrapper {
     opacity: 0;
     animation: fadeInText 1s ease-out forwards;
   }
 
-  .about__details {
+  .hero__details {
     max-width: 565px;
     line-height: 1.2em;
   }
 
-  .about__details--mobile {
+  .hero__details--mobile {
     display: none;
   }
 
@@ -38,11 +39,11 @@ const StyledAboutSection = styled.section`
     min-height: 300px;
     justify-content: center;
 
-    .about__right-column {
+    .hero__right-column {
       min-width: 450px;
     }
 
-    .about__details {
+    .hero__details {
       max-width: 420px;
     }
   }
@@ -52,11 +53,11 @@ const StyledAboutSection = styled.section`
     min-height: none;
     flex-direction: column-reverse;
 
-    .about__left-column {
+    .hero__left-column {
       margin: 0;
     }
 
-    .about__right-column {
+    .hero__right-column {
       min-width: 0;
     }
 
@@ -64,7 +65,7 @@ const StyledAboutSection = styled.section`
       display: none;
     }
 
-    .about__details {
+    .hero__details {
       width: 100%;
       max-width: none;
       font-size: 0.9em;
@@ -75,33 +76,41 @@ const StyledAboutSection = styled.section`
       animation: fadeInText 1.2s ease-out 1.2s forwards;
     }
 
-    .about__details--mobile {
+    .hero__details--mobile {
       display: block;
     }
   }
 `;
 
-const StyledAvatar = styled.img`
-  margin-bottom: 15px;
-  border-radius: 2px;
-  object-fit: contain;
-  filter: grayscale(70%);
-  border: 2px solid #E5C687;
-  box-shadow: inset 0 0 5px 5px rgba(218, 185, 139, 0.5), inset 0 0 12px 12px rgba(218, 183, 139, 0.5), 0 0 25px 25px rgba(250, 233, 222, 0.06);
-  transition: all 0.3s ease-in-out;
-
-  &:hover {
-    cursor: pointer;
-    filter: grayscale(0);
+const StyledAvatar = styled.div`
+  .avatar-img {
+    object-fit: contain;
   }
 
-  @media only screen and (max-width: 768px) {
-    width: 270px;
-    height: 270px;
-    margin: 20px 0;
-    filter: none;
-    border-radius: 50%;
+  .wrapper-img {
+    width: 220px;
+    height: 200px;
+    margin-bottom: 15px;
+    border-radius: 2px;
+    filter: grayscale(70%);
+    border: 2px solid #E5C687;
+    box-shadow: inset 0 0 5px 5px rgba(218, 185, 139, 0.5), inset 0 0 12px 12px rgba(218, 183, 139, 0.5), 0 0 25px 25px rgba(250, 233, 222, 0.06);
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      cursor: pointer;
+      filter: grayscale(0);
+    }
+
+    @media only screen and (max-width: 768px) {
+      width: 270px;
+      height: 270px;
+      margin: 20px 0;
+      filter: none;
+      border-radius: 50%;
+    }
   }
+  
 `;
 
 const StyledResumeButton = styled.a`
@@ -195,26 +204,38 @@ const StyledSlogan = styled.p`
   }
 `;
 
-const About = () => {
+const Hero = () => {
   return (
-    <StyledAboutSection id="about">
-      <div className="about__left-column">
-        <StyledAvatar src={avatar} alt="Main avatar" width="220" height="200" />
+    <StyledHeroSection id="hero">
+      <div className="hero__left-column">
+        <StyledAvatar>
+          <StaticImage
+            src="../../../images/avatar.jpg"
+            objectFit="contain"
+            quality={95}
+            formats={['AUTO', 'WEBP', 'AVIF']}
+            alt="Avatar"
+            placeholder="blurred"
+            loading="eager"
+            className="wrapper-img"
+            imgClassName="avatar-img"
+          />
+        </StyledAvatar>
         <StyledResumeButton href="/Aleksandr_Vorontsov_CV.pdf" target="_blank" rel="noopener noreferrer" aria-label="Resume">
           <span className="button-text">Resume</span>
         </StyledResumeButton>
       </div>
 
-      <div className="about__right-column">
-        <div className="about__text-wrapper">
+      <div className="hero__right-column">
+        <div className="hero__text-wrapper">
           <StyledGreeting>Hi, my name is</StyledGreeting>
           <StyledName>Alex vorontsov.</StyledName>
           <StyledSlogan>I craft projects for web.</StyledSlogan>
           <Details />
         </div>
       </div>
-    </StyledAboutSection>
+    </StyledHeroSection>
   )
 }
 
-export default About;
+export default Hero;
