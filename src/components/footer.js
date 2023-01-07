@@ -23,11 +23,7 @@ const StyledCopyrightLink = styled.a`
   font-size: 0.8em;
   text-align: center;
 
-  &:hover,
-  &:focus {
-    border: none;
-    color: #ffffff;
-  }
+  ${({ theme }) => theme.mixins.bottomDashedOutline };
 `;
 
 const Footer = () => {

@@ -57,6 +57,44 @@ const mixins = {
     align-items: center;
   `,
 
+  bottomDashedOutline: css`
+    &:focus {
+      outline: none;
+      border: none;
+    }
+    &:focus-visible {
+      outline: none;
+      border: none;
+    }
+    & {
+      position: relative;
+    }
+
+    &:focus::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      height: 2px;
+      width: 100%;
+      background-color: transparent;
+      border-bottom: 2px dashed var(--link-focus);
+    }
+    &:focus:not(:focus-visible)::after {
+      display: none;
+    }
+    &:focus-visible::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      height: 2px;
+      width: 100%;
+      background-color: transparent;
+      border-bottom: 2px dashed var(--link-focus);
+    }
+  `,
+
   button,
 
   resetList: css`
@@ -74,7 +112,6 @@ const mixins = {
     font-weight: bold;
     font-size: 3em;
     font-family: var(--font-promo);
-    white-space: nowrap;
 
     @media only screen and (max-width: 768px) {
       font-size: 1.9em;

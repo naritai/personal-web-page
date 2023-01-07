@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import avatar from '@images/avatar.jpg';
 import Details from './details';
 import { StaticImage } from 'gatsby-plugin-image';
 
@@ -132,7 +131,6 @@ const StyledGreeting = styled.p`
   color:#0F1020;
   text-align: center;
   font-size: 1.1em;
-  white-space: nowrap;
 
   border-bottom: 2px solid #F6F1D1;
   border-radius: 2px;

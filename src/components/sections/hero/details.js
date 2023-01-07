@@ -7,6 +7,10 @@ const StyledWrapper = styled.div`
   .about__details {
     max-width: 565px;
     line-height: 1.2em;
+
+    a {
+      ${({ theme }) => theme.mixins.bottomDashedOutline };
+    }
   }
 
   .about__details--mobile {

@@ -42,7 +42,7 @@ const GlobalStyle = createGlobalStyle`
 
   /* Default focus styles.*/
   :focus {
-    outline: 2px dashed #a42226;
+    outline: 2px dashed var(--link-focus);
     outline-offset: 2px;
   }
   /*
@@ -54,7 +54,7 @@ const GlobalStyle = createGlobalStyle`
     outline-offset: 0px;
   }
   :focus-visible {
-    outline: 2px dashed #a42226;
+    outline: 2px dashed var(--link-focus);
     outline-offset: 2px;
   }
 
@@ -127,10 +127,8 @@ const GlobalStyle = createGlobalStyle`
     &:visited {
       color: var(--link-general);
     }
-    &:focus,
     &:hover {
-      border-bottom: 1px solid var(--link-focus);
-      border-radius: 2px;
+      color: #ffffff;
     }
     &:active {
       color: var(--link-active);

@@ -8,6 +8,12 @@ const StyledContactSection = styled.section`
     margin-top: -15px;
   }
 
+  .heading {
+    white-space: nowrap;
+    font-family: var(--font-sans);
+    font-size: 2em;
+  }
+
   @media only screen and (max-width: 768px) {
     text-align: center;
 
@@ -72,10 +78,7 @@ const StyledEmailLink = styled.a`
   color: #FFD400;
   font-weight: bold;
 
-  &:hover {
-    border: none;
-    color: #ffffff;
-  }
+  ${({ theme }) => theme.mixins.bottomDashedOutline };
 `;
 
 const StyledSocialLinks = styled.div`
@@ -119,15 +122,6 @@ const StyledSocialLinks = styled.div`
     a:focus {
       border: none;
     }
-    a:focus::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      height: 2px;
-      width: 100%;
-      background-color: #CA4246;
-    }
 
     .links-list__image {
       width: 30px;
@@ -138,11 +132,14 @@ const StyledSocialLinks = styled.div`
 
   
   @media only screen and (max-width: 768px) {
+    display: flex;
+    justify-content: center;
     margin: 10px 0;
     width: 100%;
 
     ul {
       width: 100%;
+      max-width: 400px;
       flex-direction: row;
       justify-content: space-between;
       flex-wrap: nowrap;
