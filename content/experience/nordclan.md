@@ -2,6 +2,7 @@
 date: '3'
 period: '2019 - 2020'
 title: 'NORD CLAN'
+url: 'https://nordclan.com/'
 stack:
   - TypeScript
   - React

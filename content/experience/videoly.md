@@ -2,6 +2,7 @@
 date: '4'
 period: '2020 - 2022'
 title: 'Videoly'
+url: 'https://videoly.co/'
 stack:
   - LitElement
   - TypeScript

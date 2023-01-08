@@ -9,22 +9,11 @@ const StyledContactSection = styled.section`
     margin-top: -15px;
   }
 
-  .heading {
-    white-space: nowrap;
-    font-family: var(--font-sans);
-    font-size: 2em;
-  }
-
   @media only screen and (max-width: 768px) {
     text-align: center;
 
     .contact__line {
       margin-bottom: 15px;
-    }
-
-    .heading {
-      text-align: center;
-      white-space: normal;
     }
   }
 `;

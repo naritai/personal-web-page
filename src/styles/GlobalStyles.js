@@ -190,6 +190,17 @@ const GlobalStyle = createGlobalStyle`
       }
   }
 
+  .heading {
+    white-space: nowrap;
+    font-family: var(--font-sans);
+    font-size: 2em;
+
+    @media only screen and (max-width: 768px) {
+      text-align: center;
+      white-space: normal;
+    }
+  }
+
   /* Animations */
   @keyframes fadeInText {
     100% {
