@@ -1,29 +1,15 @@
-import { useStaticQuery, graphql } from 'gatsby';
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
+import { useSiteMetadata } from '@hooks';
 
 const Head = ({ title, description, pathname, children }) => {
-  const { site } = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          description
-          image
-          siteUrl
-          title
-          twitterUsername
-        }
-      }
-    }
-  `);
-
   const {
     description: defaultDescription,
     title: defaultTitle,
     image,
     siteUrl,
     twitterUsername
-  } = site.siteMetadata;
+  } = useSiteMetadata();
 
   const seo = {
     title: title || defaultTitle,
@@ -35,7 +21,6 @@ const Head = ({ title, description, pathname, children }) => {
 
   // TODO: titleTemplate
   // TODO: google tag manager
-  // TODO: preload space mono fonts
 
   return (
     <Helmet title={title} defaultTitle={seo.title} >

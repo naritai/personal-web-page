@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Layout from "@components/layout";
 import { Hero } from "@components/sections/hero/";
 import { Contact } from '@components/sections/contact';
+import { Experience } from '@components/sections/experience';
 
 const StyledMainContainer = styled.main`
   width: min(60%, 960px);
@@ -26,6 +27,7 @@ const IndexPage = () => {
       <Layout>
         <StyledMainContainer>
           <Hero />
+          <Experience />
           <Contact />
         </StyledMainContainer>
       </Layout>
