@@ -10,6 +10,16 @@ const variables = css`
     --selection-bg: #FFD4B2;
     --selection-text: #541212;
     --main-red: #CA4246;
+    --period-bg: rgba(87, 126, 255, 0.3);
+    --special-link-bg: linear-gradient(
+        120deg,
+        rgba(202, 66, 71, 0.8) 33.333%,
+        rgba(202, 66, 71, 0.8) 33.333%,
+        rgba(225, 102, 65, 0.8) 33.333%,
+        rgba(225, 102, 65, 0.8) 50%, 
+        rgba(215, 159, 86, 0.8) 33.333%, 
+        rgba(215, 159, 86, 0.8) 33.33%);
+
 
     --nav-height: 80px;
     --nav-scroll-height: 80px;
@@ -25,14 +35,6 @@ const variables = css`
     --link-active: #8d6820;
     --link-inactive: rgb(155, 152, 152);
     --link-focus: var(--main-red);
-    --link-gradient: linear-gradient(
-      120deg,
-      rgba(202, 66, 71, 0.8) 33.333%,
-      rgba(202, 66, 71, 0.8) 33.333%,
-      rgba(225, 102, 65, 0.8) 33.333%,
-      rgba(225, 102, 65, 0.8) 50%, 
-      rgba(215, 159, 86, 0.8) 33.333%, 
-      rgba(215, 159, 86, 0.8) 33.33%);
 
     --ham-color: #a42226;
     --ham-before: top 0.1s ease-in 0.25s,opacity 0.1s ease-in;

@@ -3,7 +3,8 @@ import styled from 'styled-components';
 
 const StyledPeriod = styled.span`
   position: relative;
-  width: 220px;
+  width: 225px;
+  max-width: 240px;
   height: 60px;
   padding: 2px;
   padding-top: 5px;
@@ -16,7 +17,7 @@ const StyledPeriod = styled.span`
   color: #ffffff;
   font-size: 3em;
   font-family: var(--font-promo);
-  background-color: rgba(167, 62, 56, 0.2);
+  background-color: var(--period-bg);
 
   &::before {
     content: "";
@@ -26,7 +27,7 @@ const StyledPeriod = styled.span`
     height: 100%;
     border-style: solid;
     border-width: 30px 0 30px 30px;
-    border-color: rgba(167, 62, 56, 0.2) transparent rgba(167, 62, 56, 0.2) transparent;
+    border-color: var(--period-bg) transparent var(--period-bg) transparent;
   }
 
   @media only screen and (max-width: 768px) {

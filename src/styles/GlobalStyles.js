@@ -61,6 +61,7 @@ const GlobalStyle = createGlobalStyle`
   html {
     height: 100vh;
     scroll-behavior: smooth;
+    background-color: var(--main-bg);
   }
 
   *, *::before, *::after {

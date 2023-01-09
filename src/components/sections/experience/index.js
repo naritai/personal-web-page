@@ -112,7 +112,7 @@ const Experience = () => {
   const jobsData = jobs.edges;
 
   return (
-    <StyledExperienceSection id="work-experience">
+    <StyledExperienceSection id="experience">
       <h2 className="heading">Where I've worked</h2>
       <hr className="horizontal-line work-experience__line" />
 
@@ -124,7 +124,7 @@ const Experience = () => {
           <StyledCompanyDetails key={id}>
             <div className="company-details__header">
               <Period period={period}/>
-              <CompanyLink text={title} url={url} />
+              <CompanyLink text={title} url={url} disabled={url === ''} />
             </div>
 
             <div className="company-details__content">

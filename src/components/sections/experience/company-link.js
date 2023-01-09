@@ -2,21 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import rocket from '@images/rocket_colored.png';
 
-// DISABLED LINK
-// .company-details__company-link--disabled {
-//   background-color: rgba(93, 81, 81, 0.8);
-//   background-size: 100%;
-//   background-repeat: repeat;
-//   -webkit-background-clip: text;
-//   -webkit-text-fill-color: transparent;
-//   filter: grayscale(100%);
-//   animation: none;
-// }
-
-// .company-details__company-link--disabled:hover {
-//   animation: none;
-// }
-
 const StyledCompanyName = styled.h3`
   min-width: 220px;
   margin: 0;
@@ -24,18 +9,12 @@ const StyledCompanyName = styled.h3`
   display: inline-block;
   font-size: 3em;
   font-family: var(--font-promo);
+  padding-left: 5px;
 
   a {
     position: relative;
     background-color: #CA4246;
-    background-image: linear-gradient(
-        120deg,
-        rgba(202, 66, 71, 0.8) 33.333%,
-        rgba(202, 66, 71, 0.8) 33.333%,
-        rgba(225, 102, 65, 0.8) 33.333%,
-        rgba(225, 102, 65, 0.8) 50%, 
-        rgba(215, 159, 86, 0.8) 33.333%, 
-        rgba(215, 159, 86, 0.8) 33.33%);
+    background-image: var(--special-link-bg);
 
     background-size: 100%;
     background-repeat: repeat;
@@ -43,18 +22,11 @@ const StyledCompanyName = styled.h3`
     -webkit-text-fill-color: transparent;
     animation: rainbow-text-simple-animation-rev 0.3s ease forwards;
 
-    /* FIX FOCUS FOR LINK NAMES!!! */
     &:focus,
     &:focus-visible {
       border: none;
       outline: none;
-
-      /* .link-text {
-        ${({ theme}) => theme.mixins.bottomDashedOutline }
-      } */
     }
-
-    
 
     &:focus::before {
       content: '';
@@ -63,13 +35,32 @@ const StyledCompanyName = styled.h3`
       left: 0;
       width: 80%;
       height: 1px;
-      background-color: #CA4246;
+      border-bottom: 2px dashed var(--link-focus);
     }
 
     &::selection {
       -webkit-background-clip: none;
       -webkit-text-fill-color: #541212;
     }
+  }
+
+  .disabled {
+    background-color: rgba(93, 81, 81, 0.8);
+    background-image: var(--special-link-bg);
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: grayscale(100%);
+    animation: none;
+  }
+  .disabled:hover {
+    animation: none;
+  }
+
+  .link-text {
+    display: inline-block;
+    margin-right: 10px;
   }
 
   .rocket {
@@ -107,6 +98,10 @@ const StyledCompanyName = styled.h3`
 
     .rocket {
       visibility: visible;
+    }
+
+    .disabled .rocket {
+      visibility: hidden;
     }
   }
 
@@ -146,13 +141,23 @@ const StyledCompanyName = styled.h3`
   }
 `;
 
-const CompanyLink = ({ url, text}) => {
+const CompanyLink = ({ url, text, disabled }) => {
   return (
     <StyledCompanyName>
-      <a href={url} target="_blank" rel="noopener noreferrer">
-        <span className="link-text">{text}</span>
-        <span className="rocket"></span>
-      </a>
+      {
+        disabled ? (
+          <span className='disabled'>
+            <span className="link-text">{text}</span>
+            <span className="rocket"></span>
+          </span>
+        ) : (
+          <a href={url} target="_blank" rel="noopener noreferrer">
+            <span className="link-text">{text}</span>
+            <span className="rocket"></span>
+          </a>
+        )
+      }
+      
     </StyledCompanyName>
   )
 }
