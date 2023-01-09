@@ -5,12 +5,17 @@ const variables = css`
     --main-bg: #0F1020;
     --light-bg: #16172b;
     --main-text: #F6F1D1;
-    --emphasize: #FFD400;
+    --emphasize: rgba(255, 213, 0, 0.9);
     --emphasize-soft: #E5C687;
     --selection-bg: #FFD4B2;
     --selection-text: #541212;
     --main-red: #CA4246;
-    --period-bg: rgba(87, 126, 255, 0.3);
+    /* --period-bg: rgba(87, 126, 255, 0.25); */
+    --period-bg: rgba(167, 62, 56, 0.25);
+    --button-bg: rgba(0, 178, 202, 0.3);
+
+    
+
     --special-link-bg: linear-gradient(
         120deg,
         rgba(202, 66, 71, 0.8) 33.333%,

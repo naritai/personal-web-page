@@ -131,7 +131,7 @@ const StyledGreeting = styled.p`
   text-align: center;
   font-size: 1.1em;
 
-  border-bottom: 2px solid #F6F1D1;
+  border: 2px solid #F6F1D1;
   border-radius: 2px;
   background-color: #F6F1D1;
   box-shadow: inset 0 4px 8px rgba(253, 168, 168, 0.3), inset 0 8px 12px rgba(250, 163, 163, 0.06);
@@ -144,7 +144,7 @@ const StyledGreeting = styled.p`
     border-width: 30px 20px 5px 0;
     border-color: #F6F1D1 transparent transparent transparent;
     position: absolute;
-    left: -3px;
+    left: -6px;
     bottom: -30px;
     transform: rotate(20deg);
   }

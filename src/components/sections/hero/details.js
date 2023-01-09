@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import TypeIt from 'typeit-react';
 import { writeCustomDetails, typewriterOptions } from './typewriter';
@@ -43,11 +43,20 @@ const StyledWrapper = styled.div`
 
 
 const Details = () => {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setIsMounted(true), 3000);
+    return () => clearTimeout(timeout);
+  });
+
   return (
     <StyledWrapper>
-      <p className="about__details" id="typewrite">
-        <TypeIt getBeforeInit={writeCustomDetails} options={typewriterOptions} />
-      </p>
+      {isMounted && (
+        <p className="about__details" id="typewrite">
+          <TypeIt getBeforeInit={writeCustomDetails} options={typewriterOptions} />
+        </p>)
+      }
       <p className="about__details about__details--mobile">
         I’m a software engineer with 5+ years of experience.
         Focused on building robust and accessible products with intuitive UI. 

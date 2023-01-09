@@ -68,6 +68,9 @@ const StyledEmailLink = styled.a`
   padding: 5px 0;
   color: #FFD400;
   font-weight: bold;
+  font-size: clamp(0.5em, 20vw, 1em);
+
+  word-break: break-all;
 
   ${({ theme }) => theme.mixins.bottomDashedOutline };
 `;

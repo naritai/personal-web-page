@@ -15,12 +15,14 @@ const button = css`
   color: #0F1020;
   cursor: pointer;
 
-  background-color: #FFD400;
+  background-color: var(--emphasize);
+
   background-image: url(${buttonBgDark});
   background-repeat: no-repeat;
   background-position: 400%;
   background-size: 140%;
-  border: 0.1px solid #FFD400;
+  border: 0.1px solid var(--emphasize);
+
   border-radius: 2px;
 
   transition: all 0.5s;
@@ -28,7 +30,7 @@ const button = css`
 
   &:hover {
     background-position: 50%;
-    border: 0.1px solid #FFD400;
+    border: 0.1px solid var(--emphasize);
   }
 
   &:focus {

@@ -19,6 +19,10 @@ const StyledPeriod = styled.span`
   font-family: var(--font-promo);
   background-color: var(--period-bg);
 
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+
+
   &::before {
     content: "";
     position: absolute;
