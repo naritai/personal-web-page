@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useEffect } from 'react';
 import Head from '@components/head';
 import GlobalStyle from "@styles/GlobalStyles";
 import styled, { ThemeProvider } from 'styled-components';
@@ -13,6 +13,23 @@ const StyledContent = styled.div`
 `;
 
 const Layout = ({ children }) => {
+
+  const setExternalLinksSafeAttrs = () => {
+    const allLinks = Array.from(document.querySelectorAll('a'));
+    if (allLinks.length > 0) {
+      allLinks.forEach((link) => {
+        if (link.host !== window.location.host) {
+          link.setAttribute('rel', 'noopener noreferrer');
+          link.setAttribute('target', '_blank');
+        }
+      })
+    }
+  }
+
+  useEffect(() => {
+    setExternalLinksSafeAttrs();
+  });
+
   return (
     <>
       <Head />

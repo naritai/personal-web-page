@@ -153,22 +153,22 @@ const Contact = () => {
         <StyledSocialLinks>
           <ul>
             <li>
-              <a href="https://github.com/naritai" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/naritai" aria-label="GitHub">
                 <IconGithub />
               </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/in/aleksandr-vorontsov" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/in/aleksandr-vorontsov" aria-label="LinkedIn">
                 <IconLinkedIn />
               </a>
             </li>
             <li>
-              <a href="https://twitter.com/dzhumandzhu" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+              <a href="https://twitter.com/dzhumandzhu" aria-label="Twitter">
               <IconTwitter />
               </a>
             </li>
             <li>
-              <a href="https://t.me/voronetskiy" aria-label="Telegram" target="_blank" rel="noopener noreferrer">
+              <a href="https://t.me/voronetskiy" aria-label="Telegram">
                 <IconTelegram />
               </a>
             </li>            

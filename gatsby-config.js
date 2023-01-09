@@ -10,11 +10,13 @@ module.exports = {
     image: `/og.png`,
   },
   plugins: [
+    "gatsby-plugin-react-helmet",
     "gatsby-plugin-styled-components",
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
-    "gatsby-plugin-sitemap", 
+    "gatsby-plugin-sitemap",
+    "gatsby-plugin-robots-txt",
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -24,31 +26,10 @@ module.exports = {
         background_color: '#0F1020',
         theme_color: '#0F1020',
         display: 'minimal-ui',
-        icon: `${__dirname}/src/images/favicon.png`
+        icon: `${__dirname}/src/images/icon.svg`
       }
-    }, "gatsby-transformer-remark",
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: "images",
-        path: `${__dirname}/src/images`
-      },
     },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: "experience",
-        path: `${__dirname}/content/experience`
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: "pages",
-        path: `${__dirname}/src/pages`
-      },
-      __key: "pages"
-    },
+    "gatsby-plugin-offline",  
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -138,6 +119,28 @@ module.exports = {
           },
         ],
       },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: "images",
+        path: `${__dirname}/src/images`
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: "experience",
+        path: `${__dirname}/content/experience`
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: "pages",
+        path: `${__dirname}/src/pages`
+      },
+      __key: "pages"
     },
   ]
 };

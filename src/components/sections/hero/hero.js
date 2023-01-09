@@ -218,7 +218,7 @@ const Hero = () => {
             imgClassName="avatar-img"
           />
         </StyledAvatar>
-        <StyledResumeButton href="/resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Resume">
+        <StyledResumeButton href="/resume.pdf" aria-label="Resume">
           <span className="button-text">Resume</span>
         </StyledResumeButton>
       </div>

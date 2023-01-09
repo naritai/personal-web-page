@@ -151,7 +151,7 @@ const CompanyLink = ({ url, text, disabled }) => {
             <span className="rocket"></span>
           </span>
         ) : (
-          <a href={url} target="_blank" rel="noopener noreferrer">
+          <a href={url}>
             <span className="link-text">{text}</span>
             <span className="rocket"></span>
           </a>

@@ -30,7 +30,7 @@ const Footer = () => {
   return (
     <StyledFooter>
       <StyledWrapper>
-        <StyledCopyrightLink href="https://github.com/naritai/personal-website" target="_blank"  rel="noopener noreferrer">
+        <StyledCopyrightLink href="https://github.com/naritai/personal-website">
           Designed & built by Aleksandr Vorontsov
         </StyledCopyrightLink>
       </StyledWrapper>
