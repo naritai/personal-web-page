@@ -5,7 +5,7 @@ import { CompanyLink } from './company-link';
 import { Period } from './period';
 
 const StyledExperienceSection = styled.section`
-  margin-bottom: 50px;
+  margin-bottom: 150px;
 
   .work-experience__line {
     margin-bottom: 20px;

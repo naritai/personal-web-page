@@ -12,7 +12,7 @@ const variables = css`
     --main-red: #CA4246;
     /* --period-bg: rgba(87, 126, 255, 0.25); */
     /* --period-bg: rgba(167, 62, 56, 0.25); */
-    --period-bg: rgba(0, 142, 213, 0.3);
+    --period-bg: rgba(167, 62, 56, 0.25);
 
     
     --button-bg: rgba(0, 178, 202, 0.3);

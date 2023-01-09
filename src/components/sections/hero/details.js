@@ -5,8 +5,8 @@ import { writeCustomDetails, typewriterOptions } from './typewriter';
 
 const StyledWrapper = styled.div`
   .about__details {
-    width: 540px;
-    max-width: 540px;
+    width: 580px;
+    max-width: 580px;
 
     line-height: 1.2em;
     /* min-height: 80px; */

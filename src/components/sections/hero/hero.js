@@ -91,6 +91,7 @@ const StyledAvatar = styled.div`
   .wrapper-img {
     width: 220px;
     height: 200px;
+    margin-top: -8px;
     /* margin-bottom: 20px;
     border-radius: 2px;
     filter: grayscale(70%);
@@ -170,7 +171,7 @@ const StyledGreeting = styled.p`
 
 const StyledName = styled.h1`
   ${({ theme }) => theme.mixins.promoHeading };
-  /* ${({ theme }) => theme.mixins.promoHeadingBright }; */
+  ${({ theme }) => theme.mixins.promoHeadingBright };
 
   opacity: 0;
   animation: fadeInText 0.75s ease-out 1.2s forwards;
@@ -208,23 +209,27 @@ const StyledWrapperTest = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 150px;
-  margin-top: 200px;
+  margin-top: 150px;
 
   .header {
-    height: 200px;
+    height: 250px;
     background-color: #eeae71;
-    background-color: rgba(0, 142, 213, 0.3);
-    transform: skew(10deg);
+    /* background-color: rgba(138, 126, 114, 0.3); */
+    background-color: rgba(60, 110, 113, 0.3);
+    transform: skew(-5deg);
     margin-bottom: 20px;
+    padding-top: 50px;
     width: 92%;
 
-    box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.3), 0 0 3px 2px rgba(255, 255, 255, 0.3), 0 0 3px 5px rgba(255, 255, 255, 0.3);
+    border: 4px solid #cecece;
+
+    /* box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.3), 0 0 3px 2px rgba(255, 255, 255, 0.3), 0 0 3px 5px rgba(255, 255, 255, 0.3); */
 
     .header-inner {
-      transform: skew(-10deg);
+      transform: skew(5deg);
       background-color: transparent;
       height: 100%;
-      padding: 0 75px;
+      padding: 0 50px;
 
       .flex {
         display: flex;
@@ -240,26 +245,26 @@ const StyledWrapperTest = styled.div`
   }
 
   .footer {
-    min-height: 110px;
-    background-color: rgba(202, 66, 71, 0.5);
-    transform: skew(-10deg);
-    margin-left: -30px;
-    margin-bottom: 20px;
-    width: 75%;
+    height: 100px;
+    /* background-color: rgba(138, 126, 114, 0.3); */
+    background-color: rgba(55, 113, 142, 0.3);
 
-    box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.3), 0 0 3px 2px rgba(255, 255, 255, 0.3), 0 0 3px 5px rgba(255, 255, 255, 0.3);
+    transform: skew(-5deg);
+    margin-bottom: 20px;
+    width: 92%;
+
+    border: 4px solid #cecece;
+
+    /* box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.3), 0 0 3px 2px rgba(255, 255, 255, 0.3), 0 0 3px 5px rgba(255, 255, 255, 0.3); */
 
     .footer-inner {
-      transform: skew(10deg);
+      transform: skew(5deg);
       background-color: transparent;
       height: 100%;
-      padding-left: 25px;
+      padding: 0 50px;
 
       .flex-column {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
       }
     }
   }
@@ -271,8 +276,8 @@ const StyledWrapperTest = styled.div`
 
 const StyledSpecialButton = styled.a`
   position: relative;
-  height: 110px;
-  width: 180px;
+  height: 70px;
+  width: 260px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -283,7 +288,8 @@ const StyledSpecialButton = styled.a`
   color: #ffffff;
   cursor: pointer;
 
-  background-color: #B56B45;
+  background-color: #B33B06;
+  /* background-color: rgba(252, 123, 58, 0.7); */
 
   background-image: url(${buttonBgDark});
   background-repeat: no-repeat;
@@ -294,13 +300,14 @@ const StyledSpecialButton = styled.a`
   transition: all 0.5s;
   transition-timing-function: cubic-bezier(.4,0,.2,1);
 
-  box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.3), 0 0 3px 2px rgba(255, 255, 255, 0.3), 0 0 3px 5px rgba(255, 255, 255, 0.3);
+  /* box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.3), 0 0 3px 2px rgba(255, 255, 255, 0.3), 0 0 3px 5px rgba(255, 255, 255, 0.3); */
 
-  margin-left: 20px;
-  transform: skew(-10deg);
+  border: 4px solid #cecece;
+  
+  transform: skew(-5deg);
 
   .button-text {
-    transform: skew(10deg);
+    transform: skew(5deg);
     color: #F6F1D1;
     font-size: 2.5em;
     letter-spacing: 3px;
@@ -309,7 +316,7 @@ const StyledSpecialButton = styled.a`
 
   &:hover {
     background-position: 50%;
-    border: 0.1px solid var(--emphasize);
+    border: 4px solid var(--emphasize);
   }
 
   &:focus {
@@ -402,10 +409,14 @@ const Hero = () => {
               </div>
             </div>
           </div>
+        </div>
+
+        <div style={{ marginLeft: '500px'}}>
           <StyledSpecialButton href="/resume.pdf" aria-label="Resume">
             <span className="button-text">Resume</span>
           </StyledSpecialButton>
         </div>
+       
        
       </StyledWrapperTest>
     </>
