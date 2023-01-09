@@ -30,7 +30,7 @@ const typewriterOptions = {
   cursor: true,
   breakLines: true,
   waitUntilVisible: true,
-  startDelay: 2000,
+  startDelay: 1000,
   nextStringDelay: 400,
   afterComplete: async (instance) => {
     setTimeout(() => {

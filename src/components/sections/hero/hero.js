@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import Details from './details';
 import { StaticImage } from 'gatsby-plugin-image';
+import buttonBgDark from '@images/button-bg-dark.svg';
+
 
 const StyledHeroSection = styled.section`
   display: flex;
@@ -89,7 +91,7 @@ const StyledAvatar = styled.div`
   .wrapper-img {
     width: 220px;
     height: 200px;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px;
     border-radius: 2px;
     filter: grayscale(70%);
     border: 2px solid #E5C687;
@@ -98,7 +100,7 @@ const StyledAvatar = styled.div`
 
     &:hover {
       filter: grayscale(0);
-    }
+    } */
 
     @media only screen and (max-width: 768px) {
       width: 270px;
@@ -115,6 +117,7 @@ const StyledResumeButton = styled.a`
   ${({ theme }) => theme.mixins.button };
   && {
     color: #0F1020;
+    color: #ffffff;
   }
 `;
 
@@ -167,7 +170,7 @@ const StyledGreeting = styled.p`
 
 const StyledName = styled.h1`
   ${({ theme }) => theme.mixins.promoHeading };
-  ${({ theme }) => theme.mixins.promoHeadingBright };
+  /* ${({ theme }) => theme.mixins.promoHeadingBright }; */
 
   opacity: 0;
   animation: fadeInText 0.75s ease-out 1.2s forwards;
@@ -201,37 +204,211 @@ const StyledSlogan = styled.p`
   }
 `;
 
-const Hero = () => {
-  return (
-    <StyledHeroSection id="hero">
-      <div className="hero__left-column">
-        <StyledAvatar>
-          <StaticImage
-            src="../../../images/avatar.jpg"
-            objectFit="contain"
-            quality={95}
-            formats={['AUTO', 'WEBP', 'AVIF']}
-            alt="Avatar"
-            placeholder="blurred"
-            loading="eager"
-            className="wrapper-img"
-            imgClassName="avatar-img"
-          />
-        </StyledAvatar>
-        <StyledResumeButton href="/resume.pdf" aria-label="Resume">
-          <span className="button-text">Resume</span>
-        </StyledResumeButton>
-      </div>
+const StyledWrapperTest = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 150px;
+  margin-top: 200px;
 
-      <div className="hero__right-column">
-        <div className="hero__text-wrapper">
-          <StyledGreeting>Hi, my name is</StyledGreeting>
-          <StyledName>Alex vorontsov.</StyledName>
-          <StyledSlogan>I craft projects for web.</StyledSlogan>
-          <Details />
+  .header {
+    height: 200px;
+    background-color: #eeae71;
+    background-color: rgba(0, 142, 213, 0.3);
+    transform: skew(10deg);
+    margin-bottom: 20px;
+    width: 92%;
+
+    box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.3), 0 0 3px 2px rgba(255, 255, 255, 0.3), 0 0 3px 5px rgba(255, 255, 255, 0.3);
+
+    .header-inner {
+      transform: skew(-10deg);
+      background-color: transparent;
+      height: 100%;
+      padding: 0 75px;
+
+      .flex {
+        display: flex;
+      }
+
+      .flex-column {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+      }
+    }
+  }
+
+  .footer {
+    min-height: 110px;
+    background-color: rgba(202, 66, 71, 0.5);
+    transform: skew(-10deg);
+    margin-left: -30px;
+    margin-bottom: 20px;
+    width: 75%;
+
+    box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.3), 0 0 3px 2px rgba(255, 255, 255, 0.3), 0 0 3px 5px rgba(255, 255, 255, 0.3);
+
+    .footer-inner {
+      transform: skew(10deg);
+      background-color: transparent;
+      height: 100%;
+      padding-left: 25px;
+
+      .flex-column {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+  .footer-flex {
+    display: flex;
+  }
+`;
+
+const StyledSpecialButton = styled.a`
+  position: relative;
+  height: 110px;
+  width: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: 'Roboto';
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ffffff;
+  cursor: pointer;
+
+  background-color: #B56B45;
+
+  background-image: url(${buttonBgDark});
+  background-repeat: no-repeat;
+  background-position: 400%;
+  background-size: 200%;
+  border: 0.1px solid #ffffff;
+
+  transition: all 0.5s;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+
+  box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.3), 0 0 3px 2px rgba(255, 255, 255, 0.3), 0 0 3px 5px rgba(255, 255, 255, 0.3);
+
+  margin-left: 20px;
+  transform: skew(-10deg);
+
+  .button-text {
+    transform: skew(10deg);
+    color: #F6F1D1;
+    font-size: 2.5em;
+    letter-spacing: 3px;
+    font-family: var(--font-promo);
+  }
+
+  &:hover {
+    background-position: 50%;
+    border: 0.1px solid var(--emphasize);
+  }
+
+  &:focus {
+    color: #a42226;
+  }
+
+  &:hover .button-text {
+    background-color: #CA4246;
+    background-image: linear-gradient(90deg, rgba(202, 66, 71, 0.8), rgba(225, 102, 65, 0.8), rgba(215, 159, 86, 0.8));
+    background-size: 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .button-text::selection {
+    -webkit-background-clip: none;
+    -webkit-text-fill-color: #541212;
+  }
+
+`;
+
+const Hero = () => {
+  // return (
+  //   <StyledHeroSection id="hero">
+  //     <div className="hero__left-column">
+  //       <StyledAvatar>
+  //         <StaticImage
+  //           src="../../../images/avatar.jpg"
+  //           objectFit="contain"
+  //           quality={95}
+  //           formats={['AUTO', 'WEBP', 'AVIF']}
+  //           alt="Avatar"
+  //           placeholder="blurred"
+  //           loading="eager"
+  //           className="wrapper-img"
+  //           imgClassName="avatar-img"
+  //         />
+  //       </StyledAvatar>
+  //       <StyledResumeButton href="/resume.pdf" aria-label="Resume">
+  //         <span className="button-text">Resume</span>
+  //       </StyledResumeButton>
+  //     </div>
+
+  //     <div className="hero__right-column">
+  //       <div className="hero__text-wrapper">
+  //         <StyledGreeting>Hi, my name is</StyledGreeting>
+  //         <StyledName>Alex vorontsov.</StyledName>
+  //         <StyledSlogan>I craft projects for web.</StyledSlogan>
+  //         <Details />
+  //       </div>
+  //     </div>
+  //   </StyledHeroSection>
+  // )
+
+
+  return (
+    <>
+      <StyledWrapperTest>
+        <div className="header">
+          <div className="header-inner">
+            <div className="flex">
+              <StyledAvatar>
+                <StaticImage
+                  src="../../../images/avatar.jpg"
+                  objectFit="contain"
+                  quality={95}
+                  formats={['AUTO', 'WEBP', 'AVIF']}
+                  alt="Avatar"
+                  placeholder="blurred"
+                  loading="eager"
+                  className="wrapper-img"
+                  imgClassName="avatar-img"
+                />
+              </StyledAvatar>
+
+              <div className="flex-column">
+                <StyledGreeting>Hi, my name is</StyledGreeting>
+                <StyledName>Alex vorontsov.</StyledName>
+                <StyledSlogan>I craft projects for web.</StyledSlogan>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </StyledHeroSection>
+        <div className='footer-flex'>
+          <div className="footer">
+            <div className='footer-inner'>
+              <div className='flex-column'>
+                <Details />
+              </div>
+            </div>
+          </div>
+          <StyledSpecialButton href="/resume.pdf" aria-label="Resume">
+            <span className="button-text">Resume</span>
+          </StyledSpecialButton>
+        </div>
+       
+      </StyledWrapperTest>
+    </>
   )
 }
 

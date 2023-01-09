@@ -5,8 +5,11 @@ import { writeCustomDetails, typewriterOptions } from './typewriter';
 
 const StyledWrapper = styled.div`
   .about__details {
+    width: 540px;
     max-width: 540px;
+
     line-height: 1.2em;
+    /* min-height: 80px; */
 
     a {
       ${({ theme }) => theme.mixins.bottomDashedOutline };

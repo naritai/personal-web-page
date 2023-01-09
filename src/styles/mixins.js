@@ -15,13 +15,13 @@ const button = css`
   color: #0F1020;
   cursor: pointer;
 
-  background-color: var(--emphasize);
+  background-color: #07373E;
 
   background-image: url(${buttonBgDark});
   background-repeat: no-repeat;
   background-position: 400%;
   background-size: 140%;
-  border: 0.1px solid var(--emphasize);
+  border: 0.1px solid #ffffff;
 
   border-radius: 2px;
 

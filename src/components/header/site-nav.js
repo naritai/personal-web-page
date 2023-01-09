@@ -15,7 +15,9 @@ const Wrapper = styled.div`
       padding-top: 14px;
       padding-bottom: 14px;
       margin-right: 15px;
-      font-size: 0.93em;
+      /* font-size: 0.93em; */
+      font-size: 1em;
+
       counter-increment: item 1;
     }
 
