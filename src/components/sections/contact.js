@@ -4,6 +4,9 @@ import contactBG from '@images/contacts-bg.png';
 import { IconGithub, IconLinkedIn, IconTelegram, IconTwitter } from '@components/icons';
 
 const StyledContactSection = styled.section`
+  display: flex;
+  justify-content: space-between;
+
   .contact__line {
     margin-bottom: 30px;
     margin-top: -15px;
@@ -26,6 +29,9 @@ const StyledWrapper = styled.div`
     margin-bottom: 3px;
     border-radius: 3px;
     z-index: 100;
+    margin-left: 5px;
+
+    flex-grow: 1;
 
     &::before {
       content: "";
@@ -153,11 +159,29 @@ const StyledSocialLinks = styled.div`
   }
 `;
 
+const StyledCopyrightLink = styled.a`
+  font-size: 0.8em;
+  text-align: center;
+
+  ${({ theme }) => theme.mixins.bottomDashedOutline };
+
+  writing-mode: vertical-lr;
+  font-size: 0.5em;
+  display: inline-block;
+  transform: rotate(180deg);
+`;
+
+
 const Contact = () => {
   return (
     <StyledContactSection id="contact">
       {/* <h2 className="heading">Get In Touch</h2>
       <hr className="horizontal-line contact__line" /> */}
+
+      <StyledCopyrightLink href="https://github.com/naritai/personal-website">
+        Designed & built by Aleksandr Vorontsov
+      </StyledCopyrightLink>
+
 
       <StyledWrapper>
         <StyledGetInTouch>
