@@ -29,12 +29,12 @@ const StyledPeriod = styled.span`
   &::before {
     content: "";
     position: absolute;
-    left: -35px;
+    left: -45px;
     top: 0;
     height: 100%;
+    width: 40px;
     border-style: solid;
     border-width: 30px 0 30px 30px;
-    /* border-color: var(--period-bg) transparent var(--period-bg) transparent; */
     border-color: #B33B06 transparent #B33B06 transparent;
   }
 

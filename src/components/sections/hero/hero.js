@@ -316,7 +316,7 @@ const StyledSpecialButton = styled.a`
 
   &:hover {
     background-position: 50%;
-    border: 4px solid var(--emphasize);
+    border: 4px solid var(--emphasize-soft);
   }
 
   &:focus {
