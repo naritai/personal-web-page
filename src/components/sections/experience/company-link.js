@@ -15,7 +15,7 @@ const StyledCompanyName = styled.h3`
 
   a {
     position: relative;
-    background-color: #CA4246;
+    background-color: var(--bg-emphasize);
     background-image: var(--special-link-bg);
 
     background-size: 100%;
@@ -44,7 +44,7 @@ const StyledCompanyName = styled.h3`
 
     &::selection {
       -webkit-background-clip: none;
-      -webkit-text-fill-color: #541212;
+      -webkit-text-fill-color: var(-selection-text);
     }
   }
 

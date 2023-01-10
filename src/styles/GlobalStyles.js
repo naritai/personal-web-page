@@ -137,7 +137,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .horizontal-line {
-    border-color: var(--main-red);
+    border-color: var(--bg-emphasize);
     border-radius: 2px;
     box-shadow: 0 0 5px rgba(240, 232, 158, 0.5);
   }
@@ -159,7 +159,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .skip-to-content {
-    color: var(--emphasize);
+    color: var(--emphasize-soft);
     background-color: transparent;
     border: 1px solid var(--link-focus);
     border-radius: 4px;
@@ -180,7 +180,7 @@ const GlobalStyle = createGlobalStyle`
     outline: none;
 
     &:focus {
-      background-color: var(--emphasize);
+      background-color: var(--emphasize-soft);
       color: var(--link-focus);
       top: 0px;
       left: 0px;

@@ -39,7 +39,7 @@ const StyledCompanyDetails = styled.section`
 
   .company-details__stack-foreword {
     font-weight: bold;
-    color: #F6F1D1;
+    color: var(--main-text);
   }
 
   @media only screen and (max-width: 768px) {

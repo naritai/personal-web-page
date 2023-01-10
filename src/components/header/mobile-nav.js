@@ -71,7 +71,7 @@ const StyledSidebar = styled.aside`
   width: min(75vw, 350px);
   padding-top: min(40vh, 100px);
   padding-bottom: 50px;
-  background-color: var(--light-bg);
+  background-color: var(--main-bg-soft);
   top: 0;
   right: 0;
   z-index: 10;

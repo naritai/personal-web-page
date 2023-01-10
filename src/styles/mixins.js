@@ -30,7 +30,7 @@ const button = css`
 
   &:hover {
     background-position: 50%;
-    border: 0.1px solid var(--emphasize);
+    border: 0.1px solid var(--emphasize-soft);
   }
 
   &:focus {
@@ -38,8 +38,8 @@ const button = css`
   }
 
   &:hover .button-text {
-    background-color: #CA4246;
-    background-image: linear-gradient(90deg, rgba(202, 66, 71, 0.8), rgba(225, 102, 65, 0.8), rgba(215, 159, 86, 0.8));
+    background-color: var(--bg-emphasize);
+    background-image: var(--promo-gradient);
     background-size: 100%;
     background-clip: text;
     -webkit-background-clip: text;
@@ -48,7 +48,7 @@ const button = css`
 
   .button-text::selection {
     -webkit-background-clip: none;
-    -webkit-text-fill-color: #541212;
+    -webkit-text-fill-color: var(--selection-text);
   }
 `;
 
@@ -129,7 +129,7 @@ const mixins = {
 
   promoHeadingGradient: css`
     background-color: #bc9664;
-    background-image: linear-gradient(90deg, rgba(202, 66, 71, 0.8), rgba(225, 102, 65, 0.8), rgba(215, 159, 86, 0.8));
+    background-image: var(--promo-gradient);
     background-size: 100%;
     background-clip: text;
     -webkit-background-clip: text;
