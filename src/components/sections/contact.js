@@ -4,11 +4,11 @@ import contactBG from '@images/contacts-bg.png';
 import { IconGithub, IconLinkedIn, IconTelegram, IconTwitter } from '@components/icons';
 
 const StyledContactSection = styled.section`
-  display: flex;
-  justify-content: space-between;
+  /* display: flex;
+  justify-content: space-between; */
 
   .contact__line {
-    margin-bottom: 30px;
+    margin-bottom: -30px;
     margin-top: -15px;
   }
 
@@ -33,7 +33,7 @@ const StyledWrapper = styled.div`
 
     flex-grow: 1;
 
-    &::before {
+    /* &::before {
       content: "";
       position: absolute;
       right: 0;
@@ -41,22 +41,23 @@ const StyledWrapper = styled.div`
       height: 100%;
       border-style: solid;
       border-width: 100px 0 100px 100px;
-      /* border-color: var(--period-bg) transparent var(--period-bg) transparent; */
       border-color: #000000 transparent #000000 transparent;
-    }
+    } */
 
-    &::after {
+      /* linear-gradient(to bottom, rgba(255, 255, 255, 0.6) 0%,rgba(255,255,255,0.8) 60%,rgba(255,255,255,1) 100%), */
+
+    /* &::after {
       content: '';
       position: absolute;
       width: 100%;
       height: 100%;
-      /* linear-gradient(to bottom, rgba(255, 255, 255, 0.6) 0%,rgba(255,255,255,0.8) 60%,rgba(255,255,255,1) 100%), */
+    
       background-image: url(${contactBG});
       top: 0;
       left: 0;
       opacity: 0.5;
       z-index: -100;
-    }
+    } */
 
     @media only screen and (max-width: 768px) {
       flex-direction: column-reverse;
@@ -69,8 +70,33 @@ const StyledGetInTouch = styled.p`
   margin: 0;
   margin-right: 10px;
   padding: 10px;
-  border-radius: 3px;
+  /* border-radius: 3px; */
   text-align: center;
+
+  /* transform: skew(-5deg);
+  border: 4px solid #cecece;
+
+  div {
+  transform: skew(5deg);
+
+  };
+
+  position: relative;
+
+     &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    
+      background-image: url(${contactBG});
+      top: 0;
+      left: 0;
+      opacity: 0.3;
+      z-index: -100;
+    } */
+
+  
 
   @media only screen and (max-width: 768px) {
     width: 100%;
@@ -175,18 +201,20 @@ const StyledCopyrightLink = styled.a`
 const Contact = () => {
   return (
     <StyledContactSection id="contact">
-      {/* <h2 className="heading">Get In Touch</h2>
-      <hr className="horizontal-line contact__line" /> */}
+      <h2 className="heading">Get In Touch</h2>
+      <hr className="horizontal-line contact__line" />
 
-      <StyledCopyrightLink href="https://github.com/naritai/personal-website">
+      {/* <StyledCopyrightLink href="https://github.com/naritai/personal-website">
         Designed & built by Aleksandr Vorontsov
-      </StyledCopyrightLink>
+      </StyledCopyrightLink> */}
 
 
       <StyledWrapper>
         <StyledGetInTouch>
-          My inbox is always open. <br /> Whether you have a question or just want to say hi, I’ll try my best to get back to you! <br />
-          <StyledEmailLink href="mailto:alexandr.voronetskiy@gmail.com">alexandr.voronetskiy@gmail.com</StyledEmailLink>
+          <div>      
+            My inbox is always open. <br /> Whether you have a question or just want to say hi, I’ll try my best to get back to you! <br />
+            <StyledEmailLink href="mailto:alexandr.voronetskiy@gmail.com">alexandr.voronetskiy@gmail.com</StyledEmailLink>
+          </div>
         </StyledGetInTouch>     
 
         <StyledSocialLinks>

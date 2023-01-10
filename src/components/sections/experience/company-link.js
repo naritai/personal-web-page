@@ -11,6 +11,8 @@ const StyledCompanyName = styled.h3`
   font-family: var(--font-promo);
   padding-left: 5px;
 
+  transform: skew(-5deg);
+
   a {
     position: relative;
     background-color: #CA4246;
