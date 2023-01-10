@@ -80,8 +80,8 @@ const StyledMainNav = styled.nav`
 
 const StyledLogoWrapper = styled.div`
   margin-right: 15px;
-  width: 45px;
-  height: 35px;
+  width: 50px;
+  height: 40px;
 
   &:focus,
   &:hover {
@@ -96,8 +96,8 @@ const StyledLogoWrapper = styled.div`
   svg {
     margin: 0;
     padding: 0;
-    width: 45px;
-    height: 35px;
+    width: 50px;
+    height: 40px;
     user-select: none;
   }
 
