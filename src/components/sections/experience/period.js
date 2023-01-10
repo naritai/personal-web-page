@@ -7,7 +7,6 @@ const StyledPeriod = styled.span`
   max-width: 240px;
   height: 60px;
   padding: 2px;
-  padding-top: 5px;
   margin-top: 5px;
   margin-right: 15px;
   margin-bottom: auto;
@@ -17,21 +16,27 @@ const StyledPeriod = styled.span`
   color: #ffffff;
   font-size: 3em;
   font-family: var(--font-promo);
-  background-color: var(--period-bg);
+  background-color: rgba(60, 110, 113, 0.3);
 
-  border-top-right-radius: 2px;
-  border-bottom-right-radius: 2px;
+  border: 4px solid #B33B06;
+  transform: skew(-5deg);
+
+  .period-text {
+    transform: skew(5deg);
+  }
 
 
   &::before {
     content: "";
     position: absolute;
-    left: -30px;
+    left: -35px;
     top: 0;
     height: 100%;
     border-style: solid;
     border-width: 30px 0 30px 30px;
-    border-color: var(--period-bg) transparent var(--period-bg) transparent;
+    /* border-color: var(--period-bg) transparent var(--period-bg) transparent; */
+    border-color: #B33B06 transparent #B33B06 transparent;
+
   }
 
   @media only screen and (max-width: 768px) {
@@ -56,7 +61,9 @@ const Period = ({ period }) => {
   const [start, end] = period.split('-');
   return (
     <StyledPeriod>
-      {start} <b className="company-details__period-delimeter">-</b> {end}
+      <div className='period-text'>
+        {start} <b className="company-details__period-delimeter">-</b> {end}
+      </div>
     </StyledPeriod>
   )
 }

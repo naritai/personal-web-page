@@ -22,6 +22,8 @@ const StyledCompanyName = styled.h3`
     -webkit-text-fill-color: transparent;
     animation: rainbow-text-simple-animation-rev 0.3s ease forwards;
 
+
+
     &:focus,
     &:focus-visible {
       border: none;

@@ -13,6 +13,10 @@ const variables = css`
     /* --period-bg: rgba(87, 126, 255, 0.25); */
     /* --period-bg: rgba(167, 62, 56, 0.25); */
     --period-bg: rgba(167, 62, 56, 0.25);
+    --period-bg: rgba(60, 110, 113, 0.5);
+
+
+    
 
     
     --button-bg: rgba(0, 178, 202, 0.3);
