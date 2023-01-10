@@ -11,6 +11,11 @@ const variables = css`
     --bg-emphasize: #CA4246;
     --period-bg: rgba(60, 110, 113, 0.5);
 
+    --raw-red: #a42226;
+    --main-red: rgba(202, 66, 71, 0.8);
+    --main-orange: rgba(225, 102, 65, 0.8);
+    --main-yellow: rgba(215, 159, 86, 0.8);
+
     --nav-height: 80px;
     --nav-scroll-height: 80px;
 
@@ -27,14 +32,14 @@ const variables = css`
     --link-focus: var(--main-red);
     --special-link-bg: linear-gradient(
         120deg,
-        rgba(202, 66, 71, 0.8) 33.333%,
-        rgba(202, 66, 71, 0.8) 33.333%,
-        rgba(225, 102, 65, 0.8) 33.333%,
-        rgba(225, 102, 65, 0.8) 50%, 
-        rgba(215, 159, 86, 0.8) 33.333%, 
-        rgba(215, 159, 86, 0.8) 33.33%);
+        var(--main-red) 33.333%,
+        var(--main-red) 33.333%,
+        var(--main-orange) 33.333%,
+        var(--main-orange) 50%, 
+        var(--main-yellow) 33.333%, 
+        var(--main-yellow) 33.33%);
 
-    --ham-color: #a42226;
+    --ham-color: var(--raw-red);
     --ham-before: top 0.1s ease-in 0.25s,opacity 0.1s ease-in;
     --ham-before-active: top 0.1s ease-out,opacity 0.1s ease-out 0.12s;
     --ham-after: bottom 0.1s ease-in 0.25s,transform 0.22s cubic-bezier(0.55,0.055,0.675,0.19);

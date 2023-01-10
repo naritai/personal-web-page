@@ -3,8 +3,8 @@ import buttonBgDark from '@images/button-bg-dark.svg';
 
 const button = css`
   position: relative;
-  height: 45px;
-  width: 220px;
+  height: 50px;
+  width: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,38 +12,38 @@ const button = css`
   font-family: 'Roboto';
   font-weight: 700;
   text-transform: uppercase;
-  color: #0F1020;
+  color: #ffffff;
   cursor: pointer;
 
-  background-color: #07373E;
-
+  background-color: #B33B06;
   background-image: url(${buttonBgDark});
   background-repeat: no-repeat;
   background-position: 400%;
-  background-size: 140%;
-  border: 0.1px solid #ffffff;
-
-  border-radius: 2px;
+  background-size: 200%;
+  border: 2px solid #cecece;
 
   transition: all 0.5s;
   transition-timing-function: cubic-bezier(.4,0,.2,1);
 
-  &:hover {
-    background-position: 50%;
-    border: 0.1px solid var(--emphasize-soft);
-  }
-
-  &:focus {
-    color: #a42226;
+  .button-text {
+    color: var(--main-text);
+    font-size: 2em;
+    letter-spacing: 3px;
+    font-family: var(--font-promo);
+    transition: color 0.6s;
   }
 
   &:hover .button-text {
-    background-color: var(--bg-emphasize);
-    background-image: var(--promo-gradient);
-    background-size: 100%;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--main-red);
+  }
+
+  &:hover {
+    background-position: 50%;
+    border: 4px solid var(--emphasize-soft);
+  }
+
+  &:focus {
+    color: var(--raw-red);
   }
 
   .button-text::selection {
