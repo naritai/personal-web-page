@@ -7,18 +7,24 @@ const Wrapper = styled.div`
   ul {
     display: flex;
     flex-wrap: wrap;
+    margin-left: 10px;
 
     li {
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
       padding-top: 14px;
       padding-bottom: 14px;
+      padding: 9px 15px;
       margin-right: 15px;
-      /* font-size: 0.93em; */
       font-size: 1em;
+      font-weight: 700;
 
       counter-increment: item 1;
+
+      /* background-color: rgba(179, 58, 6); */
+      /* border: 3px solid rgba(179, 58, 6); */
     }
 
     li::before {
@@ -31,13 +37,27 @@ const Wrapper = styled.div`
 
     li:last-child {
       margin-right: 0;
+      /* padding-right: 30px; */
     }
+
+    /* li:last-child::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      border-style: solid;
+      border-width: 18px 0 18px 18px;
+      border-color: #000000 transparent #000000 transparent;
+    }
+ */
 
     a,
     a:visited {
       color: rgb(155, 152, 152);
       text-decoration: none;
       outline: none;
+      color: #F6F1D1;
     }
 
     a:focus,

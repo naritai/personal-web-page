@@ -36,7 +36,6 @@ const StyledPeriod = styled.span`
     border-width: 30px 0 30px 30px;
     /* border-color: var(--period-bg) transparent var(--period-bg) transparent; */
     border-color: #B33B06 transparent #B33B06 transparent;
-
   }
 
   @media only screen and (max-width: 768px) {

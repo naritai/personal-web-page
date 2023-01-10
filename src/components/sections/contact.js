@@ -27,6 +27,18 @@ const StyledWrapper = styled.div`
     border-radius: 3px;
     z-index: 100;
 
+    &::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      border-style: solid;
+      border-width: 100px 0 100px 100px;
+      /* border-color: var(--period-bg) transparent var(--period-bg) transparent; */
+      border-color: #000000 transparent #000000 transparent;
+    }
+
     &::after {
       content: '';
       position: absolute;
@@ -144,8 +156,8 @@ const StyledSocialLinks = styled.div`
 const Contact = () => {
   return (
     <StyledContactSection id="contact">
-      <h2 className="heading">Get In Touch</h2>
-      <hr className="horizontal-line contact__line" />
+      {/* <h2 className="heading">Get In Touch</h2>
+      <hr className="horizontal-line contact__line" /> */}
 
       <StyledWrapper>
         <StyledGetInTouch>

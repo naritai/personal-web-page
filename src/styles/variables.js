@@ -11,7 +11,6 @@ const variables = css`
     --selection-text: #541212;
     --main-red: #CA4246;
     /* --period-bg: rgba(87, 126, 255, 0.25); */
-    /* --period-bg: rgba(167, 62, 56, 0.25); */
     --period-bg: rgba(167, 62, 56, 0.25);
     --period-bg: rgba(60, 110, 113, 0.5);
 

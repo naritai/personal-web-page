@@ -54,6 +54,9 @@ const StyledWrapper = styled.div`
   width: min(60%, 960px);
   margin: 0 auto;
 
+  /* custom! replace */
+  padding-left: 12px;
+
   @media only screen and (max-width: 1088px) {
     width: auto;
   }
