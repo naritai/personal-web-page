@@ -45,6 +45,11 @@ const StyledPeriod = styled.span`
     min-height: 50px;
     font-size: 1.5em;
     border: 1px solid #ffffff;
+    transform: none;
+
+    .period-text {
+      transform: none;
+    }
 
     &::before {
       display: none;

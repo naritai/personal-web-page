@@ -103,8 +103,8 @@ const StyledCompanyName = styled.h3`
       visibility: visible;
     }
 
-    .disabled .rocket {
-      visibility: hidden;
+    .company-link--disabled .rocket {
+      display: none;
     }
   }
 

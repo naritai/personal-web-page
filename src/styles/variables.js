@@ -10,14 +10,15 @@ const variables = css`
     --selection-text: #541212;
     --bg-emphasize: #CA4246;
     --period-bg: rgba(60, 110, 113, 0.5);
+    --hero-bg: rgba(60, 110, 113, 0.3);
 
     --raw-red: #a42226;
     --main-red: rgba(202, 66, 71, 0.8);
     --main-orange: rgba(225, 102, 65, 0.8);
     --main-yellow: rgba(215, 159, 86, 0.8);
 
-    --nav-height: 80px;
-    --nav-scroll-height: 80px;
+    --nav-height: 70px;
+    --nav-scroll-height: 70px;
 
     --font-sans: 'Roboto', 'Arial', -apple-system, system-ui, sans-serif;
     --font-mono: 'SpaceMono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;

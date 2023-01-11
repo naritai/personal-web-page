@@ -51,11 +51,9 @@ const StyledWrapper = styled.div`
   position: relative;
   display: flex;
   align-items: center;
-  width: min(60%, 960px);
+  width: min(65%, 960px);
   margin: 0 auto;
-
-  /* custom! replace */
-  padding-left: 12px;
+  padding: 0 44px;
 
   @media only screen and (max-width: 1088px) {
     width: auto;
@@ -63,6 +61,7 @@ const StyledWrapper = styled.div`
 
   @media only screen and (max-width: 768px) {
     width: 100%;
+    padding: 0;
     justify-content: space-between;
   }
 `;
@@ -70,7 +69,7 @@ const StyledWrapper = styled.div`
 const StyledMainNav = styled.nav`
   display: flex;
   align-items: center;
-  min-height: 70px;
+  min-height: 65px;
 
   @media only screen and (max-width: 768px) {
     width: 100%;

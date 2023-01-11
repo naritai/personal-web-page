@@ -13,7 +13,6 @@ const StyledContent = styled.div`
 `;
 
 const Layout = ({ children }) => {
-
   const setExternalLinksSafeAttrs = () => {
     const allLinks = Array.from(document.querySelectorAll('a'));
     if (allLinks.length > 0) {
@@ -22,7 +21,7 @@ const Layout = ({ children }) => {
           link.setAttribute('rel', 'noopener noreferrer');
           link.setAttribute('target', '_blank');
         }
-      })
+      });
     }
   }
 

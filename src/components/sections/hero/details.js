@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import TypeIt from 'typeit-react';
-import { writeCustomDetails, typewriterOptions } from './typewriter';
 
 const StyledWrapper = styled.div`
   .about__details {
-    width: 580px;
-    max-width: 580px;
-
+    width: 600px;
+    max-width: 700px;
     line-height: 1.2em;
-    /* min-height: 80px; */
 
     a {
       ${({ theme }) => theme.mixins.bottomDashedOutline };
@@ -22,7 +19,7 @@ const StyledWrapper = styled.div`
 
   @media only screen and (max-width: 1088px) {
     .about__details {
-      max-width: 460px;
+      max-width: 520px;
     }
   }
 
@@ -30,6 +27,7 @@ const StyledWrapper = styled.div`
     .about__details {
       width: 100%;
       max-width: none;
+      margin-bottom: 15px;
       font-size: 0.9em;
       margin: 0;
       margin-top: 5px;
@@ -40,6 +38,10 @@ const StyledWrapper = styled.div`
 
     .about__details--mobile {
       display: block;
+    }
+
+    #typewrite {
+      display: none;
     }
   }
 `;
@@ -74,6 +76,47 @@ const Details = () => {
       </noscript>
     </StyledWrapper>
   )
-}
+};
+
+const writeCustomDetails = (instance) => {
+  instance
+    .type('I’m a software developer with 5+ years of experie')
+    .pause(300)
+    .type('nce. ')
+    .pause(350)
+    .type('Focused on building robust and a')
+    .pause(350)
+    .type('c')
+    .pause(100)
+    .type('c')
+    .pause(30)
+    .type('essible ')
+    .pause(70)
+    .type('products with')
+    .pause(200)
+    .type(' intuitive ')
+    .pause(150)
+    .type('UI. ')
+    .pause(650)
+    .type('Blog about front-end to <a href="https://t.me/frontendmetoo" aria-label="Telegram" target="_blank" rel="noopener noreferrer">t.me/frontendmetoo</a>.')
+
+    return instance;
+};
+
+const typewriterOptions = {
+  html: true,
+  speed: 30,
+  lifeLike: true,
+  cursor: true,
+  breakLines: true,
+  waitUntilVisible: true,
+  startDelay: 1000,
+  nextStringDelay: 400,
+  afterComplete: async (instance) => {
+    setTimeout(() => {
+      instance.destroy(true);
+    }, 5000);
+  },
+};
 
 export default Details;

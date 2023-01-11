@@ -13,7 +13,7 @@ const StyledFooter = styled.footer`
 `;
 
 const StyledWrapper = styled.div`
-  width: min(60%, 960px);
+  width: min(65%, 960px);
   display: flex;
   justify-content: center;
   align-items: center;

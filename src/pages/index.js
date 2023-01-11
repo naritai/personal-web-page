@@ -6,13 +6,17 @@ import { Contact } from '@components/sections/contact';
 import { Experience } from '@components/sections/experience';
 
 const StyledMainContainer = styled.main`
-  width: min(60%, 960px);
+  width: min(65%, 960px);
   margin: 0 auto;
   min-height: 100vh;
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   @media only screen and (max-width: 1088px) {
     width: 100%;
-    padding: 0 50px;
+    padding: 0 100px;
   }
 
   @media only screen and (max-width: 768px) {
