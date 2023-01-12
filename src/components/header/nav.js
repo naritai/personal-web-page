@@ -128,9 +128,15 @@ const Nav = ({ isHome }) => {
 
   const Logo = () => (
     <StyledLogoWrapper >
-      <Link to="/" aria-label="home" tabIndex="-1">
-        <IconLogo />
-      </Link>
+      {isHome ? (
+        <a href="/" aria-label="home"  tabIndex="-1">
+          <IconLogo />
+        </a>
+      ) : (
+        <Link to="/" aria-label="home" tabIndex="-1">
+          <IconLogo />
+        </Link>
+      )}
     </StyledLogoWrapper>
   );
 
