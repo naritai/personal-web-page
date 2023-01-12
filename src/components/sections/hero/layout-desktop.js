@@ -10,6 +10,7 @@ import {
   StyledResumeButton
 } from './shared';
 import { HERO_DELAY } from '../../../utils/constants';
+import { usePrefersReducedMotion } from '@hooks';
 
 const StyledWrapper = styled.div`
   width: 95%;
@@ -76,8 +77,13 @@ const WithFadeEffect = styled.div`
 
 const HeroDesktopLayout = () => {
   const [isMounted, setIsMounted] = useState(false);
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
+    if (prefersReducedMotion) {
+      return;
+    }
+
     const timeout = setTimeout(() => setIsMounted(true), HERO_DELAY);
     return () => clearTimeout(timeout);
   }, []);
@@ -132,17 +138,30 @@ const HeroDesktopLayout = () => {
   const items = [one, two, three];
 
   return (
+
     <StyledWrapper>
-       {
-          isMounted &&
-          items && items.map((item, i) => {
-            return (
-              <WithFadeEffect delay={`0.${i + 1}s`} name='fadeUp'>
-                {item}
-              </WithFadeEffect>
-            )
-          })
-        }
+      {
+        prefersReducedMotion ? (
+          <>
+            {one}
+            {two}
+            {three}
+          </>
+        ) : (
+          <>
+            {
+              isMounted &&
+              items && items.map((item, i) => {
+                return (
+                  <WithFadeEffect delay={`0.${i + 1}s`} name='fadeUp'>
+                    {item}
+                  </WithFadeEffect>
+                )
+              })
+            }
+          </>
+        )
+      }
     </StyledWrapper>
   )
 }

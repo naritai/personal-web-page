@@ -9,6 +9,8 @@ import {
   StyledSlogan,
   StyledResumeButton
 } from './shared';
+import { usePrefersReducedMotion } from '@hooks';
+
 
 const StyledWrapper = styled.div`
   width: 100%;
@@ -51,6 +53,8 @@ const WithFadeEffect = styled.div`
 `;
 
 const HeroMobileLayout = () => {
+  const prefersReducedMotion = usePrefersReducedMotion();
+
   const one = <StyledGreeting>Hi, my name is</StyledGreeting>;
   const two = <StyledName>Alex vorontsov.</StyledName>;
   const three = <StyledSlogan>I craft projects for web.</StyledSlogan>;
@@ -86,20 +90,34 @@ const HeroMobileLayout = () => {
 
   return (
     <StyledWrapper>
-      <div className='greenting'>
-        {
-          items && items.map((item, i) => {
-            return (
-              <WithFadeEffect delay={`0.${i + 1}s`} name='fadeIn'>
-                {item}
-              </WithFadeEffect>
-            )
-          })
-        }
-      </div>
-      <WithFadeEffect delay='0.5s' name='fadeIn'>
-        {heroBottom}
-      </WithFadeEffect>
+      {
+        prefersReducedMotion ? (
+          <>
+            {one}
+            {two}
+            {three}
+            {four}
+            {heroBottom}
+          </>
+        ) : (
+          <>
+            <div className='greenting'>
+              {
+                items && items.map((item, i) => {
+                  return (
+                    <WithFadeEffect delay={`0.${i + 1}s`} name='fadeIn'>
+                      {item}
+                    </WithFadeEffect>
+                  )
+                })
+              }
+            </div>
+            <WithFadeEffect delay='0.5s' name='fadeIn'>
+              {heroBottom}
+            </WithFadeEffect>
+          </>
+        )
+      }      
     </StyledWrapper>
   )
 }
