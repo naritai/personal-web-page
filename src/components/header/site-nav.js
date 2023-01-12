@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { navLinks } from '@config';
 import { NAV_DELAY } from '../../utils/constants';
 
@@ -63,9 +63,14 @@ const Wrapper = styled.div`
 `;
 
 const WithFadeEffect = styled.div`
-  opacity: 0;
-  transform: translateY(-5px);
-  animation: ${({ name }) => name } 0.25s ease-out ${({ delay }) => delay } forwards;
+  ${({ disable }) => {
+    return disable ? `` : css`
+      opacity: 0;
+      transform: translateY(-5px);
+    `;
+  }}
+
+  animation: ${({ name, delay }) => `${name}  0.25s ease-out ${delay} forwards` };
 `;
 
 const SiteNav = ({ onLinkClick, activeLink, isHome }) => {
@@ -83,7 +88,7 @@ const SiteNav = ({ onLinkClick, activeLink, isHome }) => {
           isMounted &&
           navLinks &&
           navLinks.map(({ name, url}, i) => (
-            <WithFadeEffect delay={`0.${i + 1}s`} name='fadeUp'>
+            <WithFadeEffect delay={`0.${i + 1}s`} name='fadeUp' disable={!isHome}>
               <li key={i} style={{ transitionDelay: `${i * 1}00ms` }}>
                 <Link
                   onClick={onLinkClick}

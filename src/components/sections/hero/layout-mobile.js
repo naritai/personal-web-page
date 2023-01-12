@@ -47,7 +47,7 @@ const StyledWrapper = styled.div`
 
 const WithFadeEffect = styled.div`
   opacity: 0;
-  animation: ${({ name }) => name } 0.75s ease-out ${({ delay }) => delay } forwards;
+  animation: ${({ name, delay }) => `${name}  0.75s ease-out ${delay} forwards` };
 `;
 
 const HeroMobileLayout = () => {

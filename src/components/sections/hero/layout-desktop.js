@@ -71,7 +71,7 @@ const StyledFlexWrapper = styled.div`
 const WithFadeEffect = styled.div`
   opacity: 0;
   transform: translateY(-15px);
-  animation: ${({ name }) => name } 0.75s ease-out ${({ delay }) => delay } forwards;
+  animation: ${({ name, delay }) => `${name}  0.75s ease-out ${delay} forwards` };
 `;
 
 const HeroDesktopLayout = () => {
