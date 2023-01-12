@@ -36,8 +36,10 @@ const BurgerButton = styled.button`
   align-items: center;
   position: relative;
 
-  margin-right: -15px;
-  padding: 15px;
+  margin-right: -20px;
+  padding: 10px;
+  padding-right: 15px;
+  padding-left: 20px;
   border: 0px;
   background-color: transparent;
   color: inherit;
@@ -54,17 +56,16 @@ const BurgerButton = styled.button`
   .hamburger {
     display: inline-block;
     position: relative;
-    width: 30px;
-    height: 24px;
+    width: 40px;
+    height: 35px;
   }
 
   .hamburger-inner {
     position: absolute;
     top: 50%;
     right: 0px;
-    width: 30px;
-    height: 3px;
-    border-radius: 4px;
+    width: 40px;
+    height: 5px;
     background-color: #a42226;
 
     ${({ isOpen }) => isOpen ? (
@@ -82,8 +83,7 @@ const BurgerButton = styled.button`
     position: absolute;
     left: auto;
     right: 0px;
-    height: 3px;
-    border-radius: 4px;
+    height: 5px;
     background-color: #a42226;
     ${({ isOpen }) => isOpen ? beforeOpen : beforeClosed};
   }
@@ -94,8 +94,7 @@ const BurgerButton = styled.button`
     position: absolute;
     left: auto;
     right: 0px;
-    height: 3px;
-    border-radius: 4px;
+    height: 5px;
     background-color: #a42226;
     ${({ isOpen }) => isOpen ? afterOpen : afterClosed};
   }

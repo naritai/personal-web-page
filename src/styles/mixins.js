@@ -20,7 +20,7 @@ const button = css`
   background-repeat: no-repeat;
   background-position: 400%;
   background-size: 200%;
-  border: 2px solid #cecece;
+  border: 4px solid #cecece;
 
   transition: all 0.5s;
   transition-timing-function: cubic-bezier(.4,0,.2,1);
@@ -115,6 +115,11 @@ const mixins = {
     font-size: 3em;
     font-family: var(--font-promo);
     white-space: nowrap;
+
+    &::selection {
+      -webkit-background-clip: none;
+      -webkit-text-fill-color: var(--selection-text);
+    }
 
     @media only screen and (max-width: 1088px) {
       white-space: normal;

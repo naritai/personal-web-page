@@ -90,19 +90,12 @@ const StyledCompanyName = styled.h3`
   @media only screen and (max-width: 768px) {
     display: inline-block;
 
-    a {
+    .company-link:hover .rocket {
       animation: none;
     }
-
-    a:hover,
-    a:hover .rocket {
-      animation: none;
-    }
-
     .rocket {
       visibility: visible;
     }
-
     .company-link--disabled .rocket {
       display: none;
     }
@@ -160,7 +153,6 @@ const CompanyLink = ({ url, text, disabled }) => {
           </a>
         )
       }
-      
     </StyledCompanyName>
   )
 }

@@ -62,7 +62,6 @@ const StyledGreeting = styled.p`
     border: none;
     box-shadow: none;
     color: var(--main-text);
-    /* font-size: 1em; */
     animation: fadeInText 0.75s ease-out 0.2s forwards;
 
     &::before {
@@ -91,11 +90,6 @@ const StyledSlogan = styled.p`
   opacity: 0;
   animation: fadeInText 0.75s ease-out 2.2s forwards;
   font-size: 2.6em;
-
-  &::selection {
-    -webkit-background-clip: none;
-    -webkit-text-fill-color: var(--selection-text);
-  }
 
   @media only screen and (max-width: 768px) {
     animation: fadeInText 0.75s ease-out 0.4s forwards;

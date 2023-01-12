@@ -28,24 +28,24 @@ const Placeholder = styled.h2`
   ${({ theme }) => theme.mixins.promoHeading };
 
   && {
-    white-space: normal;
-    font-family: var(--font-mono);
     font-size: 2em;
+    font-family: var(--font-mono);
     margin-bottom: 20px;
+    white-space: normal;
     text-align: center;
   }
 `;
 
-const StyledHomeButton = styled.a`
+const StyledHomeButton = styled.div`
   ${({ theme }) => theme.mixins.button};
 `;
 
-const NotFoundPage = () => {
+const BlogPage = () => {
   return (
     <Fragment>
       <Layout hideNav={true}>
         <StyledMainContainer>
-          <Placeholder> Sorry, we couldn’t find what you were looking for.</Placeholder>
+          <Placeholder>Page in development.</Placeholder>
           <Link to="/">
              <StyledHomeButton>home</StyledHomeButton>
           </Link>
@@ -55,6 +55,4 @@ const NotFoundPage = () => {
   )
 }
 
-export default NotFoundPage
-
-export const Head = () => <title>Not found</title>
+export default BlogPage;

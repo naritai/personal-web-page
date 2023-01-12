@@ -25,8 +25,8 @@ const StyledWrapper = styled.div`
       width: 100%;
       padding-top: 14px;
       padding-bottom: 14px;
-      font-size: 0.93em;
-      font-size: clamp(14px, 4vw, 18px);
+      font-size: clamp(1em, 8vw, 1.5em);
+      font-weight: 700;
     }
 
     a {

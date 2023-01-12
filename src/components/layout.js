@@ -12,7 +12,7 @@ const StyledContent = styled.div`
   min-height: 100vh;
 `;
 
-const Layout = ({ children }) => {
+const Layout = ({ children, hideNav = false }) => {
   const setExternalLinksSafeAttrs = () => {
     const allLinks = Array.from(document.querySelectorAll('a'));
     if (allLinks.length > 0) {
@@ -42,7 +42,7 @@ const Layout = ({ children }) => {
           </a>
          
           <StyledContent>
-            <Nav />
+            {!hideNav && <Nav />}
 
             <div id="content">
               {children}
