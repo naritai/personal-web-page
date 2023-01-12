@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { navLinks } from '@config';
+import { NAV_DELAY } from '../../utils/constants';
 
 const Wrapper = styled.div`
   ul {
@@ -62,21 +64,33 @@ const Wrapper = styled.div`
 `;
 
 const SiteNav = ({ onLinkClick, activeLink }) => {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setIsMounted(true), NAV_DELAY);
+    return () =>  clearTimeout(timeout);
+  }, []);
+
   return (
     <Wrapper>
       <ul>
-        {
-          navLinks && navLinks.map(({ name, url}, i) => (
-            <li key={i}>
-              <Link
-                onClick={onLinkClick}
-                data-name={name}
-                className={activeLink === name ? 'active' : ''}
-                to={url}>{name}
-              </Link>
-            </li>
-          ))
-        }
+        <TransitionGroup component={null}>
+          { isMounted &&
+            navLinks &&
+            navLinks.map(({ name, url}, i) => (
+              <CSSTransition key={i} classNames='fadedown' timeout={NAV_DELAY}>
+                <li key={i} style={{ transitionDelay: `${i * 1}00ms` }}>
+                  <Link
+                    onClick={onLinkClick}
+                    data-name={name}
+                    className={activeLink === name ? 'active' : ''}
+                    to={url}>{name}
+                  </Link>
+                </li>
+              </CSSTransition>
+            ))
+          }
+        </TransitionGroup>
       </ul>
     </Wrapper>
   )

@@ -10,6 +10,7 @@ import {
   StyledSlogan,
   StyledResumeButton
 } from './shared';
+import { HERO_DELAY } from '../../../utils/constants';
 
 const StyledWrapper = styled.div`
   width: 95%;
@@ -58,9 +59,12 @@ const StyledWrapper = styled.div`
   .footer-flex {
     display: flex;
   }
+`;
 
+const StyledFlexWrapper = styled.div`
+  display: flex;
+  justify-content: flex-end;
   .resume-button {
-    align-self: flex-end;
     margin-right: 25px;
   }
 `;
@@ -69,7 +73,7 @@ const HeroDesktopLayout = () => {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    const timeout = setTimeout(() => setIsMounted(true), 100);
+    const timeout = setTimeout(() => setIsMounted(true), HERO_DELAY);
     return () => clearTimeout(timeout);
   }, []);
 
@@ -107,9 +111,11 @@ const HeroDesktopLayout = () => {
   );
 
   const three = (
-    <StyledResumeButton className='resume-button' href="/resume.pdf" aria-label="Resume">
-      <span className="button-text">Resume</span>
-    </StyledResumeButton>
+    <StyledFlexWrapper>
+      <StyledResumeButton className='resume-button' href="/resume.pdf" aria-label="Resume">
+        <span className="button-text">Resume</span>
+      </StyledResumeButton>
+    </StyledFlexWrapper>
   );
 
   const items = [one, two, three];
@@ -119,7 +125,7 @@ const HeroDesktopLayout = () => {
        <TransitionGroup component={null}>
           {isMounted &&
             items.map((item, i) => (
-              <CSSTransition key={i} classNames="fade" timeout={2000}>
+              <CSSTransition key={i} classNames="fade" timeout={HERO_DELAY}>
                 <div style={{ transitionDelay: `${i + 1}00ms` }}>{item}</div>
               </CSSTransition>
             ))}

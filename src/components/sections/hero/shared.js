@@ -41,8 +41,6 @@ const StyledGreeting = styled.p`
   border-radius: 2px;
   background-color: var(--main-text);
   box-shadow: inset 0 4px 8px rgba(253, 168, 168, 0.3), inset 0 8px 12px rgba(250, 163, 163, 0.06);
-  /* opacity: 0;
-  animation: fadeInText 0.75s ease-out 0.2s forwards; */
 
   &::before {
     content: "";
@@ -62,7 +60,6 @@ const StyledGreeting = styled.p`
     border: none;
     box-shadow: none;
     color: var(--main-text);
-    animation: fadeInText 0.75s ease-out 0.2s forwards;
 
     &::before {
       display: none;
@@ -74,11 +71,7 @@ const StyledName = styled.h1`
   ${({ theme }) => theme.mixins.promoHeading };
   ${({ theme }) => theme.mixins.promoHeadingBright };
 
-  /* opacity: 0;
-  animation: fadeInText 0.75s ease-out 1.2s forwards; */
-
   @media only screen and (max-width: 768px) {
-    animation: fadeInText 0.75s ease-out 0.3s forwards;
     text-align: center;
   }
 `;
@@ -87,12 +80,9 @@ const StyledSlogan = styled.p`
   ${({ theme }) => theme.mixins.promoHeading };
   ${({ theme }) => theme.mixins.promoHeadingGradient };
 
-  /* opacity: 0;
-  animation: fadeInText 0.75s ease-out 2.2s forwards; */
   font-size: 2.6em;
 
   @media only screen and (max-width: 768px) {
-    animation: fadeInText 0.75s ease-out 0.4s forwards;
     text-align: center;
   }
 `;

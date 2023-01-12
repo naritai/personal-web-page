@@ -27,7 +27,6 @@ const StyledWrapper = styled.div`
       margin-top: 5px;
       text-align: center;
       opacity: 0;
-      animation: fadeInText 1.2s ease-out 1.2s forwards;
     }
 
     .about__details--mobile {

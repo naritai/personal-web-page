@@ -202,13 +202,6 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
-  /* Animations */
-  @keyframes fadeInText {
-    100% {
-      opacity: 1;
-    }
-  }
-
   ${TransitionStyles};
 `;
 
