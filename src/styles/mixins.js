@@ -123,6 +123,7 @@ const mixins = {
     @media only screen and (max-width: 768px) {
       letter-spacing: 2px;
       white-space: nowrap;
+      font-size: 2.2em
     }
   `,
 

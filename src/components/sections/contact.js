@@ -1,12 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import contactBG from '@images/contacts-bg.png';
 import { IconGithub, IconLinkedIn, IconTelegram, IconTwitter } from '@components/icons';
 
 const StyledContactSection = styled.section`
-  /* display: flex;
-  justify-content: space-between; */
-
   .contact__line {
     margin-bottom: -30px;
     margin-top: -15px;
@@ -33,32 +29,6 @@ const StyledWrapper = styled.div`
 
     flex-grow: 1;
 
-    /* &::before {
-      content: "";
-      position: absolute;
-      right: 0;
-      top: 0;
-      height: 100%;
-      border-style: solid;
-      border-width: 100px 0 100px 100px;
-      border-color: #000000 transparent #000000 transparent;
-    } */
-
-      /* linear-gradient(to bottom, rgba(255, 255, 255, 0.6) 0%,rgba(255,255,255,0.8) 60%,rgba(255,255,255,1) 100%), */
-
-    /* &::after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-    
-      background-image: url(${contactBG});
-      top: 0;
-      left: 0;
-      opacity: 0.5;
-      z-index: -100;
-    } */
-
     @media only screen and (max-width: 768px) {
       flex-direction: column-reverse;
       padding: 10px 5px;
@@ -70,33 +40,7 @@ const StyledGetInTouch = styled.p`
   margin: 0;
   margin-right: 10px;
   padding: 10px;
-  /* border-radius: 3px; */
   text-align: center;
-
-  /* transform: skew(-5deg);
-  border: 4px solid #cecece;
-
-  div {
-  transform: skew(5deg);
-
-  };
-
-  position: relative;
-
-     &::after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-    
-      background-image: url(${contactBG});
-      top: 0;
-      left: 0;
-      opacity: 0.3;
-      z-index: -100;
-    } */
-
-  
 
   @media only screen and (max-width: 768px) {
     width: 100%;

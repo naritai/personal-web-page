@@ -77,7 +77,6 @@ const StyledName = styled.h1`
 
   opacity: 0;
   animation: fadeInText 0.75s ease-out 1.2s forwards;
-  font-size: clamp(2.2em, 9vw, 2.5em);
 
   @media only screen and (max-width: 768px) {
     animation: fadeInText 0.75s ease-out 0.3s forwards;
@@ -91,7 +90,7 @@ const StyledSlogan = styled.p`
 
   opacity: 0;
   animation: fadeInText 0.75s ease-out 2.2s forwards;
-  font-size: clamp(1.5em, 9vw, 2.2em);
+  font-size: 2.6em;
 
   &::selection {
     -webkit-background-clip: none;
