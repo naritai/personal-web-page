@@ -8,7 +8,7 @@ import {
   StyledName,
   StyledSlogan,
   StyledResumeButton
-} from './shared'; 
+} from './shared';
 
 const StyledWrapper = styled.div`
   width: 100%;
@@ -45,34 +45,61 @@ const StyledWrapper = styled.div`
   }
 `;
 
+const WithFadeEffect = styled.div`
+  opacity: 0;
+  animation: ${({ name }) => name } 0.75s ease-out ${({ delay }) => delay } forwards;
+`;
+
 const HeroMobileLayout = () => {
+  const one = <StyledGreeting>Hi, my name is</StyledGreeting>;
+  const two = <StyledName>Alex vorontsov.</StyledName>;
+  const three = <StyledSlogan>I craft projects for web.</StyledSlogan>;
+  const four = <Details />;
+  const items = [one, two, three, four];
+
+  const heroBottom = (
+    <div className='hero-bottom'>
+      <StyledAvatar className='avatar'>
+        <StaticImage
+          src="../../../images/avatar.png"
+          objectFit="contain"
+          quality={95}
+          formats={['AUTO', 'WEBP', 'AVIF']}
+          alt="Avatar"
+          placeholder="blurred"
+          loading="eager"
+          className="wrapper-img"
+          imgClassName="avatar-img"
+        />
+      </StyledAvatar>
+      <StyledResumeButton
+        className='resume-button'
+        href="/resume.pdf"
+        aria-label="Resume"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <span className="button-text">Resume</span>
+      </StyledResumeButton>
+    </div>
+  );
+
   return (
     <StyledWrapper>
       <div className='greenting'>
-        <StyledGreeting>Hi, my name is</StyledGreeting>
-        <StyledName>Alex vorontsov.</StyledName>
-        <StyledSlogan>I craft projects for web.</StyledSlogan>
-        <Details />
+        {
+          items && items.map((item, i) => {
+            return (
+              <WithFadeEffect delay={`0.${i + 1}s`} name='fadeIn'>
+                {item}
+              </WithFadeEffect>
+            )
+          })
+        }
       </div>
-
-      <div className='hero-bottom'>
-        <StyledAvatar className='avatar'>
-          <StaticImage
-            src="../../../images/avatar.png"
-            objectFit="contain"
-            quality={95}
-            formats={['AUTO', 'WEBP', 'AVIF']}
-            alt="Avatar"
-            placeholder="blurred"
-            loading="eager"
-            className="wrapper-img"
-            imgClassName="avatar-img"
-          />
-        </StyledAvatar>
-        <StyledResumeButton className='resume-button' href="/resume.pdf" aria-label="Resume">
-          <span className="button-text">Resume</span>
-        </StyledResumeButton>
-      </div>
+      <WithFadeEffect delay='0.5s' name='fadeIn'>
+        {heroBottom}
+      </WithFadeEffect>
     </StyledWrapper>
   )
 }

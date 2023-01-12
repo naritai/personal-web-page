@@ -7,7 +7,7 @@ const Hero = () => {
   const [isMobile, setIsMobile] = useState(isMobileScreen);
   const handleScreenChange = () => setIsMobile(isMobileScreen());
 
-  // TODO: use debouce or throttle
+  // TODO: use debouce or throttle from lodash
 
   useEffect(() => {
     window.addEventListener('resize', handleScreenChange);

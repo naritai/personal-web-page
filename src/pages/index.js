@@ -25,10 +25,10 @@ const StyledMainContainer = styled.main`
   }  
 `;
 
-const IndexPage = () => {
+const IndexPage = ({ location }) => {
   return (
     <Fragment>
-      <Layout>
+      <Layout location={location}>
         <StyledMainContainer>
           <Hero />
           <Experience />

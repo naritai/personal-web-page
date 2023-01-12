@@ -12,7 +12,9 @@ const StyledContent = styled.div`
   min-height: 100vh;
 `;
 
-const Layout = ({ children, hideNav = false }) => {
+const Layout = ({ children, location }) => {
+  const isHome = location.pathname === '/';
+
   const setExternalLinksSafeAttrs = () => {
     const allLinks = Array.from(document.querySelectorAll('a'));
     if (allLinks.length > 0) {
@@ -26,6 +28,17 @@ const Layout = ({ children, hideNav = false }) => {
   }
 
   useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.substring(1); // location.hash without the '#'
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView();
+          el.focus();
+        }
+      }, 0);
+    }
+
     setExternalLinksSafeAttrs();
   });
 
@@ -42,7 +55,7 @@ const Layout = ({ children, hideNav = false }) => {
           </a>
          
           <StyledContent>
-            {!hideNav && <Nav />}
+            <Nav isHome={isHome} />
 
             <div id="content">
               {children}

@@ -111,8 +111,7 @@ const StyledLogoWrapper = styled.div`
   }
 `;
 
-const Nav = ({ isHome } = { isHome: true }) => {
-  const [isMounted, setIsMounted] = useState(!isHome);
+const Nav = ({ isHome }) => {
   const [activeLink, setActiveLink] = useState(null);
   const changeActiveLink = (event) => setActiveLink(event.currentTarget.dataset.name);
 
@@ -128,7 +127,7 @@ const Nav = ({ isHome } = { isHome: true }) => {
   }, []);
 
   const Logo = () => (
-    <StyledLogoWrapper>
+    <StyledLogoWrapper >
       <Link to="/" aria-label="home" tabIndex="-1">
         <IconLogo />
       </Link>
@@ -140,7 +139,7 @@ const Nav = ({ isHome } = { isHome: true }) => {
       <StyledWrapper>
         <StyledMainNav>
           <Logo />
-          <SiteNav activeLink={activeLink} onLinkClick={changeActiveLink} />
+          <SiteNav isHome={isHome} activeLink={activeLink} onLinkClick={changeActiveLink} />
           <MobileNav activeLink={activeLink} onLinkClick={changeActiveLink} />
         </StyledMainNav>
       </StyledWrapper>

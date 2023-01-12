@@ -5,10 +5,10 @@ const useSiteMetadata = () => {
     query {
       site {
         siteMetadata {
-          description
+          defaultTitle: title
+          defaultDescription: description
           image
           siteUrl
-          title
           twitterUsername
         }
       }

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Details from './details';
 import { StaticImage } from 'gatsby-plugin-image';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import {
   StyledAvatar,
   StyledGreeting,
@@ -69,6 +68,12 @@ const StyledFlexWrapper = styled.div`
   }
 `;
 
+const WithFadeEffect = styled.div`
+  opacity: 0;
+  transform: translateY(-15px);
+  animation: ${({ name }) => name } 0.75s ease-out ${({ delay }) => delay } forwards;
+`;
+
 const HeroDesktopLayout = () => {
   const [isMounted, setIsMounted] = useState(false);
 
@@ -112,7 +117,13 @@ const HeroDesktopLayout = () => {
 
   const three = (
     <StyledFlexWrapper>
-      <StyledResumeButton className='resume-button' href="/resume.pdf" aria-label="Resume">
+      <StyledResumeButton
+        className='resume-button'
+        href="/resume.pdf"
+        aria-label="Resume"
+        target="_blank"
+        rel="noreferrer"
+      >
         <span className="button-text">Resume</span>
       </StyledResumeButton>
     </StyledFlexWrapper>
@@ -122,14 +133,16 @@ const HeroDesktopLayout = () => {
 
   return (
     <StyledWrapper>
-       <TransitionGroup component={null}>
-          {isMounted &&
-            items.map((item, i) => (
-              <CSSTransition key={i} classNames="fade" timeout={HERO_DELAY}>
-                <div style={{ transitionDelay: `${i + 1}00ms` }}>{item}</div>
-              </CSSTransition>
-            ))}
-        </TransitionGroup>
+       {
+          isMounted &&
+          items && items.map((item, i) => {
+            return (
+              <WithFadeEffect delay={`0.${i + 1}s`} name='fadeUp'>
+                {item}
+              </WithFadeEffect>
+            )
+          })
+        }
     </StyledWrapper>
   )
 }

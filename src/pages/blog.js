@@ -2,6 +2,8 @@ import React, { Fragment } from "react";
 import styled from "styled-components";
 import Layout from "@components/layout";
 import { Link } from "gatsby";
+import { Helmet } from "react-helmet";
+
 
 const StyledMainContainer = styled.main`
   width: min(65%, 960px);
@@ -40,10 +42,12 @@ const StyledHomeButton = styled.div`
   ${({ theme }) => theme.mixins.button};
 `;
 
-const BlogPage = () => {
+const BlogPage = ({ location }) => {
   return (
     <Fragment>
-      <Layout hideNav={true}>
+      <Layout location={location} >
+        <Helmet title="Blog" />
+
         <StyledMainContainer>
           <Placeholder>Page in development.</Placeholder>
           <Link to="/">

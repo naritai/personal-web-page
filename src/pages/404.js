@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import styled from "styled-components";
 import Layout from "@components/layout";
 import { Link } from "gatsby";
+import { Helmet } from "react-helmet";
 
 const StyledMainContainer = styled.main`
   width: min(65%, 960px);
@@ -40,10 +41,12 @@ const StyledHomeButton = styled.a`
   ${({ theme }) => theme.mixins.button};
 `;
 
-const NotFoundPage = () => {
+const NotFoundPage = ({ location }) => {
   return (
     <Fragment>
-      <Layout hideNav={true}>
+      <Layout location={location}>
+        <Helmet title="Page Not Found" />
+
         <StyledMainContainer>
           <Placeholder> Sorry, we couldn’t find what you were looking for.</Placeholder>
           <Link to="/">
@@ -56,5 +59,3 @@ const NotFoundPage = () => {
 }
 
 export default NotFoundPage
-
-export const Head = () => <title>Not found</title>

@@ -2,7 +2,6 @@ import { createGlobalStyle } from "styled-components";
 import mainBackground from '@images/main-bg.jpg';
 import variables from "./variables";
 import fonts from "./fonts";
-import TransitionStyles from "./TransitionStyles";
 import normalize from 'normalize.css';
 
 const GlobalStyle = createGlobalStyle`
@@ -161,7 +160,7 @@ const GlobalStyle = createGlobalStyle`
   .skip-to-content {
     color: var(--emphasize-soft);
     background-color: transparent;
-    border: 1px solid var(--link-focus);
+    border: 2px solid var(--link-focus);
     border-radius: 4px;
     font-size: 1em;
     line-height: 1;
@@ -179,6 +178,10 @@ const GlobalStyle = createGlobalStyle`
     z-index: -88;
     outline: none;
 
+    &&, &&:visited {
+      color: var(--main-bg);
+    }
+
     &:focus {
       background-color: var(--emphasize-soft);
       color: var(--link-focus);
@@ -188,7 +191,7 @@ const GlobalStyle = createGlobalStyle`
       height: auto;
       overflow: auto;
       z-index: 88;
-      }
+    }
   }
 
   .heading {
@@ -202,7 +205,18 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
-  ${TransitionStyles};
+  @keyframes fadeIn {
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeUp {
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 `;
 
 export default GlobalStyle;

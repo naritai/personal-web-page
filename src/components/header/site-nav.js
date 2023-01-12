@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { navLinks } from '@config';
@@ -63,8 +62,14 @@ const Wrapper = styled.div`
   }
 `;
 
-const SiteNav = ({ onLinkClick, activeLink }) => {
-  const [isMounted, setIsMounted] = useState(false);
+const WithFadeEffect = styled.div`
+  opacity: 0;
+  transform: translateY(-5px);
+  animation: ${({ name }) => name } 0.25s ease-out ${({ delay }) => delay } forwards;
+`;
+
+const SiteNav = ({ onLinkClick, activeLink, isHome }) => {
+  const [isMounted, setIsMounted] = useState(!isHome);
 
   useEffect(() => {
     const timeout = setTimeout(() => setIsMounted(true), NAV_DELAY);
@@ -74,23 +79,22 @@ const SiteNav = ({ onLinkClick, activeLink }) => {
   return (
     <Wrapper>
       <ul>
-        <TransitionGroup component={null}>
-          { isMounted &&
-            navLinks &&
-            navLinks.map(({ name, url}, i) => (
-              <CSSTransition key={i} classNames='fadedown' timeout={NAV_DELAY}>
-                <li key={i} style={{ transitionDelay: `${i * 1}00ms` }}>
-                  <Link
-                    onClick={onLinkClick}
-                    data-name={name}
-                    className={activeLink === name ? 'active' : ''}
-                    to={url}>{name}
-                  </Link>
-                </li>
-              </CSSTransition>
-            ))
-          }
-        </TransitionGroup>
+        { 
+          isMounted &&
+          navLinks &&
+          navLinks.map(({ name, url}, i) => (
+            <WithFadeEffect delay={`0.${i + 1}s`} name='fadeUp'>
+              <li key={i} style={{ transitionDelay: `${i * 1}00ms` }}>
+                <Link
+                  onClick={onLinkClick}
+                  data-name={name}
+                  className={activeLink === name ? 'active' : ''}
+                  to={url}>{name}
+                </Link>
+              </li>
+            </WithFadeEffect>
+          ))
+        }
       </ul>
     </Wrapper>
   )

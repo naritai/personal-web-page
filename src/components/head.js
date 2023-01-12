@@ -1,11 +1,14 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
 import { useSiteMetadata } from '@hooks';
+import { useLocation } from '@reach/router';
 
-const Head = ({ title, description, pathname, children }) => {
+const Head = ({ title, description, children }) => {
+  const { pathname } = useLocation();
+
   const {
-    description: defaultDescription,
-    title: defaultTitle,
+    defaultDescription,
+    defaultTitle,
     image,
     siteUrl,
     twitterUsername
@@ -15,15 +18,12 @@ const Head = ({ title, description, pathname, children }) => {
     title: title || defaultTitle,
     description: description || defaultDescription,
     image: `${siteUrl}${image}`,
-    url: `${siteUrl}${pathname || ``}`,
+    url: `${siteUrl}${pathname}`,
     twitterUsername
   };
 
-  // TODO: titleTemplate
-  // TODO: google tag manager
-
   return (
-    <Helmet title={title} defaultTitle={seo.title} >
+    <Helmet title={title} defaultTitle={seo.title} titleTemplate={`%s | ${defaultTitle}`}>
       <html lang="en" />
   
       <title>{seo.title}</title>

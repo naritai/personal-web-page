@@ -12,26 +12,17 @@ const StyledWrapper = styled.div`
   }
 
   @media only screen and (max-width: 1088px) {
-    .about__details {
-      max-width: 520px;
-    }
+    max-width: 520px;
   }
 
   @media only screen and (max-width: 768px) {
-    .about__details {
-      width: 100%;
-      max-width: none;
-      margin-bottom: 15px;
-      font-size: 0.9em;
-      margin: 0;
-      margin-top: 5px;
-      text-align: center;
-      opacity: 0;
-    }
-
-    .about__details--mobile {
-      display: block;
-    }
+    width: 100%;
+    max-width: none;
+    margin-bottom: 15px;
+    font-size: 0.9em;
+    margin: 0;
+    margin-top: 5px;
+    text-align: center;
   }
 `;
 
