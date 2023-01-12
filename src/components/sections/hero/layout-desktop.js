@@ -22,7 +22,7 @@ const StyledWrapper = styled.div`
     margin-bottom: 20px;
     padding: 0 10px;
     padding-top: 50px;
-    border: 4px solid #cecece;
+    border: 4px solid var(--border-color);
     background-color: var(--hero-bg);
     transform: skew(-5deg);
 
@@ -39,7 +39,7 @@ const StyledWrapper = styled.div`
     min-height: 100px;
     margin-bottom: 20px;
     padding: 0 10px;
-    border: 4px solid #cecece;
+    border: 4px solid var(--border-color);
     background-color: var(--hero-bg);
     transform: skew(-5deg);
 

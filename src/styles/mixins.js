@@ -20,7 +20,7 @@ const button = css`
   background-repeat: no-repeat;
   background-position: 400%;
   background-size: 200%;
-  border: 4px solid #cecece;
+  border: 4px solid var(--border-color);
 
   transition: all 0.5s;
   transition-timing-function: cubic-bezier(.4,0,.2,1);

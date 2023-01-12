@@ -19,7 +19,7 @@ const StyledAvatar = styled.div`
 
       background-color: var(--hero-bg);
       border-radius: 50%;
-      border: 4px solid #cecece;
+      border: 4px solid var(--border-color);
     }
   }
 `;
@@ -103,7 +103,7 @@ const StyledResumeButton = styled.a`
   && {
     height: 70px;
     width: 260px;
-    border: 4px solid #cecece;
+    border: 4px solid var(--border-color);
     transform: skew(-5deg);
   }
 

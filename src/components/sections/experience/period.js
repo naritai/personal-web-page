@@ -16,7 +16,7 @@ const StyledPeriod = styled.span`
   color: #ffffff;
   font-size: 3em;
   font-family: var(--font-promo);
-  background-color: rgba(60, 110, 113, 0.3);
+  background-color: var(--hero-bg-soft);
 
   border: 4px solid #B33B06;
   transform: skew(-5deg);
@@ -44,7 +44,9 @@ const StyledPeriod = styled.span`
     width: 55px;
     min-height: 50px;
     font-size: 1.5em;
-    border: 1px solid #ffffff;
+    border: 1px solid transparent;
+
+    box-shadow: 0 0 2px 2px rgba(202, 66, 71, 0.8), 0 0 3px 4px rgba(202, 66, 71, 0.8);
     transform: none;
 
     .period-text {

@@ -10,7 +10,9 @@ const variables = css`
     --selection-text: #541212;
     --bg-emphasize: #CA4246;
     --period-bg: rgba(60, 110, 113, 0.5);
-    --hero-bg: rgba(60, 110, 113, 0.3);
+    --hero-bg: rgba(60, 110, 113, 0.4);
+    --hero-bg-soft: rgba(60, 110, 113, 0.3);
+    --border-color: #cecece;
 
     --raw-red: #a42226;
     --main-red: rgba(202, 66, 71, 0.8);
