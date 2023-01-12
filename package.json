@@ -40,7 +40,6 @@
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
     "react-transition-group": "^4.4.5",
-    "styled-components": "^5.3.6",
-    "typeit-react": "^2.6.4"
+    "styled-components": "^5.3.6"
   }
 }
