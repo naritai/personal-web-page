@@ -32,10 +32,12 @@ const TransitionStyles = css`
   /* Fade */
   .fade-enter {
     opacity: 0;
+    transform: rotate(3deg);
   }
   .fade-enter-active {
     opacity: 1;
-    transition: opacity 300ms var(--easing);
+    transform: none;
+    transition: all 300ms var(--easing);
   }
   .fade-exit {
     opacity: 1;
@@ -43,6 +45,24 @@ const TransitionStyles = css`
   .fade-exit-active {
     opacity: 0;
     transition: opacity 300ms var(--easing);
+  }
+
+
+  .my-node-enter {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  .my-node-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 500ms;
+  }
+  .my-node-exit {
+    opacity: 1;
+  }
+  .my-node-exit-active {
+    opacity: 0;
+    transition: opacity 800ms;
   }
 `;
 

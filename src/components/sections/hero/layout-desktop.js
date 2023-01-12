@@ -63,39 +63,42 @@ const StyledWrapper = styled.div`
 const HeroDesktopLayout = () => {
   return (
     <StyledWrapper>
-    <div className="hero-top">
-      <div className="flex-wrapper">
-        <StyledAvatar className='avatar-flex-item'>
-          <StaticImage
-            src="../../../images/avatar.png"
-            objectFit="contain"
-            quality={95}
-            formats={['AUTO', 'WEBP', 'AVIF']}
-            alt="Avatar"
-            placeholder="blurred"
-            loading="eager"
-            className="wrapper-img"
-            imgClassName="avatar-img"
-          />
-        </StyledAvatar>
+      <div className="hero-top">
+        <div className="flex-wrapper">
+          <StyledAvatar className='avatar-flex-item'>
+            <StaticImage
+              src="../../../images/avatar.png"
+              objectFit="contain"
+              quality={95}
+              formats={['AUTO', 'WEBP', 'AVIF']}
+              alt="Avatar"
+              placeholder="blurred"
+              loading="eager"
+              className="wrapper-img"
+              imgClassName="avatar-img"
+            />
+          </StyledAvatar>
 
-        <div className='hero-text'>
-          <StyledGreeting>Hi, my name is</StyledGreeting>
-          <StyledName>Alex vorontsov.</StyledName>
-          <StyledSlogan>I craft projects for web.</StyledSlogan>
+      
+
+          <div className='hero-text'>
+            <StyledGreeting>Hi, my name is</StyledGreeting>
+            <StyledName>Alex vorontsov.</StyledName>
+            <StyledSlogan>I craft projects for web.</StyledSlogan>
+          </div>
         </div>
       </div>
-    </div>
-    <div className="hero-bottom">
-      <div className='flex-wrapper'>
-        <Details />
-      </div>
-    </div>
 
-    <StyledResumeButton className='resume-button' href="/resume.pdf" aria-label="Resume">
-      <span className="button-text">Resume</span>
-    </StyledResumeButton>
-  </StyledWrapper>
+      <div className="hero-bottom">
+        <div className='flex-wrapper'>
+          <Details />
+        </div>
+      </div>
+
+      <StyledResumeButton className='resume-button' href="/resume.pdf" aria-label="Resume">
+        <span className="button-text">Resume</span>
+      </StyledResumeButton>
+    </StyledWrapper>
   )
 }
 
