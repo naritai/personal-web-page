@@ -12,4 +12,4 @@ stack:
   - Bitbucket
 ---
 
-I’ve been working on an in-house fulfillment system (order management, warehouse inventory, barcode scanning, tracking deliveries). I've written most of the screens of ff.-system for mobile devices & refactored lots of components.
+IML Express is the first big company where I worked as a frontend dev. and had the opportunity to learn from experienced professionals. I was working on an in-house fulfillment system for which I developed most of the mobile screens. Additionally, I refactored dozens of old components to make them simple and clean, which improved the overall performance and user experience.

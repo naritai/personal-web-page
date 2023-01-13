@@ -25,10 +25,10 @@ const StyledCompanyDetails = styled.section`
 
   .company-details__content {
     padding: 5px;
+    line-height: 1.5em;
   }
 
   .company-details__description p {
-    line-height: 1.1em;
     margin-left: 240px;
   }
 

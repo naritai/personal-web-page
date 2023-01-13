@@ -21,8 +21,6 @@ const Wrapper = styled.div`
       margin-right: 15px;
       font-size: 1em;
       font-weight: 700;
-
-      counter-increment: item 1;
     }
 
     li::before {
@@ -69,7 +67,8 @@ const WithFadeEffect = styled.div`
       transform: translateY(-5px);
     `;
   }}
-
+  // move increment from li (above) to fix counter
+  counter-increment: item 1;  
   animation: ${({ name, delay }) => `${name}  0.25s ease-out ${delay} forwards` };
 `;
 

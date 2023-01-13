@@ -14,6 +14,5 @@ stack:
   - Robot3
 ---
 
-Videoly automatically connects videos to online stores' product pages.
-
-I was responsible for developing the core customer-facing product - Videoly Widget. For 2 years I've been working with 2 versions of the widget (legacy & new), backend, chrome extension, BS auto-tests, and other parts of Videoly project. It was a great responsibility for me to completely rebuild the widget with the new stack. I'm really proud of our success - new widget is successfully running now in production 🏆
+At Videoly I was responsible for developing the core customer-facing product - Videoly Widget. 
+Most of the time I developed the brand new widget. The initial project, written in vanilla JavaScript, was full of code couplings and tricky staff, so it was a great time for developing Sherlock's intuition. Alongside new widget development, I fixed bugs and implemented new features in the production widget, worked with the backend, videoly chrome extension, browserstack, and other parts of the Videoly project. In the end I rebuilt the widget in new stack and widget team ran it in production. I'm really proud of it. 🏆

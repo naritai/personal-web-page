@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const StyledWrapper = styled.div`
   width: 600px;
   max-width: 700px;
-  line-height: 1.2em;
+  line-height: 1.5em;
   padding: 10px 0;
 
   a {
@@ -31,7 +31,7 @@ const Details = () => {
   return (
     <StyledWrapper>
       I’m a software engineer with 5+ years of experience.
-      Focused on building robust and accessible products with intuitive UI. 
+      Focused on building robust and accessible products with creative UI. 
       Blog about front-end to <a href="https://t.me/frontendmetoo" aria-label="Telegram blog" target="_blank" rel="noopener noreferrer">t.me/frontendmetoo</a>.
     </StyledWrapper>
   )

@@ -89,6 +89,7 @@ const StyledCompanyName = styled.h3`
 
   @media only screen and (max-width: 768px) {
     display: inline-block;
+    transform: none;
 
     .company-link:hover .rocket {
       animation: none;

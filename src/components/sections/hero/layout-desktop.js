@@ -143,9 +143,7 @@ const HeroDesktopLayout = () => {
       {
         prefersReducedMotion ? (
           <>
-            {one}
-            {two}
-            {three}
+            {one}{two}{three}
           </>
         ) : (
           <>

@@ -27,6 +27,7 @@ const StyledWrapper = styled.div`
       padding-bottom: 14px;
       font-size: clamp(1em, 8vw, 1.5em);
       font-weight: 700;
+      counter-increment: item 1;
     }
 
     a {
@@ -37,7 +38,6 @@ const StyledWrapper = styled.div`
       outline: none;
       padding: 5px;
       vertical-align: middle;
-      counter-increment: item 1;
     }
 
     a::before {

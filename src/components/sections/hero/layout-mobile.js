@@ -93,11 +93,7 @@ const HeroMobileLayout = () => {
       {
         prefersReducedMotion ? (
           <>
-            {one}
-            {two}
-            {three}
-            {four}
-            {heroBottom}
+            {one}{two}{three}{four}{heroBottom}
           </>
         ) : (
           <>

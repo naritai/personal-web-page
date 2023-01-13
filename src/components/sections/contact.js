@@ -21,6 +21,7 @@ const StyledWrapper = styled.div`
     position: relative;
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 50px;
     margin-bottom: 3px;
     border-radius: 3px;
@@ -41,6 +42,7 @@ const StyledGetInTouch = styled.p`
   margin-right: 10px;
   padding: 10px;
   text-align: center;
+  line-height: 1.5em;
 
   @media only screen and (max-width: 768px) {
     width: 100%;

@@ -13,4 +13,6 @@ stack:
   - Enzyme
 ---
 
-I’ve been working on a CRM system for a company producing electric and thermal energy. The product is focused around inspecting/logging equipment parts to support reliability, detect equipment quality of work, analyze data in charts, make detours in a factory. The main goal is to improve efficiency for detours and inspection of the equipment.
+
+
+At Nord Clan I had the chance to meet clever and interesting people with a great sense of humor (thanks God). In addition, there was an interesting project, a CRM system for a company producing electric and thermal energy. It was a huge project, written in React/Redux stack, and a wide field for refactoring. I revamped a ton of components, tables, charts, monstrous reducers, and stayed alive. 🏄🏻‍♂️
