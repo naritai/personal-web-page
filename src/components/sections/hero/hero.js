@@ -5,13 +5,11 @@ import { HeroMobileLayout } from './layout-mobile';
 
 const Hero = () => {
   const [isMobile, setIsMobile] = useState(isMobileScreen);
-  const handleScreenChange = () => setIsMobile(isMobileScreen());
-
-  // TODO: use debouce or throttle from lodash
+  const resizeHandler = () => setIsMobile(isMobileScreen());
 
   useEffect(() => {
-    window.addEventListener('resize', handleScreenChange);
-    return () => window.removeEventListener('resize', handleScreenChange);
+    window.addEventListener('resize', resizeHandler);
+    return () => window.removeEventListener('resize', resizeHandler);
   }, [isMobile]);
 
   return isMobile ? <HeroMobileLayout /> : <HeroDesktopLayout />;
