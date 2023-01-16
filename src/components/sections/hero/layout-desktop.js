@@ -86,7 +86,7 @@ const HeroDesktopLayout = () => {
 
     const timeout = setTimeout(() => setIsMounted(true), HERO_DELAY);
     return () => clearTimeout(timeout);
-  }, []);
+  }, [prefersReducedMotion]);
 
   const one = (
     <div className="hero-top">

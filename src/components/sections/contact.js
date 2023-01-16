@@ -36,7 +36,7 @@ const StyledWrapper = styled.div`
     }
 `;
 
-const StyledGetInTouch = styled.p`
+const StyledGetInTouch = styled.div`
   max-width: 500px;
   margin: 0;
   margin-right: 10px;

@@ -15,4 +15,4 @@ stack:
 
 
 
-At Nord Clan I had the chance to meet clever and interesting people with a great sense of humor (thanks God). In addition, there was an interesting project, a CRM system for a company producing electric and thermal energy. It was a huge project, written in React/Redux stack, and a wide field for refactoring. I revamped a ton of components, tables, charts, monstrous reducers, and stayed alive. 🏄🏻‍♂️
+Nord Clan is a software development company that focuses its efforts on a variety of fields, such as fintech, computer vision, healthcare, CRMs, and others. I've been working on a CRM system for a company that produces electric and thermal energy, so there was a special attention to details. It was a huge project, written in  React/Redux stack. The main goal of that CRM was to do detours in the factory to detect equipment quality of work, then analyze gathered data to be able to improve efficiency of the equipment and detours. There was a wide field for refactoring. I've refactored dozens of components, tables, complex charts, monstrous reducers, made several big pages and stayed alive. 🏄🏻‍♂️
