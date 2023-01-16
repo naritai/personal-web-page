@@ -106,7 +106,7 @@ const HeroDesktopLayout = () => {
         </StyledAvatar>
         <div className='hero-text'>
           <StyledGreeting>Hi, my name is</StyledGreeting>
-          <StyledName>Alex vorontsov.</StyledName>
+          <StyledName>Alex Voronetskiy.</StyledName>
           <StyledSlogan>I craft projects for web.</StyledSlogan>
         </div>
       </div>

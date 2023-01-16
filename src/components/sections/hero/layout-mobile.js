@@ -56,7 +56,7 @@ const HeroMobileLayout = () => {
   const prefersReducedMotion = usePrefersReducedMotion();
 
   const one = <StyledGreeting>Hi, my name is</StyledGreeting>;
-  const two = <StyledName>Alex vorontsov.</StyledName>;
+  const two = <StyledName>Alex Voronetskiy.</StyledName>;
   const three = <StyledSlogan>I craft projects for web.</StyledSlogan>;
   const four = <Details />;
   const items = [one, two, three, four];

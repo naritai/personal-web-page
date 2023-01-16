@@ -2,10 +2,13 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
+  flags: {
+    DEV_SSR: true
+  },
   siteMetadata: {
-    title: `Alex Vorontsov`,
-    description: 'Alex Vorontsov is a web devloper who specializes in building dynamic and robust applications with intuitive UI.',
-    siteUrl: `https://vorontsov.dev`,
+    title: `Alex Voronetskiy`,
+    description: 'Alex Voronetskiy is a web devloper who specializes in building dynamic and robust applications with intuitive UI.',
+    siteUrl: `https://voronetskiy.dev`,
     twitterUsername: `@dzhumandzhu`,
     image: `/og.png`,
   },
@@ -20,8 +23,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'Alex Vorontsov',
-        short_name: 'Alex Vorontsov',
+        name: 'Alex Voronetskiy',
+        short_name: 'Alex Voronetskiy',
         start_url: '/',
         background_color: '#0F1020',
         theme_color: '#0F1020',

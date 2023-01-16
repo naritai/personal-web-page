@@ -30,7 +30,7 @@ const Footer = () => {
     <StyledFooter>
       <StyledWrapper>
         {/* <StyledCopyrightLink href="https://github.com/naritai/personal-website">
-          Designed & built by Aleksandr Vorontsov
+          Designed & built by Aleksandr Voronetskiy
         </StyledCopyrightLink> */}
       </StyledWrapper>
     </StyledFooter>
