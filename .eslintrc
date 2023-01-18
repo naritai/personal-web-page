@@ -1,4 +1,21 @@
 {
   "root": true,
-  "extends": ["airbnb", "airbnb/hooks"]
+  "extends": ["airbnb", "airbnb/hooks"],
+  "rules": {
+    "import/prefer-default-export": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "alias": [
+        ["@components", "./src/components"],
+        ["@styles", "./src/styles"],
+        ["@pages", "./src/pages"],
+        ["@images", "./src/images"],
+        ["@fonts", "./src/fonts"],
+        ["@config", "./src/config"],
+        ["@hooks", "./src/hooks"],
+        ["@utils", "./src/utils"]
+      ]
+    }
+  }
 }
