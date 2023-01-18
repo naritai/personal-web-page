@@ -17,10 +17,10 @@ function Head({ title, description, children }) {
   };
 
   return (
-    <Helmet title={title} defaultTitle={seo.title} titleTemplate={`%s | Voronetskiy`}>
+    <Helmet title={title} defaultTitle={seo.title} titleTemplate={`%s | ${defaultTitle}`}>
       <html lang="en" />
 
-      <title>{seo.title}</title>
+      <title>{title}</title>
       <meta name="description" content={seo.title} />
       <meta name="image" content={seo.image} />
 

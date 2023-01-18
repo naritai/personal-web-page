@@ -35,7 +35,7 @@ function Side({ children, isHome, orientation }) {
 
   useEffect(() => {
     if (!isHome || prefersReducedMotion) {
-      return null;
+      return undefined;
     }
     const timeout = setTimeout(() => setIsMounted(true), HERO_DELAY);
     return () => clearTimeout(timeout);

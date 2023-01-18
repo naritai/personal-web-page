@@ -81,7 +81,7 @@ function HeroDesktopLayout() {
 
   useEffect(() => {
     if (prefersReducedMotion) {
-      return null;
+      return undefined;
     }
 
     const timeout = setTimeout(() => setIsMounted(true), HERO_DELAY);
