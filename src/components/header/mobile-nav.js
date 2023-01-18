@@ -5,6 +5,7 @@ import { Link } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import { useOnClickOutside } from '@hooks';
 import { KEY_CODES } from '@utils';
+import PropTypes from 'prop-types';
 import BurgerButton from './burger-button';
 
 const StyledWrapper = styled.div`
@@ -218,5 +219,14 @@ function MobileNav({ activeLink, onLinkClick }) {
     </StyledWrapper>
   );
 }
+
+MobileNav.propTypes = {
+  activeLink: PropTypes.string,
+  onLinkClick: PropTypes.func.isRequired,
+};
+
+MobileNav.defaultProps = {
+  activeLink: '',
+};
 
 export default MobileNav;

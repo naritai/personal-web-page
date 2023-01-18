@@ -1,8 +1,9 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Layout from '@components/layout';
 import { Link } from 'gatsby';
 import { Helmet } from 'react-helmet';
+import PropTypes from 'prop-types';
 
 const StyledMainContainer = styled.main`
   width: min(65%, 960px);
@@ -58,5 +59,9 @@ function NotFoundPage({ location }) {
     </Layout>
   );
 }
+
+NotFoundPage.propTypes = {
+  location: PropTypes.object.isRequired,
+};
 
 export default NotFoundPage;

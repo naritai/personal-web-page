@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Helmet } from 'react-helmet';
 import { useSiteMetadata } from '@hooks';
 import { useLocation } from '@reach/router';
+import PropTypes from 'prop-types';
 
 function Head({ title, description, children }) {
   const { pathname } = useLocation();
@@ -45,5 +46,17 @@ function Head({ title, description, children }) {
     </Helmet>
   );
 }
+
+Head.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
+  children: PropTypes.node,
+};
+
+Head.defaultProps = {
+  title: '',
+  description: '',
+  children: null,
+};
 
 export default Head;

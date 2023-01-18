@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import rocket from '@images/rocket_colored.png';
+import PropTypes from 'prop-types';
 
 const StyledCompanyName = styled.h3`
   min-width: 220px;
@@ -155,5 +156,15 @@ function CompanyLink({ url, text, disabled }) {
     </StyledCompanyName>
   );
 }
+
+CompanyLink.propTypes = {
+  url: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  disabled: PropTypes.bool,
+};
+
+CompanyLink.defaultProps = {
+  disabled: false,
+};
 
 export { CompanyLink };

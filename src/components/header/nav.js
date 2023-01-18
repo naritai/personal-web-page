@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
 import { useScrollDirection } from '@hooks';
 import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
 import SiteNav from './site-nav';
 import MobileNav from './mobile-nav';
 import { IconLogo } from '../icons/logo';
@@ -126,21 +127,19 @@ function Nav({ isHome }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  function Logo() {
-    return (
-      <StyledLogoWrapper>
-        {isHome ? (
-          <a href="/" aria-label="home" tabIndex="-1">
-            <IconLogo />
-          </a>
-        ) : (
-          <Link to="/" aria-label="home" tabIndex="-1">
-            <IconLogo />
-          </Link>
-        )}
-      </StyledLogoWrapper>
-    );
-  }
+  const Logo = (
+    <StyledLogoWrapper>
+      {isHome ? (
+        <a href="/" aria-label="home" tabIndex="-1">
+          <IconLogo />
+        </a>
+      ) : (
+        <Link to="/" aria-label="home" tabIndex="-1">
+          <IconLogo />
+        </Link>
+      )}
+    </StyledLogoWrapper>
+  );
 
   return (
     <StyledHeader
@@ -149,7 +148,7 @@ function Nav({ isHome }) {
     >
       <StyledWrapper>
         <StyledMainNav>
-          <Logo />
+          {Logo}
           <SiteNav
             isHome={isHome}
             activeLink={activeLink}
@@ -161,5 +160,13 @@ function Nav({ isHome }) {
     </StyledHeader>
   );
 }
+
+Nav.propTypes = {
+  isHome: PropTypes.bool,
+};
+
+Nav.defaultProps = {
+  isHome: true,
+};
 
 export default Nav;

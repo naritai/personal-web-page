@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Side } from '@components/side';
+import PropTypes from 'prop-types';
 
 const StyledCopyrightWrapper = styled.div`
   display: flex;
@@ -45,5 +46,13 @@ function Copyright({ isHome }) {
     </Side>
   );
 }
+
+Copyright.propTypes = {
+  isHome: PropTypes.bool,
+};
+
+Copyright.defaultProps = {
+  isHome: true,
+};
 
 export { Copyright };

@@ -2,7 +2,8 @@
   "root": true,
   "extends": ["airbnb", "airbnb/hooks"],
   "rules": {
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
   },
   "settings": {
     "import/resolver": {
@@ -15,7 +16,13 @@
         ["@config", "./src/config"],
         ["@hooks", "./src/hooks"],
         ["@utils", "./src/utils"]
-      ]
+      ],
+      "node": {
+        "extensions": [".js", ".jsx"]
+      }
     }
+  },
+  "env": {
+    "browser": true
   }
 }

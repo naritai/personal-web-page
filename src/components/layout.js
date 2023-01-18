@@ -3,6 +3,7 @@ import Head from '@components/head';
 import GlobalStyle from '@styles/GlobalStyles';
 import styled, { ThemeProvider } from 'styled-components';
 import { Copyright } from '@components/copyright';
+import PropTypes from 'prop-types';
 import { theme } from '../styles/theme';
 import Nav from './header/nav';
 import Footer from './footer';
@@ -69,5 +70,13 @@ function Layout({ children, location }) {
     </>
   );
 }
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
+    hash: PropTypes.string.isRequired,
+  }).isRequired,
+};
 
 export default Layout;

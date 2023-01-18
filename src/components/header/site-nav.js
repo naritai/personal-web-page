@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 import styled, { css } from 'styled-components';
 import { navLinks } from '@config';
+import PropTypes from 'prop-types';
 import { NAV_DELAY } from '../../utils/constants';
 
 const Wrapper = styled.div`
@@ -107,5 +108,16 @@ function SiteNav({ onLinkClick, activeLink, isHome }) {
     </Wrapper>
   );
 }
+
+SiteNav.propTypes = {
+  onLinkClick: PropTypes.func.isRequired,
+  activeLink: PropTypes.string,
+  isHome: PropTypes.bool,
+};
+
+SiteNav.defaultProps = {
+  activeLink: '',
+  isHome: true,
+};
 
 export default SiteNav;

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { HERO_DELAY } from '@utils';
 import { usePrefersReducedMotion } from '@hooks';
+import PropTypes from 'prop-types';
 
 const StyledSideElement = styled.div`
   width: 40px;
@@ -38,12 +39,12 @@ function Side({ children, isHome, orientation }) {
     }
     const timeout = setTimeout(() => setIsMounted(true), HERO_DELAY);
     return () => clearTimeout(timeout);
-  }, []);
+  }, [isHome, prefersReducedMotion]);
 
   return (
     <StyledSideElement orientation={orientation}>
       {prefersReducedMotion ? (
-        <>{children}</>
+        { children }
       ) : (
         <>
           {isMounted && (
@@ -56,5 +57,15 @@ function Side({ children, isHome, orientation }) {
     </StyledSideElement>
   );
 }
+
+Side.propTypes = {
+  children: PropTypes.node.isRequired,
+  isHome: PropTypes.bool,
+  orientation: PropTypes.string.isRequired,
+};
+
+Side.defaultProps = {
+  isHome: true,
+};
 
 export { Side };

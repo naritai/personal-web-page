@@ -1,9 +1,10 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Layout from '@components/layout';
 import { Hero } from '@components/sections/hero/';
 import { Contact } from '@components/sections/contact';
 import { Experience } from '@components/sections/experience';
+import PropTypes from 'prop-types';
 
 const StyledMainContainer = styled.main`
   width: min(65%, 960px);
@@ -36,5 +37,9 @@ function IndexPage({ location }) {
     </Layout>
   );
 }
+
+IndexPage.propTypes = {
+  location: PropTypes.object.isRequired,
+};
 
 export default IndexPage;

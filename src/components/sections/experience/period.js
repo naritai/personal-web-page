@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const StyledPeriod = styled.div`
   position: relative;
@@ -77,5 +78,9 @@ function Period({ period }) {
     </StyledPeriod>
   );
 }
+
+Period.propTypes = {
+  period: PropTypes.string.isRequired,
+};
 
 export { Period };
