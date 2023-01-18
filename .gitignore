@@ -1,4 +1,7 @@
-node_modules/
-.cache/
-public
+.cache
+node_modules
+yarn-error.log
+package-lock.json
+/public
 .DS_Store
+.vscode/
