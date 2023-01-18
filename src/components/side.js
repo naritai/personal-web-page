@@ -26,7 +26,7 @@ const WithFadeEffect = styled.div`
   opacity: 0;
   transform: translateY(35px);
   animation: ${({ name, delay }) =>
-    `${name}  0.75s ease-out ${delay} forwards`};
+    `${name}  0.85s ease-out ${delay} forwards`};
 `;
 
 const Side = ({ children, isHome, orientation }) => {
