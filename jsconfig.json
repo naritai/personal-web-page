@@ -9,8 +9,7 @@
       "@fonts": ["src/fonts"],
       "@config": ["src/config"],
       "@hooks": ["src/hooks"],
-      "@utils": ["src/utils"],
-
+      "@utils": ["src/utils"]
     }
   }
 }

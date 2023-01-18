@@ -100,10 +100,7 @@ function MobileNav({ activeLink, onLinkClick }) {
   let lastFocusableEl;
 
   const setFocusables = () => {
-    menuFocusables = [
-      buttonRef.current,
-      ...Array.from(navRef.current.querySelectorAll('a')),
-    ];
+    menuFocusables = [buttonRef.current, ...Array.from(navRef.current.querySelectorAll('a'))];
     firstFocusableEl = menuFocusables[0];
     lastFocusableEl = menuFocusables[menuFocusables.length - 1];
   };
@@ -165,6 +162,7 @@ function MobileNav({ activeLink, onLinkClick }) {
       document.removeEventListener('keydown', onKeyDown);
       window.removeEventListener('resize', onResize);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const wrapperRef = useRef();
@@ -200,8 +198,8 @@ function MobileNav({ activeLink, onLinkClick }) {
           id="mobile-menu"
         >
           <ul>
-            {navLinks
-              && navLinks.map(({ name, url }, i) => (
+            {navLinks &&
+              navLinks.map(({ name, url }, i) => (
                 <li key={i}>
                   <Link
                     onClick={handleLinkClick}

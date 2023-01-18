@@ -40,8 +40,7 @@ const StyledGreeting = styled.p`
   border: 2px solid var(--main-text);
   border-radius: 2px;
   background-color: var(--main-text);
-  box-shadow: inset 0 4px 8px rgba(253, 168, 168, 0.3),
-    inset 0 8px 12px rgba(250, 163, 163, 0.06);
+  box-shadow: inset 0 4px 8px rgba(253, 168, 168, 0.3), inset 0 8px 12px rgba(250, 163, 163, 0.06);
 
   &::before {
     content: '';
@@ -120,10 +119,4 @@ const StyledResumeButton = styled.a`
   }
 `;
 
-export {
-  StyledAvatar,
-  StyledGreeting,
-  StyledName,
-  StyledSlogan,
-  StyledResumeButton,
-};
+export { StyledAvatar, StyledGreeting, StyledName, StyledSlogan, StyledResumeButton };

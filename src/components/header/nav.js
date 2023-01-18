@@ -29,18 +29,20 @@ const StyledHeader = styled.header`
   }
 
   @media (prefers-reduced-motion: no-preference) {
-    ${({ scrolledToTop, scrollDirection }) => scrollDirection === 'up'
-      && !scrolledToTop
-      && css`
+    ${({ scrolledToTop, scrollDirection }) =>
+      scrollDirection === 'up' &&
+      !scrolledToTop &&
+      css`
         height: var(--nav-scroll-height);
         transform: translateY(0px);
         background-color: rgba(15, 16, 32, 0.75);
         box-shadow: 0 10px 30px -10px #0f1020;
       `}
 
-    ${({ scrolledToTop, scrollDirection }) => scrollDirection === 'down'
-      && !scrolledToTop
-      && css`
+    ${({ scrolledToTop, scrollDirection }) =>
+      scrollDirection === 'down' &&
+      !scrolledToTop &&
+      css`
         height: var(--nav-scroll-height);
         transform: translateY(calc(var(--nav-scroll-height) * -1));
         box-shadow: 0 10px 30px -10px #0f1020;
@@ -142,18 +144,11 @@ function Nav({ isHome }) {
   );
 
   return (
-    <StyledHeader
-      scrolledToTop={scrolledToTop}
-      scrollDirection={scrollDirection}
-    >
+    <StyledHeader scrolledToTop={scrolledToTop} scrollDirection={scrollDirection}>
       <StyledWrapper>
         <StyledMainNav>
           {Logo}
-          <SiteNav
-            isHome={isHome}
-            activeLink={activeLink}
-            onLinkClick={changeActiveLink}
-          />
+          <SiteNav isHome={isHome} activeLink={activeLink} onLinkClick={changeActiveLink} />
           <MobileNav activeLink={activeLink} onLinkClick={changeActiveLink} />
         </StyledMainNav>
       </StyledWrapper>

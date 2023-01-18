@@ -48,10 +48,7 @@ function NotFoundPage({ location }) {
       <Helmet title="Page Not Found" />
 
       <StyledMainContainer>
-        <Placeholder>
-          {' '}
-          Sorry, we couldn’t find what you were looking for.
-        </Placeholder>
+        <Placeholder> Sorry, we couldn’t find what you were looking for.</Placeholder>
         <Link to="/">
           <StyledHomeButton>home</StyledHomeButton>
         </Link>
@@ -61,7 +58,10 @@ function NotFoundPage({ location }) {
 }
 
 NotFoundPage.propTypes = {
-  location: PropTypes.object.isRequired,
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
+    hash: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default NotFoundPage;

@@ -116,12 +116,10 @@ function Experience() {
       <h2 className="heading">Where I&aposve worked</h2>
       <hr className="horizontal-line work-experience__line" />
 
-      {jobsData
-        && jobsData.map(({ node }) => {
+      {jobsData &&
+        jobsData.map(({ node }) => {
           const { frontmatter, html, id } = node;
-          const {
-            url, stack, period, title,
-          } = frontmatter;
+          const { url, stack, period, title } = frontmatter;
 
           return (
             <StyledCompanyDetails key={id}>

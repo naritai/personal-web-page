@@ -81,7 +81,7 @@ function HeroDesktopLayout() {
 
   useEffect(() => {
     if (prefersReducedMotion) {
-      return;
+      return null;
     }
 
     const timeout = setTimeout(() => setIsMounted(true), HERO_DELAY);
@@ -146,15 +146,15 @@ function HeroDesktopLayout() {
           {three}
         </>
       ) : (
-        <>
-          {isMounted
-            && items
-            && items.map((item, i) => (
+        <div>
+          {isMounted &&
+            items &&
+            items.map((item, i) => (
               <WithFadeEffect delay={`0.${i + 1}s`} name="fadeUp">
                 {item}
               </WithFadeEffect>
             ))}
-        </>
+        </div>
       )}
     </StyledWrapper>
   );

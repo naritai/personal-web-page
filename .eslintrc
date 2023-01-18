@@ -1,10 +1,22 @@
 {
   "root": true,
-  "extends": ["airbnb", "airbnb/hooks"],
+  "extends": ["airbnb", "airbnb/hooks", "prettier"],
   "rules": {
     "import/prefer-default-export": "off",
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "no-console": ["error", { "allow": ["warn", "error"] }],
+
+    // Best Practices
+    "curly":      "error",
+    "eqeqeq":     "error",
+    "no-eq-null": "error",
+    "no-use-before-define": ["error", "nofunc"],
+
+    // for now used very simple lists
+    "react/no-array-index-key": "off",
+    "prefer-destructuring": "off"
   },
+  "parser": "@babel/eslint-parser",
   "settings": {
     "import/resolver": {
       "alias": [
@@ -24,5 +36,7 @@
   },
   "env": {
     "browser": true
-  }
+  },
+  // ignore gatsby default code
+  "ignorePatterns": "src/html.js"
 }

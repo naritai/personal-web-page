@@ -46,8 +46,7 @@ const StyledPeriod = styled.div`
     font-size: 1.5em;
     border: 1px solid transparent;
 
-    box-shadow: 0 0 2px 2px rgba(202, 66, 71, 0.8),
-      0 0 3px 4px rgba(202, 66, 71, 0.8);
+    box-shadow: 0 0 2px 2px rgba(202, 66, 71, 0.8), 0 0 3px 4px rgba(202, 66, 71, 0.8);
     transform: none;
 
     .period-text {
@@ -69,11 +68,7 @@ function Period({ period }) {
   return (
     <StyledPeriod>
       <div className="period-text">
-        {start}
-        {' '}
-        <b className="company-details__period-delimeter">-</b>
-        {' '}
-        {end}
+        {start} <b className="company-details__period-delimeter">-</b> {end}
       </div>
     </StyledPeriod>
   );

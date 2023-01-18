@@ -100,8 +100,8 @@ function HeroMobileLayout() {
       ) : (
         <>
           <div className="greenting">
-            {items
-              && items.map((item, i) => (
+            {items &&
+              items.map((item, i) => (
                 <WithFadeEffect delay={`0.${i + 1}s`} name="fadeIn">
                   {item}
                 </WithFadeEffect>

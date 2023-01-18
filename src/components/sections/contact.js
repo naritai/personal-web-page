@@ -1,11 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {
-  IconGithub,
-  IconLinkedIn,
-  IconTelegram,
-  IconTwitter,
-} from '@components/icons';
+import { IconGithub, IconLinkedIn, IconTelegram, IconTwitter } from '@components/icons';
 
 const StyledContactSection = styled.section`
   .contact__line {
@@ -143,14 +138,8 @@ function Contact() {
       <StyledWrapper>
         <StyledGetInTouch>
           <div>
-            My inbox is always open.
-            {' '}
-            <br />
-            {' '}
-            Whether you have a question or just
-            want to say hi, I’ll try my best to get back to you!
-            {' '}
-            <br />
+            My inbox is always open. <br /> Whether you have a question or just want to say hi, I’ll
+            try my best to get back to you! <br />
             <StyledEmailLink href="mailto:alexandr.voronetskiy@gmail.com">
               alexandr.voronetskiy@gmail.com
             </StyledEmailLink>
@@ -165,10 +154,7 @@ function Contact() {
               </a>
             </li>
             <li>
-              <a
-                href="https://www.linkedin.com/in/aleksandr-vorontsov"
-                aria-label="LinkedIn"
-              >
+              <a href="https://www.linkedin.com/in/aleksandr-vorontsov" aria-label="LinkedIn">
                 <IconLinkedIn />
               </a>
             </li>

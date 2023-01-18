@@ -6,10 +6,7 @@ import PropTypes from 'prop-types';
 
 function Head({ title, description, children }) {
   const { pathname } = useLocation();
-
-  const {
-    defaultDescription, defaultTitle, image, siteUrl, twitterUsername,
-  } = useSiteMetadata();
+  const { defaultDescription, defaultTitle, image, siteUrl, twitterUsername } = useSiteMetadata();
 
   const seo = {
     title: title || defaultTitle,
@@ -20,11 +17,7 @@ function Head({ title, description, children }) {
   };
 
   return (
-    <Helmet
-      title={title}
-      defaultTitle={seo.title}
-      titleTemplate={`%s | ${defaultTitle}`}
-    >
+    <Helmet title={title} defaultTitle={seo.title} titleTemplate={`%s | Voronetskiy`}>
       <html lang="en" />
 
       <title>{seo.title}</title>
@@ -54,8 +47,8 @@ Head.propTypes = {
 };
 
 Head.defaultProps = {
-  title: '',
-  description: '',
+  title: null,
+  description: null,
   children: null,
 };
 

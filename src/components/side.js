@@ -35,7 +35,7 @@ function Side({ children, isHome, orientation }) {
 
   useEffect(() => {
     if (!isHome || prefersReducedMotion) {
-      return;
+      return null;
     }
     const timeout = setTimeout(() => setIsMounted(true), HERO_DELAY);
     return () => clearTimeout(timeout);
@@ -46,13 +46,13 @@ function Side({ children, isHome, orientation }) {
       {prefersReducedMotion ? (
         { children }
       ) : (
-        <>
+        <div>
           {isMounted && (
             <WithFadeEffect delay="0.1s" name="fadeUp">
               {children}
             </WithFadeEffect>
           )}
-        </>
+        </div>
       )}
     </StyledSideElement>
   );

@@ -58,7 +58,10 @@ function BlogPage({ location }) {
 }
 
 BlogPage.propTypes = {
-  location: PropTypes.object.isRequired,
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
+    hash: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default BlogPage;
