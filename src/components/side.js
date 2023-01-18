@@ -44,7 +44,7 @@ function Side({ children, isHome, orientation }) {
   return (
     <StyledSideElement orientation={orientation}>
       {prefersReducedMotion ? (
-        { children }
+        <div>{children}</div>
       ) : (
         <div>
           {isMounted && (
