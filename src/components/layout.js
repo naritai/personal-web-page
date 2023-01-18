@@ -5,6 +5,7 @@ import styled, { ThemeProvider } from 'styled-components';
 import { theme } from '../styles/theme';
 import Nav from './header/nav';
 import Footer from './footer';
+import { Copyright } from '@components/copyright';
 
 const StyledContent = styled.div`
   display: flex;
@@ -56,6 +57,7 @@ const Layout = ({ children, location }) => {
          
           <StyledContent>
             <Nav isHome={isHome} />
+            <Copyright isHome={isHome} />
 
             <div id="content">
               {children}
