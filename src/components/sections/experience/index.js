@@ -113,7 +113,7 @@ function Experience() {
 
   return (
     <StyledExperienceSection id="experience">
-      <h2 className="heading">Where I&apos;ve worked</h2>
+      <h2 className="heading">Where I&#39;ve worked</h2>
       <hr className="horizontal-line work-experience__line" />
 
       {jobsData &&
