@@ -183,9 +183,9 @@ const MobileNav = ({ activeLink, onLinkClick }) => {
           onClick={toggleMenu}
           ref={buttonRef}
         >
-          <div className="hamburger">
-            <div className="hamburger-inner"></div>
-          </div>
+          <span className="hamburger">
+            <span className="hamburger-inner"></span>
+          </span>
         </BurgerButton>
 
         <StyledSidebar

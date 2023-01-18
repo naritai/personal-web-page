@@ -61,6 +61,7 @@ const BurgerButton = styled.button`
   }
 
   .hamburger-inner {
+    display: inline-block;
     position: absolute;
     top: 50%;
     right: 0px;
