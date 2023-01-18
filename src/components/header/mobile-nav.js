@@ -2,10 +2,10 @@ import React, { useRef, useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { navLinks } from '@config';
 import { Link } from 'gatsby';
-import BurgerButton from './burger-button';
 import { Helmet } from 'react-helmet';
 import { useOnClickOutside } from '@hooks';
 import { KEY_CODES } from '@utils';
+import BurgerButton from './burger-button';
 
 const StyledWrapper = styled.div`
   display: none;
@@ -82,7 +82,7 @@ const StyledSidebar = styled.aside`
   visibility: ${({ visible }) => (visible ? 'visible' : 'hidden')};
 `;
 
-const MobileNav = ({ activeLink, onLinkClick }) => {
+function MobileNav({ activeLink, onLinkClick }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const toggleMenu = () => setMenuOpen((prevState) => !prevState);
 
@@ -186,7 +186,7 @@ const MobileNav = ({ activeLink, onLinkClick }) => {
           ref={buttonRef}
         >
           <span className="hamburger">
-            <span className="hamburger-inner"></span>
+            <span className="hamburger-inner" />
           </span>
         </BurgerButton>
 
@@ -199,8 +199,8 @@ const MobileNav = ({ activeLink, onLinkClick }) => {
           id="mobile-menu"
         >
           <ul>
-            {navLinks &&
-              navLinks.map(({ name, url }, i) => (
+            {navLinks
+              && navLinks.map(({ name, url }, i) => (
                 <li key={i}>
                   <Link
                     onClick={handleLinkClick}
@@ -217,6 +217,6 @@ const MobileNav = ({ activeLink, onLinkClick }) => {
       </div>
     </StyledWrapper>
   );
-};
+}
 
 export default MobileNav;

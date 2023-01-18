@@ -25,18 +25,16 @@ const StyledMainContainer = styled.main`
   }
 `;
 
-const IndexPage = ({ location }) => {
+function IndexPage({ location }) {
   return (
-    <Fragment>
-      <Layout location={location}>
-        <StyledMainContainer>
-          <Hero />
-          <Experience />
-          <Contact />
-        </StyledMainContainer>
-      </Layout>
-    </Fragment>
+    <Layout location={location}>
+      <StyledMainContainer>
+        <Hero />
+        <Experience />
+        <Contact />
+      </StyledMainContainer>
+    </Layout>
   );
-};
+}
 
 export default IndexPage;

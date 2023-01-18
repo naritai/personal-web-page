@@ -26,11 +26,12 @@ const StyledWrapper = styled.div`
   }
 `;
 
-const Details = () => {
+function Details() {
   return (
     <StyledWrapper>
       I’m a software engineer with 5+ years of experience. Focused on building
-      robust and accessible products with creative UI. Blog about front-end to{' '}
+      robust and accessible products with creative UI. Blog about front-end to
+      {' '}
       <a
         href="https://t.me/frontendmetoo"
         aria-label="Telegram blog"
@@ -42,6 +43,6 @@ const Details = () => {
       .
     </StyledWrapper>
   );
-};
+}
 
 export default Details;

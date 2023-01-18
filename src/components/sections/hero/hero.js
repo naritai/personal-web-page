@@ -3,7 +3,7 @@ import { isMobileScreen } from '@utils/device-matcher';
 import { HeroDesktopLayout } from './layout-desktop';
 import { HeroMobileLayout } from './layout-mobile';
 
-const Hero = () => {
+function Hero() {
   const [isMobile, setIsMobile] = useState(isMobileScreen);
   const resizeHandler = () => setIsMobile(isMobileScreen());
 
@@ -13,6 +13,6 @@ const Hero = () => {
   }, [isMobile]);
 
   return isMobile ? <HeroMobileLayout /> : <HeroDesktopLayout />;
-};
+}
 
 export default Hero;

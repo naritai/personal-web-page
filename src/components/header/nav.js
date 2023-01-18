@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
+import { useScrollDirection } from '@hooks';
+import { Link } from 'gatsby';
 import SiteNav from './site-nav';
 import MobileNav from './mobile-nav';
-import { useScrollDirection } from '@hooks';
 import { IconLogo } from '../icons/logo';
-import { Link } from 'gatsby';
 
 const StyledHeader = styled.header`
   position: fixed;
@@ -28,20 +28,18 @@ const StyledHeader = styled.header`
   }
 
   @media (prefers-reduced-motion: no-preference) {
-    ${({ scrolledToTop, scrollDirection }) =>
-      scrollDirection === 'up' &&
-      !scrolledToTop &&
-      css`
+    ${({ scrolledToTop, scrollDirection }) => scrollDirection === 'up'
+      && !scrolledToTop
+      && css`
         height: var(--nav-scroll-height);
         transform: translateY(0px);
         background-color: rgba(15, 16, 32, 0.75);
         box-shadow: 0 10px 30px -10px #0f1020;
       `}
 
-    ${({ scrolledToTop, scrollDirection }) =>
-      scrollDirection === 'down' &&
-      !scrolledToTop &&
-      css`
+    ${({ scrolledToTop, scrollDirection }) => scrollDirection === 'down'
+      && !scrolledToTop
+      && css`
         height: var(--nav-scroll-height);
         transform: translateY(calc(var(--nav-scroll-height) * -1));
         box-shadow: 0 10px 30px -10px #0f1020;
@@ -113,10 +111,9 @@ const StyledLogoWrapper = styled.div`
   }
 `;
 
-const Nav = ({ isHome }) => {
+function Nav({ isHome }) {
   const [activeLink, setActiveLink] = useState(null);
-  const changeActiveLink = (event) =>
-    setActiveLink(event.currentTarget.dataset.name);
+  const changeActiveLink = (event) => setActiveLink(event.currentTarget.dataset.name);
 
   const scrollDirection = useScrollDirection({ initialDirection: 'down' });
   const [scrolledToTop, setScrolledToTop] = useState(true);
@@ -129,19 +126,21 @@ const Nav = ({ isHome }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const Logo = () => (
-    <StyledLogoWrapper>
-      {isHome ? (
-        <a href="/" aria-label="home" tabIndex="-1">
-          <IconLogo />
-        </a>
-      ) : (
-        <Link to="/" aria-label="home" tabIndex="-1">
-          <IconLogo />
-        </Link>
-      )}
-    </StyledLogoWrapper>
-  );
+  function Logo() {
+    return (
+      <StyledLogoWrapper>
+        {isHome ? (
+          <a href="/" aria-label="home" tabIndex="-1">
+            <IconLogo />
+          </a>
+        ) : (
+          <Link to="/" aria-label="home" tabIndex="-1">
+            <IconLogo />
+          </Link>
+        )}
+      </StyledLogoWrapper>
+    );
+  }
 
   return (
     <StyledHeader
@@ -161,6 +160,6 @@ const Nav = ({ isHome }) => {
       </StyledWrapper>
     </StyledHeader>
   );
-};
+}
 
 export default Nav;

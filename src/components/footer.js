@@ -28,7 +28,7 @@ const StyledCopyrightLink = styled.a`
   }
 `;
 
-const Footer = () => {
+function Footer() {
   return (
     <StyledFooter>
       <StyledWrapper>
@@ -38,6 +38,6 @@ const Footer = () => {
       </StyledWrapper>
     </StyledFooter>
   );
-};
+}
 
 export default Footer;

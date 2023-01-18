@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import Details from './details';
 import { StaticImage } from 'gatsby-plugin-image';
+import { usePrefersReducedMotion } from '@hooks';
+import Details from './details';
 import {
   StyledAvatar,
   StyledGreeting,
@@ -9,7 +10,6 @@ import {
   StyledSlogan,
   StyledResumeButton,
 } from './shared';
-import { usePrefersReducedMotion } from '@hooks';
 
 const StyledWrapper = styled.div`
   width: 100%;
@@ -48,11 +48,10 @@ const StyledWrapper = styled.div`
 
 const WithFadeEffect = styled.div`
   opacity: 0;
-  animation: ${({ name, delay }) =>
-    `${name}  0.75s ease-out ${delay} forwards`};
+  animation: ${({ name, delay }) => `${name}  0.75s ease-out ${delay} forwards`};
 `;
 
-const HeroMobileLayout = () => {
+function HeroMobileLayout() {
   const prefersReducedMotion = usePrefersReducedMotion();
 
   const one = <StyledGreeting>Hi, my name is</StyledGreeting>;
@@ -101,14 +100,12 @@ const HeroMobileLayout = () => {
       ) : (
         <>
           <div className="greenting">
-            {items &&
-              items.map((item, i) => {
-                return (
-                  <WithFadeEffect delay={`0.${i + 1}s`} name="fadeIn">
-                    {item}
-                  </WithFadeEffect>
-                );
-              })}
+            {items
+              && items.map((item, i) => (
+                <WithFadeEffect delay={`0.${i + 1}s`} name="fadeIn">
+                  {item}
+                </WithFadeEffect>
+              ))}
           </div>
           <WithFadeEffect delay="0.5s" name="fadeIn">
             {heroBottom}
@@ -117,6 +114,6 @@ const HeroMobileLayout = () => {
       )}
     </StyledWrapper>
   );
-};
+}
 
 export { HeroMobileLayout };

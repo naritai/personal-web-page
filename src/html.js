@@ -20,35 +20,35 @@ export default function HTML(props) {
           href={SpaceMonoRegularWoff}
           as="font"
           type="font/woff"
-          crossorigin="anonymous"
+          crossOrigin="anonymous"
         />
         <link
           rel="preload"
           href={SpaceMonoRegularWoff2}
           as="font"
           type="font/woff2"
-          crossorigin="anonymous"
+          crossOrigin="anonymous"
         />
         <link
           rel="preload"
           href={BebasNeueRegularWoff}
           as="font"
           type="font/woff"
-          crossorigin="anonymous"
+          crossOrigin="anonymous"
         />
         <link
           rel="preload"
           href={BebasNeueRegularWoff2}
           as="font"
           type="font/woff2"
-          crossorigin="anonymous"
+          crossOrigin="anonymous"
         />
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}
         <div
-          key={`body`}
+          key="body"
           id="___gatsby"
           dangerouslySetInnerHTML={{ __html: props.body }}
         />

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import Details from './details';
 import { StaticImage } from 'gatsby-plugin-image';
+import { usePrefersReducedMotion } from '@hooks';
+import Details from './details';
 import {
   StyledAvatar,
   StyledGreeting,
@@ -10,7 +11,6 @@ import {
   StyledResumeButton,
 } from './shared';
 import { HERO_DELAY } from '../../../utils/constants';
-import { usePrefersReducedMotion } from '@hooks';
 
 const StyledWrapper = styled.div`
   width: 95%;
@@ -72,11 +72,10 @@ const StyledFlexWrapper = styled.div`
 const WithFadeEffect = styled.div`
   opacity: 0;
   transform: translateY(-15px);
-  animation: ${({ name, delay }) =>
-    `${name}  0.75s ease-out ${delay} forwards`};
+  animation: ${({ name, delay }) => `${name}  0.75s ease-out ${delay} forwards`};
 `;
 
-const HeroDesktopLayout = () => {
+function HeroDesktopLayout() {
   const [isMounted, setIsMounted] = useState(false);
   const prefersReducedMotion = usePrefersReducedMotion();
 
@@ -148,19 +147,17 @@ const HeroDesktopLayout = () => {
         </>
       ) : (
         <>
-          {isMounted &&
-            items &&
-            items.map((item, i) => {
-              return (
-                <WithFadeEffect delay={`0.${i + 1}s`} name="fadeUp">
-                  {item}
-                </WithFadeEffect>
-              );
-            })}
+          {isMounted
+            && items
+            && items.map((item, i) => (
+              <WithFadeEffect delay={`0.${i + 1}s`} name="fadeUp">
+                {item}
+              </WithFadeEffect>
+            ))}
         </>
       )}
     </StyledWrapper>
   );
-};
+}
 
 export { HeroDesktopLayout };

@@ -61,21 +61,18 @@ const Wrapper = styled.div`
 `;
 
 const WithFadeEffect = styled.div`
-  ${({ disable }) => {
-    return disable
-      ? ``
-      : css`
+  ${({ disable }) => (disable
+    ? ''
+    : css`
           opacity: 0;
           transform: translateY(-5px);
-        `;
-  }}
+        `)}
   // move increment from li (above) to fix counter
   counter-increment: item 1;
-  animation: ${({ name, delay }) =>
-    `${name}  0.25s ease-out ${delay} forwards`};
+  animation: ${({ name, delay }) => `${name}  0.25s ease-out ${delay} forwards`};
 `;
 
-const SiteNav = ({ onLinkClick, activeLink, isHome }) => {
+function SiteNav({ onLinkClick, activeLink, isHome }) {
   const [isMounted, setIsMounted] = useState(!isHome);
 
   useEffect(() => {
@@ -86,9 +83,9 @@ const SiteNav = ({ onLinkClick, activeLink, isHome }) => {
   return (
     <Wrapper>
       <ul>
-        {isMounted &&
-          navLinks &&
-          navLinks.map(({ name, url }, i) => (
+        {isMounted
+          && navLinks
+          && navLinks.map(({ name, url }, i) => (
             <WithFadeEffect
               delay={`0.${i + 1}s`}
               name="fadeUp"
@@ -109,6 +106,6 @@ const SiteNav = ({ onLinkClick, activeLink, isHome }) => {
       </ul>
     </Wrapper>
   );
-};
+}
 
 export default SiteNav;

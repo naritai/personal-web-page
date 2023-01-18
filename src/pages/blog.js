@@ -41,21 +41,19 @@ const StyledHomeButton = styled.div`
   ${({ theme }) => theme.mixins.button};
 `;
 
-const BlogPage = ({ location }) => {
+function BlogPage({ location }) {
   return (
-    <Fragment>
-      <Layout location={location}>
-        <Helmet title="Blog" />
+    <Layout location={location}>
+      <Helmet title="Blog" />
 
-        <StyledMainContainer>
-          <Placeholder>Page in development.</Placeholder>
-          <Link to="/">
-            <StyledHomeButton>home</StyledHomeButton>
-          </Link>
-        </StyledMainContainer>
-      </Layout>
-    </Fragment>
+      <StyledMainContainer>
+        <Placeholder>Page in development.</Placeholder>
+        <Link to="/">
+          <StyledHomeButton>home</StyledHomeButton>
+        </Link>
+      </StyledMainContainer>
+    </Layout>
   );
-};
+}
 
 export default BlogPage;

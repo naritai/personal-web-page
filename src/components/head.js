@@ -3,11 +3,12 @@ import { Helmet } from 'react-helmet';
 import { useSiteMetadata } from '@hooks';
 import { useLocation } from '@reach/router';
 
-const Head = ({ title, description, children }) => {
+function Head({ title, description, children }) {
   const { pathname } = useLocation();
 
-  const { defaultDescription, defaultTitle, image, siteUrl, twitterUsername } =
-    useSiteMetadata();
+  const {
+    defaultDescription, defaultTitle, image, siteUrl, twitterUsername,
+  } = useSiteMetadata();
 
   const seo = {
     title: title || defaultTitle,
@@ -43,6 +44,6 @@ const Head = ({ title, description, children }) => {
       {children}
     </Helmet>
   );
-};
+}
 
 export default Head;

@@ -2,10 +2,10 @@ import React, { useEffect } from 'react';
 import Head from '@components/head';
 import GlobalStyle from '@styles/GlobalStyles';
 import styled, { ThemeProvider } from 'styled-components';
+import { Copyright } from '@components/copyright';
 import { theme } from '../styles/theme';
 import Nav from './header/nav';
 import Footer from './footer';
-import { Copyright } from '@components/copyright';
 
 const StyledContent = styled.div`
   display: flex;
@@ -13,7 +13,7 @@ const StyledContent = styled.div`
   min-height: 100vh;
 `;
 
-const Layout = ({ children, location }) => {
+function Layout({ children, location }) {
   const isHome = location.pathname === '/';
 
   const setExternalLinksSafeAttrs = () => {
@@ -68,6 +68,6 @@ const Layout = ({ children, location }) => {
       </div>
     </>
   );
-};
+}
 
 export default Layout;

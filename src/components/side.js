@@ -25,11 +25,10 @@ const StyledSideElement = styled.div`
 const WithFadeEffect = styled.div`
   opacity: 0;
   transform: translateY(35px);
-  animation: ${({ name, delay }) =>
-    `${name}  0.85s ease-out ${delay} forwards`};
+  animation: ${({ name, delay }) => `${name}  0.85s ease-out ${delay} forwards`};
 `;
 
-const Side = ({ children, isHome, orientation }) => {
+function Side({ children, isHome, orientation }) {
   const [isMounted, setIsMounted] = useState(!isHome);
   const prefersReducedMotion = usePrefersReducedMotion();
 
@@ -56,6 +55,6 @@ const Side = ({ children, isHome, orientation }) => {
       )}
     </StyledSideElement>
   );
-};
+}
 
 export { Side };

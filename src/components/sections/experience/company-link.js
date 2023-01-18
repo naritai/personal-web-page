@@ -138,22 +138,22 @@ const StyledCompanyName = styled.h3`
   }
 `;
 
-const CompanyLink = ({ url, text, disabled }) => {
+function CompanyLink({ url, text, disabled }) {
   return (
     <StyledCompanyName>
       {disabled ? (
         <span className="company-link company-link--disabled">
           <span className="link-text">{text}</span>
-          <span className="rocket"></span>
+          <span className="rocket" />
         </span>
       ) : (
         <a className="company-link" href={url}>
           <span className="link-text">{text}</span>
-          <span className="rocket"></span>
+          <span className="rocket" />
         </a>
       )}
     </StyledCompanyName>
   );
-};
+}
 
 export { CompanyLink };

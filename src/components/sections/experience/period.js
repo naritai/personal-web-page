@@ -63,15 +63,19 @@ const StyledPeriod = styled.div`
   }
 `;
 
-const Period = ({ period }) => {
+function Period({ period }) {
   const [start, end] = period.split('-');
   return (
     <StyledPeriod>
       <div className="period-text">
-        {start} <b className="company-details__period-delimeter">-</b> {end}
+        {start}
+        {' '}
+        <b className="company-details__period-delimeter">-</b>
+        {' '}
+        {end}
       </div>
     </StyledPeriod>
   );
-};
+}
 
 export { Period };

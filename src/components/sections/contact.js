@@ -134,7 +134,7 @@ const StyledSocialLinks = styled.div`
   }
 `;
 
-const Contact = () => {
+function Contact() {
   return (
     <StyledContactSection id="contact">
       <h2 className="heading">Get In Touch</h2>
@@ -143,8 +143,14 @@ const Contact = () => {
       <StyledWrapper>
         <StyledGetInTouch>
           <div>
-            My inbox is always open. <br /> Whether you have a question or just
-            want to say hi, I’ll try my best to get back to you! <br />
+            My inbox is always open.
+            {' '}
+            <br />
+            {' '}
+            Whether you have a question or just
+            want to say hi, I’ll try my best to get back to you!
+            {' '}
+            <br />
             <StyledEmailLink href="mailto:alexandr.voronetskiy@gmail.com">
               alexandr.voronetskiy@gmail.com
             </StyledEmailLink>
@@ -181,6 +187,6 @@ const Contact = () => {
       </StyledWrapper>
     </StyledContactSection>
   );
-};
+}
 
 export { Contact };

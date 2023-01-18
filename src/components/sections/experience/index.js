@@ -85,7 +85,7 @@ const StyledCompanyDetails = styled.section`
   }
 `;
 
-const Experience = () => {
+function Experience() {
   const { allMarkdownRemark: jobs } = useStaticQuery(graphql`
     query {
       allMarkdownRemark(
@@ -116,10 +116,12 @@ const Experience = () => {
       <h2 className="heading">Where I've worked</h2>
       <hr className="horizontal-line work-experience__line" />
 
-      {jobsData &&
-        jobsData.map(({ node }) => {
+      {jobsData
+        && jobsData.map(({ node }) => {
           const { frontmatter, html, id } = node;
-          const { url, stack, period, title } = frontmatter;
+          const {
+            url, stack, period, title,
+          } = frontmatter;
 
           return (
             <StyledCompanyDetails key={id}>
@@ -132,7 +134,7 @@ const Experience = () => {
                 <div
                   className="company-details__description"
                   dangerouslySetInnerHTML={{ __html: html }}
-                ></div>
+                />
                 <p className="company-details__stack">
                   <b className="company-details__stack-foreword">Stack: </b>
                   {stack && stack.join(' • ')}
@@ -143,6 +145,6 @@ const Experience = () => {
         })}
     </StyledExperienceSection>
   );
-};
+}
 
 export { Experience };

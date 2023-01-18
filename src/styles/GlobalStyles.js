@@ -1,8 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 import mainBackground from '@images/main-bg.jpg';
+import normalize from 'normalize.css';
 import variables from './variables';
 import fonts from './fonts';
-import normalize from 'normalize.css';
 
 const GlobalStyle = createGlobalStyle`
   ${normalize};

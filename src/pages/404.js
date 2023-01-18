@@ -41,24 +41,22 @@ const StyledHomeButton = styled.a`
   ${({ theme }) => theme.mixins.button};
 `;
 
-const NotFoundPage = ({ location }) => {
+function NotFoundPage({ location }) {
   return (
-    <Fragment>
-      <Layout location={location}>
-        <Helmet title="Page Not Found" />
+    <Layout location={location}>
+      <Helmet title="Page Not Found" />
 
-        <StyledMainContainer>
-          <Placeholder>
-            {' '}
-            Sorry, we couldn’t find what you were looking for.
-          </Placeholder>
-          <Link to="/">
-            <StyledHomeButton>home</StyledHomeButton>
-          </Link>
-        </StyledMainContainer>
-      </Layout>
-    </Fragment>
+      <StyledMainContainer>
+        <Placeholder>
+          {' '}
+          Sorry, we couldn’t find what you were looking for.
+        </Placeholder>
+        <Link to="/">
+          <StyledHomeButton>home</StyledHomeButton>
+        </Link>
+      </StyledMainContainer>
+    </Layout>
   );
-};
+}
 
 export default NotFoundPage;
