@@ -146,5 +146,11 @@ module.exports = {
       },
       __key: 'pages',
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'G-1B4RKYN3G9',
+      },
+    }
   ],
 };
