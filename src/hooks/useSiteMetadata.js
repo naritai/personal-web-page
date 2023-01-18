@@ -17,6 +17,6 @@ const useSiteMetadata = () => {
 
   const { site: { siteMetadata } = {} } = data;
   return siteMetadata;
-}
+};
 
 export { useSiteMetadata };

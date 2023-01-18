@@ -37,9 +37,9 @@ const StyledCopyrightLink = styled.a`
 const Copyright = ({ isHome }) => (
   <Side isHome={isHome} orientation="right">
     <StyledCopyrightWrapper>
-        <StyledCopyrightLink href="https://github.com/naritai/personal-website">
-          Designed & built by Aleksandr Voronetskiy
-        </StyledCopyrightLink>
+      <StyledCopyrightLink href="https://github.com/naritai/personal-website">
+        Designed & built by Aleksandr Voronetskiy
+      </StyledCopyrightLink>
     </StyledCopyrightWrapper>
   </Side>
 );

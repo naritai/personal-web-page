@@ -83,7 +83,7 @@ const StyledCompanyName = styled.h3`
   }
 
   .company-link--disabled:hover,
-  .company-link--disabled:hover .rocket  {
+  .company-link--disabled:hover .rocket {
     animation: none;
   }
 
@@ -115,25 +115,25 @@ const StyledCompanyName = styled.h3`
 
   @keyframes rainbow-text-simple-animation-rev {
     0% {
-        background-size: 650%;
+      background-size: 650%;
     }
     40% {
-        background-size: 100%;
+      background-size: 100%;
     }
     100% {
-        background-size: 100%;
+      background-size: 100%;
     }
   }
 
   @keyframes rainbow-text-simple-animation {
     0% {
-        background-size: 100%;
+      background-size: 100%;
     }
     80% {
-        background-size: 650%;
+      background-size: 650%;
     }
     100% {
-        background-size: 650%;
+      background-size: 650%;
     }
   }
 `;
@@ -141,21 +141,19 @@ const StyledCompanyName = styled.h3`
 const CompanyLink = ({ url, text, disabled }) => {
   return (
     <StyledCompanyName>
-      {
-        disabled ? (
-          <span className='company-link company-link--disabled'>
-            <span className="link-text">{text}</span>
-            <span className="rocket"></span>
-          </span>
-        ) : (
-          <a className='company-link' href={url}>
-            <span className="link-text">{text}</span>
-            <span className="rocket"></span>
-          </a>
-        )
-      }
+      {disabled ? (
+        <span className="company-link company-link--disabled">
+          <span className="link-text">{text}</span>
+          <span className="rocket"></span>
+        </span>
+      ) : (
+        <a className="company-link" href={url}>
+          <span className="link-text">{text}</span>
+          <span className="rocket"></span>
+        </a>
+      )}
     </StyledCompanyName>
-  )
-}
+  );
+};
 
 export { CompanyLink };

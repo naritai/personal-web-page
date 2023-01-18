@@ -12,5 +12,5 @@ module.exports = {
       name: 'blog',
       url: '/blog',
     },
-  ]
-}
+  ],
+};

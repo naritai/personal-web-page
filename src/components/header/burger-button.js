@@ -69,35 +69,40 @@ const BurgerButton = styled.button`
     height: 5px;
     background-color: #a42226;
 
-    ${({ isOpen }) => isOpen ? (
-      css`transition: transform 0.22s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s;
-        transform: rotate(225deg);`
-    ) : (
-      css`transition: transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19) 0s;
-        transform: rotate(0deg);`
-    )}
+    ${({ isOpen }) =>
+      isOpen
+        ? css`
+            transition: transform 0.22s cubic-bezier(0.215, 0.61, 0.355, 1)
+              0.12s;
+            transform: rotate(225deg);
+          `
+        : css`
+            transition: transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19)
+              0s;
+            transform: rotate(0deg);
+          `}
   }
 
   .hamburger-inner::before {
-    content: "";
+    content: '';
     display: block;
     position: absolute;
     left: auto;
     right: 0px;
     height: 5px;
     background-color: #a42226;
-    ${({ isOpen }) => isOpen ? beforeOpen : beforeClosed};
+    ${({ isOpen }) => (isOpen ? beforeOpen : beforeClosed)};
   }
 
   .hamburger-inner::after {
-    content: "";
+    content: '';
     display: block;
     position: absolute;
     left: auto;
     right: 0px;
     height: 5px;
     background-color: #a42226;
-    ${({ isOpen }) => isOpen ? afterOpen : afterClosed};
+    ${({ isOpen }) => (isOpen ? afterOpen : afterClosed)};
   }
 `;
 

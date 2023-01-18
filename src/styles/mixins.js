@@ -1,4 +1,4 @@
-import { css } from "styled-components";
+import { css } from 'styled-components';
 import buttonBgDark from '@images/button-bg-dark.svg';
 
 const button = css`
@@ -15,7 +15,7 @@ const button = css`
   color: #ffffff;
   cursor: pointer;
 
-  background-color: #B33B06;
+  background-color: #b33b06;
   background-image: url(${buttonBgDark});
   background-repeat: no-repeat;
   background-position: 400%;
@@ -23,7 +23,7 @@ const button = css`
   border: 4px solid var(--border-color);
 
   transition: all 0.5s;
-  transition-timing-function: cubic-bezier(.4,0,.2,1);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
   .button-text {
     color: var(--main-text);
@@ -128,7 +128,7 @@ const mixins = {
     @media only screen and (max-width: 768px) {
       letter-spacing: 2px;
       white-space: nowrap;
-      font-size: 2.2em
+      font-size: 2.2em;
     }
   `,
 
@@ -144,7 +144,7 @@ const mixins = {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
-  `
-}
+  `,
+};
 
 export { mixins };

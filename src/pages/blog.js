@@ -1,9 +1,8 @@
-import React, { Fragment } from "react";
-import styled from "styled-components";
-import Layout from "@components/layout";
-import { Link } from "gatsby";
-import { Helmet } from "react-helmet";
-
+import React, { Fragment } from 'react';
+import styled from 'styled-components';
+import Layout from '@components/layout';
+import { Link } from 'gatsby';
+import { Helmet } from 'react-helmet';
 
 const StyledMainContainer = styled.main`
   width: min(65%, 960px);
@@ -23,11 +22,11 @@ const StyledMainContainer = styled.main`
   @media only screen and (max-width: 768px) {
     width: 100%;
     padding: 0 25px;
-  }  
+  }
 `;
 
 const Placeholder = styled.h2`
-  ${({ theme }) => theme.mixins.promoHeading };
+  ${({ theme }) => theme.mixins.promoHeading};
 
   && {
     font-size: 2em;
@@ -45,18 +44,18 @@ const StyledHomeButton = styled.div`
 const BlogPage = ({ location }) => {
   return (
     <Fragment>
-      <Layout location={location} >
+      <Layout location={location}>
         <Helmet title="Blog" />
 
         <StyledMainContainer>
           <Placeholder>Page in development.</Placeholder>
           <Link to="/">
-             <StyledHomeButton>home</StyledHomeButton>
+            <StyledHomeButton>home</StyledHomeButton>
           </Link>
         </StyledMainContainer>
       </Layout>
     </Fragment>
-  )
-}
+  );
+};
 
 export default BlogPage;

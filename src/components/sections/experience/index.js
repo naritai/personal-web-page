@@ -33,7 +33,7 @@ const StyledCompanyDetails = styled.section`
   }
 
   .company-details__stack {
-    color: #E5C687;
+    color: #e5c687;
     margin-left: 240px;
   }
 
@@ -89,8 +89,8 @@ const Experience = () => {
   const { allMarkdownRemark: jobs } = useStaticQuery(graphql`
     query {
       allMarkdownRemark(
-        sort: {frontmatter: {date: DESC}}
-        filter: {fileAbsolutePath: {regex: "/content/experience/"}}
+        sort: { frontmatter: { date: DESC } }
+        filter: { fileAbsolutePath: { regex: "/content/experience/" } }
       ) {
         edges {
           node {
@@ -116,29 +116,33 @@ const Experience = () => {
       <h2 className="heading">Where I've worked</h2>
       <hr className="horizontal-line work-experience__line" />
 
-       {jobsData && jobsData.map(({ node }) => {
-        const { frontmatter, html, id } = node;
-        const { url, stack, period, title } = frontmatter;
+      {jobsData &&
+        jobsData.map(({ node }) => {
+          const { frontmatter, html, id } = node;
+          const { url, stack, period, title } = frontmatter;
 
-        return (
-          <StyledCompanyDetails key={id}>
-            <div className="company-details__header">
-              <Period period={period}/>
-              <CompanyLink text={title} url={url} disabled={url === ''} />
-            </div>
+          return (
+            <StyledCompanyDetails key={id}>
+              <div className="company-details__header">
+                <Period period={period} />
+                <CompanyLink text={title} url={url} disabled={url === ''} />
+              </div>
 
-            <div className="company-details__content">
-              <div className="company-details__description" dangerouslySetInnerHTML={{ __html: html }}></div>
-              <p className="company-details__stack">
-                <b className="company-details__stack-foreword">Stack: </b>
-                {stack && stack.join(' • ')}
-              </p>
-            </div>
-          </StyledCompanyDetails> 
-        )
+              <div className="company-details__content">
+                <div
+                  className="company-details__description"
+                  dangerouslySetInnerHTML={{ __html: html }}
+                ></div>
+                <p className="company-details__stack">
+                  <b className="company-details__stack-foreword">Stack: </b>
+                  {stack && stack.join(' • ')}
+                </p>
+              </div>
+            </StyledCompanyDetails>
+          );
         })}
-    </StyledExperienceSection> 
-  )
-}
+    </StyledExperienceSection>
+  );
+};
 
 export { Experience };

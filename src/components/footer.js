@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const StyledFooter = styled.footer`
   width: 100%;
   background-color: #000000;
-  box-shadow: 0 -10px 30px -10px #0F1020;
+  box-shadow: 0 -10px 30px -10px #0f1020;
   display: flex;
   justify-content: center;
 `;
@@ -17,7 +17,7 @@ const StyledWrapper = styled.div`
 `;
 
 const StyledCopyrightLink = styled.a`
-  ${({ theme }) => theme.mixins.bottomDashedOutline };
+  ${({ theme }) => theme.mixins.bottomDashedOutline};
   font-size: 0.5em;
   padding: 5px;
   padding-bottom: 20px;
@@ -37,7 +37,7 @@ const Footer = () => {
         </StyledCopyrightLink>
       </StyledWrapper>
     </StyledFooter>
-  )
-}
+  );
+};
 
 export default Footer;

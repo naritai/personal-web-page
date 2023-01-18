@@ -24,11 +24,11 @@ const Wrapper = styled.div`
     }
 
     li::before {
-      content: "0" counter(item) ".";
+      content: '0' counter(item) '.';
       display: inline-block;
       margin-right: 5px;
       text-align: right;
-      color: #E5C687;
+      color: #e5c687;
     }
 
     li:last-child {
@@ -45,13 +45,13 @@ const Wrapper = styled.div`
 
     a:focus,
     a:hover {
-      color: #E5C687;
+      color: #e5c687;
       background: none;
       border-bottom: none;
     }
 
     a.active {
-      color: #E5C687;
+      color: #e5c687;
     }
   }
 
@@ -62,14 +62,17 @@ const Wrapper = styled.div`
 
 const WithFadeEffect = styled.div`
   ${({ disable }) => {
-    return disable ? `` : css`
-      opacity: 0;
-      transform: translateY(-5px);
-    `;
+    return disable
+      ? ``
+      : css`
+          opacity: 0;
+          transform: translateY(-5px);
+        `;
   }}
   // move increment from li (above) to fix counter
-  counter-increment: item 1;  
-  animation: ${({ name, delay }) => `${name}  0.25s ease-out ${delay} forwards` };
+  counter-increment: item 1;
+  animation: ${({ name, delay }) =>
+    `${name}  0.25s ease-out ${delay} forwards`};
 `;
 
 const SiteNav = ({ onLinkClick, activeLink, isHome }) => {
@@ -77,31 +80,35 @@ const SiteNav = ({ onLinkClick, activeLink, isHome }) => {
 
   useEffect(() => {
     const timeout = setTimeout(() => setIsMounted(true), NAV_DELAY);
-    return () =>  clearTimeout(timeout);
+    return () => clearTimeout(timeout);
   }, []);
 
   return (
     <Wrapper>
       <ul>
-        { 
-          isMounted &&
+        {isMounted &&
           navLinks &&
-          navLinks.map(({ name, url}, i) => (
-            <WithFadeEffect delay={`0.${i + 1}s`} name='fadeUp' disable={!isHome}>
+          navLinks.map(({ name, url }, i) => (
+            <WithFadeEffect
+              delay={`0.${i + 1}s`}
+              name="fadeUp"
+              disable={!isHome}
+            >
               <li key={i} style={{ transitionDelay: `${i * 1}00ms` }}>
                 <Link
                   onClick={onLinkClick}
                   data-name={name}
                   className={activeLink === name ? 'active' : ''}
-                  to={url}>{name}
+                  to={url}
+                >
+                  {name}
                 </Link>
               </li>
             </WithFadeEffect>
-          ))
-        }
+          ))}
       </ul>
     </Wrapper>
-  )
-}
+  );
+};
 
 export default SiteNav;

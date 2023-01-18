@@ -1,5 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 import SpaceMonoRegularWoff from '@fonts/SpaceMono/space-mono-regular.woff';
 import SpaceMonoRegularWoff2 from '@fonts/SpaceMono/space-mono-regular.woff2';
 import BebasNeueRegularWoff from '@fonts/BebasNeue/bebas-neue-regular.woff';
@@ -15,10 +15,34 @@ export default function HTML(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-          <link rel="preload" href={SpaceMonoRegularWoff} as="font" type="font/woff" crossorigin="anonymous" />
-          <link rel="preload" href={SpaceMonoRegularWoff2} as="font" type="font/woff2" crossorigin="anonymous" />
-          <link rel="preload" href={BebasNeueRegularWoff} as="font" type="font/woff" crossorigin="anonymous" />
-          <link rel="preload" href={BebasNeueRegularWoff2} as="font" type="font/woff2" crossorigin="anonymous" />
+        <link
+          rel="preload"
+          href={SpaceMonoRegularWoff}
+          as="font"
+          type="font/woff"
+          crossorigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href={SpaceMonoRegularWoff2}
+          as="font"
+          type="font/woff2"
+          crossorigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href={BebasNeueRegularWoff}
+          as="font"
+          type="font/woff"
+          crossorigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href={BebasNeueRegularWoff2}
+          as="font"
+          type="font/woff2"
+          crossorigin="anonymous"
+        />
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
@@ -31,7 +55,7 @@ export default function HTML(props) {
         {props.postBodyComponents}
       </body>
     </html>
-  )
+  );
 }
 
 HTML.propTypes = {
@@ -41,4 +65,4 @@ HTML.propTypes = {
   preBodyComponents: PropTypes.array,
   body: PropTypes.string,
   postBodyComponents: PropTypes.array,
-}
+};

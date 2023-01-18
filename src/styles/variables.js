@@ -1,14 +1,14 @@
-import { css } from "styled-components";
+import { css } from 'styled-components';
 
 const variables = css`
   :root {
-    --main-bg: #0F1020;
+    --main-bg: #0f1020;
     --main-bg-soft: #16172b;
-    --main-text: #F6F1D1;
-    --emphasize-soft: #E5C687;
-    --selection-bg: #FFD4B2;
+    --main-text: #f6f1d1;
+    --emphasize-soft: #e5c687;
+    --selection-bg: #ffd4b2;
     --selection-text: #541212;
-    --bg-emphasize: #CA4246;
+    --bg-emphasize: #ca4246;
     --period-bg: rgba(60, 110, 113, 0.5);
     --hero-bg: rgba(60, 110, 113, 0.4);
     --hero-bg-soft: rgba(60, 110, 113, 0.3);
@@ -34,22 +34,30 @@ const variables = css`
     --link-inactive: rgb(155, 152, 152);
     --link-focus: var(--main-red);
     --special-link-bg: linear-gradient(
-        120deg,
-        var(--main-red) 33.333%,
-        var(--main-red) 33.333%,
-        var(--main-orange) 33.333%,
-        var(--main-orange) 50%, 
-        var(--main-yellow) 33.333%, 
-        var(--main-yellow) 33.33%);
+      120deg,
+      var(--main-red) 33.333%,
+      var(--main-red) 33.333%,
+      var(--main-orange) 33.333%,
+      var(--main-orange) 50%,
+      var(--main-yellow) 33.333%,
+      var(--main-yellow) 33.33%
+    );
 
     --ham-color: var(--raw-red);
-    --ham-before: top 0.1s ease-in 0.25s,opacity 0.1s ease-in;
-    --ham-before-active: top 0.1s ease-out,opacity 0.1s ease-out 0.12s;
-    --ham-after: bottom 0.1s ease-in 0.25s,transform 0.22s cubic-bezier(0.55,0.055,0.675,0.19);
-    --ham-after-active: bottom 0.1s ease-out,transform 0.22s cubic-bezier(0.215,0.61,0.355,1) 0.12s;
+    --ham-before: top 0.1s ease-in 0.25s, opacity 0.1s ease-in;
+    --ham-before-active: top 0.1s ease-out, opacity 0.1s ease-out 0.12s;
+    --ham-after: bottom 0.1s ease-in 0.25s,
+      transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    --ham-after-active: bottom 0.1s ease-out,
+      transform 0.22s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s;
 
     --scroll-track: #464862;
-    --promo-gradient: linear-gradient(90deg, rgba(202, 66, 71, 0.8), rgba(225, 102, 65, 0.8), rgba(215, 159, 86, 0.8));
+    --promo-gradient: linear-gradient(
+      90deg,
+      rgba(202, 66, 71, 0.8),
+      rgba(225, 102, 65, 0.8),
+      rgba(215, 159, 86, 0.8)
+    );
   }
 `;
 

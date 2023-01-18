@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import Head from '@components/head';
-import GlobalStyle from "@styles/GlobalStyles";
+import GlobalStyle from '@styles/GlobalStyles';
 import styled, { ThemeProvider } from 'styled-components';
 import { theme } from '../styles/theme';
 import Nav from './header/nav';
@@ -26,7 +26,7 @@ const Layout = ({ children, location }) => {
         }
       });
     }
-  }
+  };
 
   useEffect(() => {
     if (location.hash) {
@@ -54,7 +54,7 @@ const Layout = ({ children, location }) => {
           <a href="#content" className="skip-to-content">
             Skip to content
           </a>
-         
+
           <StyledContent>
             <Nav isHome={isHome} />
             <Copyright isHome={isHome} />
@@ -65,9 +65,9 @@ const Layout = ({ children, location }) => {
             </div>
           </StyledContent>
         </ThemeProvider>
-      </div>      
+      </div>
     </>
-  )
-}
+  );
+};
 
 export default Layout;

@@ -19,8 +19,8 @@ const StyledHeader = styled.header`
   box-shadow: 0 0 5px rgba(202, 66, 71, 0.5);
   backdrop-filter: blur(10px);
   z-index: 10;
-  box-shadow: 0 10px 30px -10px #0F1020;
-  transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+  box-shadow: 0 10px 30px -10px #0f1020;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 
   @media only screen and (max-width: 768px) {
     padding: 0 25px;
@@ -28,22 +28,24 @@ const StyledHeader = styled.header`
   }
 
   @media (prefers-reduced-motion: no-preference) {
-    ${({ scrolledToTop, scrollDirection }) => scrollDirection === 'up' && !scrolledToTop && (
+    ${({ scrolledToTop, scrollDirection }) =>
+      scrollDirection === 'up' &&
+      !scrolledToTop &&
       css`
         height: var(--nav-scroll-height);
         transform: translateY(0px);
         background-color: rgba(15, 16, 32, 0.75);
-        box-shadow: 0 10px 30px -10px #0F1020;
-        `
-    )}
+        box-shadow: 0 10px 30px -10px #0f1020;
+      `}
 
-    ${({ scrolledToTop, scrollDirection }) => scrollDirection === 'down' && !scrolledToTop && (
+    ${({ scrolledToTop, scrollDirection }) =>
+      scrollDirection === 'down' &&
+      !scrolledToTop &&
       css`
         height: var(--nav-scroll-height);
         transform: translateY(calc(var(--nav-scroll-height) * -1));
-        box-shadow: 0 10px 30px -10px #0F1020;
-        `
-    )}
+        box-shadow: 0 10px 30px -10px #0f1020;
+      `}
   }
 `;
 
@@ -113,7 +115,8 @@ const StyledLogoWrapper = styled.div`
 
 const Nav = ({ isHome }) => {
   const [activeLink, setActiveLink] = useState(null);
-  const changeActiveLink = (event) => setActiveLink(event.currentTarget.dataset.name);
+  const changeActiveLink = (event) =>
+    setActiveLink(event.currentTarget.dataset.name);
 
   const scrollDirection = useScrollDirection({ initialDirection: 'down' });
   const [scrolledToTop, setScrolledToTop] = useState(true);
@@ -127,9 +130,9 @@ const Nav = ({ isHome }) => {
   }, []);
 
   const Logo = () => (
-    <StyledLogoWrapper >
+    <StyledLogoWrapper>
       {isHome ? (
-        <a href="/" aria-label="home"  tabIndex="-1">
+        <a href="/" aria-label="home" tabIndex="-1">
           <IconLogo />
         </a>
       ) : (
@@ -141,16 +144,23 @@ const Nav = ({ isHome }) => {
   );
 
   return (
-    <StyledHeader scrolledToTop={scrolledToTop} scrollDirection={scrollDirection}>
+    <StyledHeader
+      scrolledToTop={scrolledToTop}
+      scrollDirection={scrollDirection}
+    >
       <StyledWrapper>
         <StyledMainNav>
           <Logo />
-          <SiteNav isHome={isHome} activeLink={activeLink} onLinkClick={changeActiveLink} />
+          <SiteNav
+            isHome={isHome}
+            activeLink={activeLink}
+            onLinkClick={changeActiveLink}
+          />
           <MobileNav activeLink={activeLink} onLinkClick={changeActiveLink} />
         </StyledMainNav>
       </StyledWrapper>
     </StyledHeader>
-  )
-}
+  );
+};
 
 export default Nav;

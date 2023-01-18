@@ -8,7 +8,7 @@ const StyledWrapper = styled.div`
   padding: 10px 0;
 
   a {
-    ${({ theme }) => theme.mixins.bottomDashedOutline };
+    ${({ theme }) => theme.mixins.bottomDashedOutline};
   }
 
   @media only screen and (max-width: 1088px) {
@@ -26,15 +26,22 @@ const StyledWrapper = styled.div`
   }
 `;
 
-
 const Details = () => {
   return (
     <StyledWrapper>
-      I’m a software engineer with 5+ years of experience.
-      Focused on building robust and accessible products with creative UI. 
-      Blog about front-end to <a href="https://t.me/frontendmetoo" aria-label="Telegram blog" target="_blank" rel="noopener noreferrer">t.me/frontendmetoo</a>.
+      I’m a software engineer with 5+ years of experience. Focused on building
+      robust and accessible products with creative UI. Blog about front-end to{' '}
+      <a
+        href="https://t.me/frontendmetoo"
+        aria-label="Telegram blog"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        t.me/frontendmetoo
+      </a>
+      .
     </StyledWrapper>
-  )
+  );
 };
 
 export default Details;

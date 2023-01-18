@@ -13,6 +13,6 @@ const Hero = () => {
   }, [isMobile]);
 
   return isMobile ? <HeroMobileLayout /> : <HeroDesktopLayout />;
-}
+};
 
 export default Hero;

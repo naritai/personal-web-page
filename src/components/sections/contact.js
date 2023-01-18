@@ -1,6 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import { IconGithub, IconLinkedIn, IconTelegram, IconTwitter } from '@components/icons';
+import {
+  IconGithub,
+  IconLinkedIn,
+  IconTelegram,
+  IconTwitter,
+} from '@components/icons';
 
 const StyledContactSection = styled.section`
   .contact__line {
@@ -18,22 +23,22 @@ const StyledContactSection = styled.section`
 `;
 
 const StyledWrapper = styled.div`
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 50px;
-    margin-bottom: 3px;
-    border-radius: 3px;
-    z-index: 100;
-    margin-left: 5px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  margin-bottom: 3px;
+  border-radius: 3px;
+  z-index: 100;
+  margin-left: 5px;
 
-    flex-grow: 1;
+  flex-grow: 1;
 
-    @media only screen and (max-width: 768px) {
-      flex-direction: column-reverse;
-      padding: 10px 5px;
-    }
+  @media only screen and (max-width: 768px) {
+    flex-direction: column-reverse;
+    padding: 10px 5px;
+  }
 `;
 
 const StyledGetInTouch = styled.div`
@@ -56,17 +61,17 @@ const StyledGetInTouch = styled.div`
 const StyledEmailLink = styled.a`
   display: inline-block;
   padding: 5px 0;
-  color: #FFD400;
+  color: #ffd400;
   font-weight: bold;
   font-size: clamp(0.5em, 20vw, 1em);
 
   word-break: break-all;
 
-  ${({ theme }) => theme.mixins.bottomDashedOutline };
+  ${({ theme }) => theme.mixins.bottomDashedOutline};
 `;
 
 const StyledSocialLinks = styled.div`
-  transition: all 0.5s cubic-bezier(0.645,0.045,0.355,1);
+  transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
   border-radius: 3px;
   padding: 2px;
 
@@ -89,10 +94,10 @@ const StyledSocialLinks = styled.div`
       text-decoration-skip-ink: auto;
       font-family: var(--font-mono);
       font-size: 0.65em;
-      letter-spacing: 0.1em;  
-      color: #E5C687;
+      letter-spacing: 0.1em;
+      color: #e5c687;
       cursor: pointer;
-      transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+      transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
     }
 
     a:hover {
@@ -113,7 +118,6 @@ const StyledSocialLinks = styled.div`
     }
   }
 
-  
   @media only screen and (max-width: 768px) {
     display: flex;
     justify-content: center;
@@ -138,11 +142,14 @@ const Contact = () => {
 
       <StyledWrapper>
         <StyledGetInTouch>
-          <div>      
-            My inbox is always open. <br /> Whether you have a question or just want to say hi, I’ll try my best to get back to you! <br />
-            <StyledEmailLink href="mailto:alexandr.voronetskiy@gmail.com">alexandr.voronetskiy@gmail.com</StyledEmailLink>
+          <div>
+            My inbox is always open. <br /> Whether you have a question or just
+            want to say hi, I’ll try my best to get back to you! <br />
+            <StyledEmailLink href="mailto:alexandr.voronetskiy@gmail.com">
+              alexandr.voronetskiy@gmail.com
+            </StyledEmailLink>
           </div>
-        </StyledGetInTouch>     
+        </StyledGetInTouch>
 
         <StyledSocialLinks>
           <ul>
@@ -152,25 +159,28 @@ const Contact = () => {
               </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/in/aleksandr-vorontsov" aria-label="LinkedIn">
+              <a
+                href="https://www.linkedin.com/in/aleksandr-vorontsov"
+                aria-label="LinkedIn"
+              >
                 <IconLinkedIn />
               </a>
             </li>
             <li>
               <a href="https://twitter.com/dzhumandzhu" aria-label="Twitter">
-              <IconTwitter />
+                <IconTwitter />
               </a>
             </li>
             <li>
               <a href="https://t.me/voronetskiy" aria-label="Telegram">
                 <IconTelegram />
               </a>
-            </li>            
+            </li>
           </ul>
         </StyledSocialLinks>
       </StyledWrapper>
     </StyledContactSection>
-  )
+  );
 };
 
 export { Contact };

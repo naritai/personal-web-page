@@ -1,8 +1,8 @@
-import React, { Fragment } from "react";
-import styled from "styled-components";
-import Layout from "@components/layout";
-import { Link } from "gatsby";
-import { Helmet } from "react-helmet";
+import React, { Fragment } from 'react';
+import styled from 'styled-components';
+import Layout from '@components/layout';
+import { Link } from 'gatsby';
+import { Helmet } from 'react-helmet';
 
 const StyledMainContainer = styled.main`
   width: min(65%, 960px);
@@ -22,11 +22,11 @@ const StyledMainContainer = styled.main`
   @media only screen and (max-width: 768px) {
     width: 100%;
     padding: 0 25px;
-  }  
+  }
 `;
 
 const Placeholder = styled.h2`
-  ${({ theme }) => theme.mixins.promoHeading };
+  ${({ theme }) => theme.mixins.promoHeading};
 
   && {
     white-space: normal;
@@ -48,14 +48,17 @@ const NotFoundPage = ({ location }) => {
         <Helmet title="Page Not Found" />
 
         <StyledMainContainer>
-          <Placeholder> Sorry, we couldn’t find what you were looking for.</Placeholder>
+          <Placeholder>
+            {' '}
+            Sorry, we couldn’t find what you were looking for.
+          </Placeholder>
           <Link to="/">
-             <StyledHomeButton>home</StyledHomeButton>
+            <StyledHomeButton>home</StyledHomeButton>
           </Link>
         </StyledMainContainer>
       </Layout>
     </Fragment>
-  )
-}
+  );
+};
 
-export default NotFoundPage
+export default NotFoundPage;

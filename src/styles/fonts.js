@@ -21,16 +21,16 @@ const bebasNeueRegular = {
 
 const robotoRegular = {
   400: [RobotoRegularWoff, RobotoRegularWoff2],
-  700: [RobotoBoldrWoff, RobotoBoldWoff2]
+  700: [RobotoBoldrWoff, RobotoBoldWoff2],
 };
 
 const spaceMonoRegular = {
   400: [SpaceMonoRegularWoff, SpaceMonoRegularWoff2],
-  700: [SpaceMonoBoldWoff, SpaceMonoBoldWoff2]
+  700: [SpaceMonoBoldWoff, SpaceMonoBoldWoff2],
 };
 
 const spaceMonoItalic = {
-  400: [SpaceMonoItalicWoff, SpaceMonoItalicWoff2]
+  400: [SpaceMonoItalicWoff, SpaceMonoItalicWoff2],
 };
 
 const roboto = {
@@ -41,12 +41,12 @@ const roboto = {
 const spaceMono = {
   name: 'SpaceMono',
   normal: spaceMonoRegular,
-  italic: spaceMonoItalic
+  italic: spaceMonoItalic,
 };
 
 const bebasNeue = {
   name: 'BebasNeue',
-  normal: bebasNeueRegular
+  normal: bebasNeueRegular,
 };
 
 const createFontFaces = (family, style = 'normal') => {
@@ -63,11 +63,11 @@ const createFontFaces = (family, style = 'normal') => {
         src: url(${woff2}) format('woff2'), url(${woff}) format('woff');
         font-display: swap;
       }
-    `
+    `;
   });
 
   return styles;
-}
+};
 
 const robotoFonts = createFontFaces(roboto);
 const spaceMonoRegularFonts = createFontFaces(spaceMono);

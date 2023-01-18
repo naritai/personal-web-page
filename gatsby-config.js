@@ -3,23 +3,24 @@
  */
 module.exports = {
   flags: {
-    DEV_SSR: false
+    DEV_SSR: false,
   },
   siteMetadata: {
     title: `Alex Voronetskiy`,
-    description: 'Alex Voronetskiy is a web devloper who specializes in building dynamic and robust applications with intuitive UI.',
+    description:
+      'Alex Voronetskiy is a web devloper who specializes in building dynamic and robust applications with intuitive UI.',
     siteUrl: `https://voronetskiy.dev`,
     twitterUsername: `@dzhumandzhu`,
     image: `/og.png`,
   },
   plugins: [
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-styled-components",
-    "gatsby-plugin-image",
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
-    "gatsby-plugin-sitemap",
-    "gatsby-plugin-robots-txt",
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-styled-components',
+    'gatsby-plugin-image',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sitemap',
+    'gatsby-plugin-robots-txt',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -29,10 +30,10 @@ module.exports = {
         background_color: '#0F1020',
         theme_color: '#0F1020',
         display: 'minimal-ui',
-        icon: `${__dirname}/src/images/icon.svg`
-      }
+        icon: `${__dirname}/src/images/icon.svg`,
+      },
     },
-    "gatsby-plugin-offline",  
+    'gatsby-plugin-offline',
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -126,24 +127,24 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: "images",
-        path: `${__dirname}/src/images`
+        name: 'images',
+        path: `${__dirname}/src/images`,
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: "experience",
-        path: `${__dirname}/content/experience`
+        name: 'experience',
+        path: `${__dirname}/content/experience`,
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: "pages",
-        path: `${__dirname}/src/pages`
+        name: 'pages',
+        path: `${__dirname}/src/pages`,
       },
-      __key: "pages"
+      __key: 'pages',
     },
-  ]
+  ],
 };

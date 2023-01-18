@@ -10,7 +10,8 @@ const getInitialState = () => {
   return isRenderingOnServer ? true : !window.matchMedia(QUERY).matches;
 };
 function usePrefersReducedMotion() {
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState(getInitialState);
+  const [prefersReducedMotion, setPrefersReducedMotion] =
+    useState(getInitialState);
 
   useEffect(() => {
     const mediaQueryList = window.matchMedia(QUERY);
@@ -27,7 +28,8 @@ function usePrefersReducedMotion() {
         mediaQueryList.removeEventListener('change', listener);
       } else {
         mediaQueryList.removeListener(listener);
-      }    };
+      }
+    };
   }, []);
 
   return prefersReducedMotion;

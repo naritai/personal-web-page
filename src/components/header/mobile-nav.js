@@ -41,12 +41,12 @@ const StyledWrapper = styled.div`
     }
 
     a::before {
-      content: "0" counter(item) ".";
+      content: '0' counter(item) '.';
       display: inline-block;
       margin-right: 5px;
       padding: 3px 0 10px;
       text-align: right;
-      color: #E5C687;
+      color: #e5c687;
     }
 
     a:visited {
@@ -54,13 +54,13 @@ const StyledWrapper = styled.div`
     }
     a:focus,
     a:hover {
-      color: #E5C687;
+      color: #e5c687;
       background: none;
       border-bottom: none;
     }
 
     a.active {
-      color: #E5C687;
+      color: #e5c687;
     }
   }
 `;
@@ -76,12 +76,11 @@ const StyledSidebar = styled.aside`
   right: 0;
   z-index: 10;
   outline: 0px;
-  box-shadow: -10px 0px 30px -15px rgba(2,12,27,0.7);
-  transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+  box-shadow: -10px 0px 30px -15px rgba(2, 12, 27, 0.7);
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   transform: translateX(${({ visible }) => (visible ? 0 : 100)}vw);
-  visibility: ${({ visible }) => visible ? 'visible' : 'hidden'};
+  visibility: ${({ visible }) => (visible ? 'visible' : 'hidden')};
 `;
-
 
 const MobileNav = ({ activeLink, onLinkClick }) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -100,26 +99,29 @@ const MobileNav = ({ activeLink, onLinkClick }) => {
   let lastFocusableEl;
 
   const setFocusables = () => {
-    menuFocusables = [buttonRef.current, ...Array.from(navRef.current.querySelectorAll('a'))];
+    menuFocusables = [
+      buttonRef.current,
+      ...Array.from(navRef.current.querySelectorAll('a')),
+    ];
     firstFocusableEl = menuFocusables[0];
     lastFocusableEl = menuFocusables[menuFocusables.length - 1];
-  }
+  };
 
   const handleBackwardTab = (event) => {
     if (document.activeElement === firstFocusableEl) {
       event.preventDefault();
       lastFocusableEl.focus();
     }
-  }
+  };
 
   const handleForwardTab = (event) => {
     if (document.activeElement === lastFocusableEl) {
       event.preventDefault();
       firstFocusableEl.focus();
     }
-  }
+  };
 
-  const onKeyDown = e => {
+  const onKeyDown = (e) => {
     switch (e.key) {
       case KEY_CODES.ESCAPE:
       case KEY_CODES.ESCAPE_IE11: {
@@ -174,7 +176,7 @@ const MobileNav = ({ activeLink, onLinkClick }) => {
       </Helmet>
 
       <div ref={wrapperRef}>
-        <BurgerButton 
+        <BurgerButton
           aria-controls="mobile-menu"
           aria-expanded={menuOpen}
           aria-label="menu"
@@ -197,23 +199,24 @@ const MobileNav = ({ activeLink, onLinkClick }) => {
           id="mobile-menu"
         >
           <ul>
-            {
-              navLinks && navLinks.map(({ name, url}, i) => (
+            {navLinks &&
+              navLinks.map(({ name, url }, i) => (
                 <li key={i}>
                   <Link
                     onClick={handleLinkClick}
                     data-name={name}
                     className={activeLink === name ? 'active' : ''}
-                    to={url}>{name}
+                    to={url}
+                  >
+                    {name}
                   </Link>
                 </li>
-              ))
-            }
+              ))}
           </ul>
         </StyledSidebar>
       </div>
     </StyledWrapper>
-  )
-}
+  );
+};
 
 export default MobileNav;

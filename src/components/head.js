@@ -6,26 +6,25 @@ import { useLocation } from '@reach/router';
 const Head = ({ title, description, children }) => {
   const { pathname } = useLocation();
 
-  const {
-    defaultDescription,
-    defaultTitle,
-    image,
-    siteUrl,
-    twitterUsername
-  } = useSiteMetadata();
+  const { defaultDescription, defaultTitle, image, siteUrl, twitterUsername } =
+    useSiteMetadata();
 
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
     image: `${siteUrl}${image}`,
     url: `${siteUrl}${pathname}`,
-    twitterUsername
+    twitterUsername,
   };
 
   return (
-    <Helmet title={title} defaultTitle={seo.title} titleTemplate={`%s | ${defaultTitle}`}>
+    <Helmet
+      title={title}
+      defaultTitle={seo.title}
+      titleTemplate={`%s | ${defaultTitle}`}
+    >
       <html lang="en" />
-  
+
       <title>{seo.title}</title>
       <meta name="description" content={seo.title} />
       <meta name="image" content={seo.image} />
@@ -43,7 +42,7 @@ const Head = ({ title, description, children }) => {
       <meta name="twitter:image" content={seo.image} />
       {children}
     </Helmet>
-  )
-}
+  );
+};
 
 export default Head;

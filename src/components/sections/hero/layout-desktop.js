@@ -7,7 +7,7 @@ import {
   StyledGreeting,
   StyledName,
   StyledSlogan,
-  StyledResumeButton
+  StyledResumeButton,
 } from './shared';
 import { HERO_DELAY } from '../../../utils/constants';
 import { usePrefersReducedMotion } from '@hooks';
@@ -72,7 +72,8 @@ const StyledFlexWrapper = styled.div`
 const WithFadeEffect = styled.div`
   opacity: 0;
   transform: translateY(-15px);
-  animation: ${({ name, delay }) => `${name}  0.75s ease-out ${delay} forwards` };
+  animation: ${({ name, delay }) =>
+    `${name}  0.75s ease-out ${delay} forwards`};
 `;
 
 const HeroDesktopLayout = () => {
@@ -91,7 +92,7 @@ const HeroDesktopLayout = () => {
   const one = (
     <div className="hero-top">
       <div className="flex-wrapper">
-        <StyledAvatar className='avatar-flex-item'>
+        <StyledAvatar className="avatar-flex-item">
           <StaticImage
             src="../../../images/avatar.png"
             objectFit="contain"
@@ -104,7 +105,7 @@ const HeroDesktopLayout = () => {
             imgClassName="avatar-img"
           />
         </StyledAvatar>
-        <div className='hero-text'>
+        <div className="hero-text">
           <StyledGreeting>Hi, my name is</StyledGreeting>
           <StyledName>Alex Voronetskiy.</StyledName>
           <StyledSlogan>I craft projects for web.</StyledSlogan>
@@ -115,8 +116,8 @@ const HeroDesktopLayout = () => {
 
   const two = (
     <div className="hero-bottom">
-      <div className='flex-wrapper'>
-      <Details />
+      <div className="flex-wrapper">
+        <Details />
       </div>
     </div>
   );
@@ -124,7 +125,7 @@ const HeroDesktopLayout = () => {
   const three = (
     <StyledFlexWrapper>
       <StyledResumeButton
-        className='resume-button'
+        className="resume-button"
         href="/resume.pdf"
         aria-label="Resume"
         target="_blank"
@@ -138,30 +139,28 @@ const HeroDesktopLayout = () => {
   const items = [one, two, three];
 
   return (
-
     <StyledWrapper>
-      {
-        prefersReducedMotion ? (
-          <>
-            {one}{two}{three}
-          </>
-        ) : (
-          <>
-            {
-              isMounted &&
-              items && items.map((item, i) => {
-                return (
-                  <WithFadeEffect delay={`0.${i + 1}s`} name='fadeUp'>
-                    {item}
-                  </WithFadeEffect>
-                )
-              })
-            }
-          </>
-        )
-      }
+      {prefersReducedMotion ? (
+        <>
+          {one}
+          {two}
+          {three}
+        </>
+      ) : (
+        <>
+          {isMounted &&
+            items &&
+            items.map((item, i) => {
+              return (
+                <WithFadeEffect delay={`0.${i + 1}s`} name="fadeUp">
+                  {item}
+                </WithFadeEffect>
+              );
+            })}
+        </>
+      )}
     </StyledWrapper>
-  )
-}
+  );
+};
 
 export { HeroDesktopLayout };

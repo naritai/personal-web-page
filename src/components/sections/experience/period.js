@@ -18,16 +18,15 @@ const StyledPeriod = styled.div`
   font-family: var(--font-promo);
   background-color: var(--hero-bg-soft);
 
-  border: 4px solid #B33B06;
+  border: 4px solid #b33b06;
   transform: skew(-5deg);
 
   .period-text {
     transform: skew(5deg);
   }
 
-
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     left: -45px;
     top: 0;
@@ -35,7 +34,7 @@ const StyledPeriod = styled.div`
     width: 40px;
     border-style: solid;
     border-width: 30px 0 30px 30px;
-    border-color: #B33B06 transparent #B33B06 transparent;
+    border-color: #b33b06 transparent #b33b06 transparent;
   }
 
   @media only screen and (max-width: 768px) {
@@ -46,7 +45,8 @@ const StyledPeriod = styled.div`
     font-size: 1.5em;
     border: 1px solid transparent;
 
-    box-shadow: 0 0 2px 2px rgba(202, 66, 71, 0.8), 0 0 3px 4px rgba(202, 66, 71, 0.8);
+    box-shadow: 0 0 2px 2px rgba(202, 66, 71, 0.8),
+      0 0 3px 4px rgba(202, 66, 71, 0.8);
     transform: none;
 
     .period-text {
@@ -67,11 +67,11 @@ const Period = ({ period }) => {
   const [start, end] = period.split('-');
   return (
     <StyledPeriod>
-      <div className='period-text'>
+      <div className="period-text">
         {start} <b className="company-details__period-delimeter">-</b> {end}
       </div>
     </StyledPeriod>
-  )
-}
+  );
+};
 
 export { Period };

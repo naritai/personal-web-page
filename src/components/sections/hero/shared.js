@@ -31,19 +31,20 @@ const StyledGreeting = styled.p`
   margin-top: 0;
   margin-bottom: 20px;
   padding: 10px;
-  
+
   text-shadow: 0 0 1px var(--main-text);
-  color:#0F1020;
+  color: #0f1020;
   text-align: center;
   font-size: clamp(0.8em, 8vw, 1.1em);
 
   border: 2px solid var(--main-text);
   border-radius: 2px;
   background-color: var(--main-text);
-  box-shadow: inset 0 4px 8px rgba(253, 168, 168, 0.3), inset 0 8px 12px rgba(250, 163, 163, 0.06);
+  box-shadow: inset 0 4px 8px rgba(253, 168, 168, 0.3),
+    inset 0 8px 12px rgba(250, 163, 163, 0.06);
 
   &::before {
-    content: "";
+    content: '';
     border-style: solid;
     border-width: 30px 20px 5px 0;
     border-color: var(--main-text) transparent transparent transparent;
@@ -68,8 +69,8 @@ const StyledGreeting = styled.p`
 `;
 
 const StyledName = styled.h1`
-  ${({ theme }) => theme.mixins.promoHeading };
-  ${({ theme }) => theme.mixins.promoHeadingBright };
+  ${({ theme }) => theme.mixins.promoHeading};
+  ${({ theme }) => theme.mixins.promoHeadingBright};
 
   @media only screen and (max-width: 768px) {
     text-align: center;
@@ -77,8 +78,8 @@ const StyledName = styled.h1`
 `;
 
 const StyledSlogan = styled.p`
-  ${({ theme }) => theme.mixins.promoHeading };
-  ${({ theme }) => theme.mixins.promoHeadingGradient };
+  ${({ theme }) => theme.mixins.promoHeading};
+  ${({ theme }) => theme.mixins.promoHeadingGradient};
 
   font-size: 2.6em;
 
@@ -88,7 +89,7 @@ const StyledSlogan = styled.p`
 `;
 
 const StyledResumeButton = styled.a`
-  ${({ theme }) => theme.mixins.button };
+  ${({ theme }) => theme.mixins.button};
 
   && {
     height: 70px;
@@ -108,7 +109,7 @@ const StyledResumeButton = styled.a`
   }
 
   @media only screen and (max-width: 768px) {
-    && { 
+    && {
       height: 65px;
       width: clamp(265px, 65vw, 300px);
     }
@@ -119,4 +120,10 @@ const StyledResumeButton = styled.a`
   }
 `;
 
-export { StyledAvatar, StyledGreeting, StyledName, StyledSlogan, StyledResumeButton };
+export {
+  StyledAvatar,
+  StyledGreeting,
+  StyledName,
+  StyledSlogan,
+  StyledResumeButton,
+};

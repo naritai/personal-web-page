@@ -1,4 +1,4 @@
-import { mixins } from "./mixins"
+import { mixins } from './mixins';
 
 const theme = {
   bp: {
@@ -6,7 +6,7 @@ const theme = {
     tablet: 'max-width: 1088px',
   },
 
-  mixins
-}
+  mixins,
+};
 
 export { theme };
