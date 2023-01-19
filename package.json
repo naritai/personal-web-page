@@ -3,7 +3,14 @@
   "version": "1.0.0",
   "private": true,
   "description": "Personal Web Page",
-  "author": "naritai",
+  "author": "Alex Voronetskiy <alexandr.voronetskiy@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/naritai/personal-web-page"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "keywords": [
     "gatsby"
   ],
