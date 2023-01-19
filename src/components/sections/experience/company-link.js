@@ -20,6 +20,7 @@ const StyledCompanyName = styled.h3`
     background-size: 100%;
     background-repeat: repeat;
     animation: rainbow-text-simple-animation-rev 0.3s ease forwards;
+    transition: color 0.3s;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

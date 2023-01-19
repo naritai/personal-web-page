@@ -42,16 +42,27 @@ const StyledHomeButton = styled.div`
   ${({ theme }) => theme.mixins.button};
 `;
 
+const WithFadeEffect = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  animation: ${({ name, delay }) => `${name}  0.75s ease-out ${delay} forwards`};
+`;
+
 function BlogPage({ location }) {
   return (
     <Layout location={location}>
       <Helmet title="Blog" />
 
       <StyledMainContainer>
-        <Placeholder>Page in development.</Placeholder>
-        <Link to="/">
-          <StyledHomeButton>home</StyledHomeButton>
-        </Link>
+        <WithFadeEffect delay="0.1s" name="fadeUp">
+          <Placeholder>Page in development.</Placeholder>
+          <Link to="/">
+            <StyledHomeButton>home</StyledHomeButton>
+          </Link>
+        </WithFadeEffect>
       </StyledMainContainer>
     </Layout>
   );
