@@ -36,7 +36,7 @@ const StyledCopyrightLink = styled.a`
 `;
 
 function Copyright({ isHome }) {
-  return (
+  return !isHome ? null : (
     <Side isHome={isHome} orientation="right">
       <StyledCopyrightWrapper>
         <StyledCopyrightLink aria-label="repository" target="_blank" rel="noreferrer" href="https://github.com/naritai/personal-web-page">

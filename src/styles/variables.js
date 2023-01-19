@@ -19,6 +19,8 @@ const variables = css`
     --main-orange: rgba(225, 102, 65, 0.8);
     --main-yellow: rgba(215, 159, 86, 0.8);
 
+    --scrollbar-width: calc(100vw - 100%);
+
     --nav-height: 70px;
     --nav-scroll-height: 70px;
 

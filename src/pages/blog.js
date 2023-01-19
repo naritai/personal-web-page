@@ -43,6 +43,7 @@ const StyledHomeButton = styled.div`
 `;
 
 const WithFadeEffect = styled.div`
+  width: calc(100vw - var(--scrollbar-width));
   display: flex;
   flex-direction: column;
   justify-content: center;
