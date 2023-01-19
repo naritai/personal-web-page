@@ -3,6 +3,10 @@ import styled from 'styled-components';
 const StyledAvatar = styled.div`
   .avatar-img {
     object-fit: contain;
+
+    @media only screen and (max-width: 768px) {
+      border-radius: 50%;
+    }
   }
 
   .wrapper-img {
@@ -80,7 +84,7 @@ const StyledSlogan = styled.p`
   ${({ theme }) => theme.mixins.promoHeading};
   ${({ theme }) => theme.mixins.promoHeadingGradient};
 
-  font-size: 2.6em;
+  font-size: 2.3em;
 
   @media only screen and (max-width: 768px) {
     text-align: center;

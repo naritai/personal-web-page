@@ -17,10 +17,10 @@ const StyledHeader = styled.header`
   top: 0;
   left: 0;
   background-color: #000000;
-  box-shadow: 0 0 5px rgba(202, 66, 71, 0.5);
+  box-shadow: 0 0 5px rgba(2, 23, 26, 0.5);
   backdrop-filter: blur(10px);
   z-index: 10;
-  box-shadow: 0 10px 30px -10px #0f1020;
+  box-shadow: 0 10px 30px -10px #02171a;
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 
   @media only screen and (max-width: 768px) {
@@ -35,8 +35,8 @@ const StyledHeader = styled.header`
       css`
         height: var(--nav-scroll-height);
         transform: translateY(0px);
-        background-color: rgba(15, 16, 32, 0.75);
-        box-shadow: 0 10px 30px -10px #0f1020;
+        background-color: rgba(2, 23, 26, 0.75);
+        box-shadow: 0 10px 30px -10px #02171a;
       `}
 
     ${({ scrolledToTop, scrollDirection }) =>
@@ -45,7 +45,7 @@ const StyledHeader = styled.header`
       css`
         height: var(--nav-scroll-height);
         transform: translateY(calc(var(--nav-scroll-height) * -1));
-        box-shadow: 0 10px 30px -10px #0f1020;
+        box-shadow: 0 10px 30px -10px #02171a;
       `}
   }
 `;

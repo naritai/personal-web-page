@@ -77,7 +77,7 @@ const StyledSidebar = styled.aside`
   right: 0;
   z-index: 10;
   outline: 0px;
-  box-shadow: -10px 0px 30px -15px rgba(2, 12, 27, 0.7);
+  box-shadow: -10px 0px 30px -15px rgba(2, 23, 26, 0.7);
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   transform: translateX(${({ visible }) => (visible ? 0 : 100)}vw);
   visibility: ${({ visible }) => (visible ? 'visible' : 'hidden')};

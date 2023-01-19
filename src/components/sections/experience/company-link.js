@@ -19,9 +19,28 @@ const StyledCompanyName = styled.h3`
     background-image: var(--special-link-bg);
     background-size: 100%;
     background-repeat: repeat;
+    animation: rainbow-text-simple-animation-rev 0.3s ease forwards;
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: rainbow-text-simple-animation-rev 0.3s ease forwards;
+
+
+    /* @supports (-webkit-background-clip: text) and (-webkit-text-fill-color: transparent) {
+      background-color: var(--bg-emphasize);
+      background-image: var(--special-link-bg);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    } */
+
+    /* @supports not (-webkit-hyphens: none) { 
+      font-weight: 700;
+      background-color: var(--bg-emphasize);
+      background-image: var(--special-link-bg);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+     } */
 
     &:hover {
       animation: rainbow-text-simple-animation 0.3s ease-in forwards;

@@ -40,15 +40,13 @@ const StyledGetInTouch = styled.div`
   max-width: 500px;
   margin: 0;
   margin-right: 10px;
-  padding: 10px;
+  padding: 10px 0;
   text-align: center;
   line-height: 1.5em;
 
   @media only screen and (max-width: 768px) {
     width: 100%;
     max-width: none;
-    font-size: 0.9em;
-    line-height: 1.2em;
     text-align: center;
   }
 `;
@@ -58,7 +56,7 @@ const StyledEmailLink = styled.a`
   padding: 5px 0;
   color: #ffd400;
   font-weight: bold;
-  font-size: clamp(0.5em, 20vw, 1em);
+  font-size: 0.9em;
 
   word-break: break-all;
 

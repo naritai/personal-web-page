@@ -14,6 +14,11 @@ const StyledWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    margin-top: 10px;
+  }
 `;
 
 const StyledCopyrightLink = styled.a`

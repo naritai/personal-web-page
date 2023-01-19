@@ -14,7 +14,7 @@ import {
 const StyledWrapper = styled.div`
   width: 100%;
   height: 80vh;
-  margin-top: min(15vh, 135px);
+  margin-top: min(20vh, 135px);
   margin-bottom: 100px;
   display: flex;
   flex-direction: column;
@@ -34,7 +34,7 @@ const StyledWrapper = styled.div`
   /* Smartphone witn small height */
   @media only screen and (max-width: 400px) and (max-height: 667px) {
     height: 90vh;
-    margin-top: 70px;
+    margin-top: min(25vh, 100px);
     padding-bottom: 0;
 
     .greenting {

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { HeroDesktopLayout } from './layout-desktop';
 import { HeroMobileLayout } from './layout-mobile';
@@ -24,14 +24,6 @@ const StyledDesktopLayout = styled.div`
 `;
 
 function Hero() {
-  // const [isMobile, setIsMobile] = useState(isMobileScreen);
-  // const resizeHandler = () => setIsMobile(isMobileScreen());
-
-  // useEffect(() => {
-  //   window.addEventListener('resize', resizeHandler);
-  //   return () => window.removeEventListener('resize', resizeHandler);
-  // }, [isMobile]);
-
   return (
     <StyledWrapper>
       <StyledMobileLayout>

@@ -19,7 +19,6 @@ const StyledWrapper = styled.div`
     width: 100%;
     max-width: none;
     margin-bottom: 15px;
-    font-size: 0.9em;
     margin: 0;
     margin-top: 5px;
     text-align: center;

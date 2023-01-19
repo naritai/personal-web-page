@@ -52,6 +52,10 @@ const StyledCompanyDetails = styled.section`
       flex-direction: column;
     }
 
+    .company-details__content {
+      line-height: 1.5em;
+    }
+
     .company-details__period {
       padding: 2px;
       margin-top: 0;
@@ -71,15 +75,11 @@ const StyledCompanyDetails = styled.section`
 
     .company-details__description p {
       width: 100%;
-      font-size: 0.9em;
-      line-height: 1.2em;
       margin-left: 0;
     }
 
     .company-details__stack {
       width: 100%;
-      font-size: 0.9em;
-      line-height: 1.2em;
       margin-left: 0;
     }
   }
