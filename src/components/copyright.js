@@ -39,7 +39,7 @@ function Copyright({ isHome }) {
   return (
     <Side isHome={isHome} orientation="right">
       <StyledCopyrightWrapper>
-        <StyledCopyrightLink href="https://github.com/naritai/personal-web-page">
+        <StyledCopyrightLink aria-label="repository" target="_blank" rel="noreferrer" href="https://github.com/naritai/personal-web-page">
           Designed & built by Aleksandr Voronetskiy
         </StyledCopyrightLink>
       </StyledCopyrightWrapper>
