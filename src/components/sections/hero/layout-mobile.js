@@ -14,7 +14,7 @@ import {
 const StyledWrapper = styled.div`
   width: 100%;
   height: 80vh;
-  margin-top: min(25vh, 135px);
+  margin-top: min(25vh, 150px);
   margin-bottom: 100px;
   display: flex;
   flex-direction: column;
@@ -32,7 +32,7 @@ const StyledWrapper = styled.div`
   }
 
   /* Smartphone witn small height */
-  @media only screen and (max-width: 400px) and (max-height: 667px) {
+  /* @media only screen and (max-width: 400px) and (max-height: 667px) {
     height: 90vh;
     margin-top: min(25vh, 100px);
     padding-bottom: 0;
@@ -43,7 +43,7 @@ const StyledWrapper = styled.div`
     .resume-button {
       margin-top: -10px;
     }
-  }
+  } */
 `;
 
 const WithFadeEffect = styled.div`
