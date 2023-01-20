@@ -23,9 +23,11 @@ const StyledWrapper = styled.div`
 
 const StyledCopyrightLink = styled.a`
   ${({ theme }) => theme.mixins.bottomDashedOutline};
-  font-size: 0.5em;
+  width: 170px;
+  text-align: center;
+  font-size: 0.7em;
   padding: 5px;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
   display: none;
 
   @media only screen and (max-width: 768px) {
