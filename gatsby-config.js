@@ -147,9 +147,9 @@ module.exports = {
       __key: 'pages',
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingId: 'G-1B4RKYN3G9',
+        trackingIds: ['G-1B4RKYN3G9'],
       },
     }
   ],
