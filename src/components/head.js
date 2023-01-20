@@ -20,8 +20,7 @@ function Head({ title, description, children }) {
     <Helmet title={title} defaultTitle={seo.title} titleTemplate={`%s | ${defaultTitle}`}>
       <html lang="en" />
 
-      <title>{title}</title>
-      <meta name="description" content={seo.title} />
+      <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
 
       <meta property="og:title" content="Alex Voronetskiy" />
@@ -35,6 +34,8 @@ function Head({ title, description, children }) {
       <meta name="twitter:title" content="Alex Voronetskiy" />
       <meta name="twitter:description" content={seo.title} />
       <meta name="twitter:image" content={seo.image} />
+
+      <meta name="google-site-verification" content="9fAFFp1LbfaHvd1G4MGGJ-X4WeUtKUcC3c7A1kr19E8" />
       {children}
     </Helmet>
   );
