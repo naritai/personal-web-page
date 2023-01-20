@@ -3,6 +3,7 @@ import mainBackground from '@images/main-bg.jpg';
 import normalize from 'normalize.css';
 import variables from './variables';
 import fonts from './fonts';
+import { Animations } from './Animations';
 
 const GlobalStyle = createGlobalStyle`
   ${normalize};
@@ -205,18 +206,7 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
-  @keyframes fadeIn {
-    100% {
-      opacity: 1;
-    }
-  }
-
-  @keyframes fadeUp {
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+  ${Animations};
 `;
 
 export default GlobalStyle;

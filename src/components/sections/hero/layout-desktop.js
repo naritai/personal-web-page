@@ -77,8 +77,11 @@ const WithFadeEffect = styled.div`
   animation: ${({ name, delay }) => `${name}  0.75s ease-out ${delay} forwards`};
 `;
 
+
 function HeroDesktopLayout() {
   const [isMounted, setIsMounted] = useState(false);
+  const [isMounted2, setIsMounted2] = useState(false);
+
   const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
@@ -87,6 +90,8 @@ function HeroDesktopLayout() {
     }
 
     const timeout = setTimeout(() => setIsMounted(true), HERO_DELAY);
+    const timeout2 = setTimeout(() => setIsMounted2(true), 1500);
+
     return () => clearTimeout(timeout);
   }, [prefersReducedMotion]);
 
@@ -139,10 +144,13 @@ function HeroDesktopLayout() {
 
   const items = [one, two, three];
 
+  const sparcle1 = { top: '20%', left: '-30%' };
+  const sparcle2 = { top: '-30%', left: '-27%' };
+  const sparcle3 = { top: '10%', left: '100%' };
+  const sparcle4 = { top: '-50%', left: '103%' };
+
   return (
     <StyledWrapper>
-      
-      
       {prefersReducedMotion ? (
         <>
           {one}
@@ -151,7 +159,14 @@ function HeroDesktopLayout() {
         </>
       ) : (
         <div>
-          { isMounted && <Sparcle />}
+          {isMounted && (
+            <>
+              <Sparcle color1="#a42226" color2="#e5c687" size={50} coords={sparcle1}  />
+              <Sparcle color1="#a42226" color2="#e5c687" size={80} coords={sparcle2} />
+              <Sparcle color1="#a42226" color2="#e5c687" size={50} coords={sparcle3} />
+              <Sparcle color1="#a42226" color2="#e5c687" size={85} coords={sparcle4} />
+            </>
+          )}
 
           {isMounted &&
             items &&

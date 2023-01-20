@@ -30,20 +30,6 @@ const StyledWrapper = styled.div`
   .greenting {
     margin-bottom: 20px;
   }
-
-  /* Smartphone witn small height */
-  /* @media only screen and (max-width: 400px) and (max-height: 667px) {
-    height: 90vh;
-    margin-top: min(25vh, 100px);
-    padding-bottom: 0;
-
-    .greenting {
-      margin-bottom: 10px;
-    }
-    .resume-button {
-      margin-top: -10px;
-    }
-  } */
 `;
 
 const WithFadeEffect = styled.div`

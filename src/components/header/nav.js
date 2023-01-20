@@ -17,7 +17,6 @@ const StyledHeader = styled.header`
   top: 0;
   left: 0;
   background-color: #000000;
-  box-shadow: 0 0 5px rgba(2, 23, 26, 0.5);
   backdrop-filter: blur(10px);
   z-index: 10;
   box-shadow: 0 10px 30px -10px #02171a;
