@@ -9,7 +9,7 @@ const StyledWrapper = styled.div`
 
 const StyledMobileLayout = styled.div`
   display: none;
-  @media only screen and (max-width: 767.98px) {
+  @media only screen and (max-width: 767.99px) {
     width: 100%;
     display: block;
   }
@@ -17,7 +17,7 @@ const StyledMobileLayout = styled.div`
 
 const StyledDesktopLayout = styled.div`
   display: none;
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 768.01px) {
     width: 100%;
     display: block;
   }

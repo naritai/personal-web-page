@@ -14,7 +14,7 @@ import {
 const StyledWrapper = styled.div`
   width: 100%;
   height: 80vh;
-  margin-top: min(20vh, 135px);
+  margin-top: min(25vh, 135px);
   margin-bottom: 100px;
   display: flex;
   flex-direction: column;
