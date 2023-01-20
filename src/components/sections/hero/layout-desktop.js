@@ -11,8 +11,10 @@ import {
   StyledResumeButton,
 } from './shared';
 import { HERO_DELAY } from '../../../utils/constants';
+import { Sparcle } from './sparcle';
 
 const StyledWrapper = styled.div`
+  position: relative;
   width: 95%;
   min-height: 70vh;
   display: flex;
@@ -139,6 +141,8 @@ function HeroDesktopLayout() {
 
   return (
     <StyledWrapper>
+      
+      
       {prefersReducedMotion ? (
         <>
           {one}
@@ -147,6 +151,8 @@ function HeroDesktopLayout() {
         </>
       ) : (
         <div>
+          { isMounted && <Sparcle />}
+
           {isMounted &&
             items &&
             items.map((item, i) => (
