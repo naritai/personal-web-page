@@ -86,6 +86,12 @@ const StyledSidebar = styled.aside`
     transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
     transform: translateX(${({ visible }) => (visible ? 0 : 100)}vw);
     visibility: ${({ visible }) => (visible ? 'visible' : 'hidden')};
+    overflow: hidden;
+
+    /* fix iOS & safary dynamic height problem */
+    @supports (height: 100dvh) {
+      height: 100dvh;
+    }
   }
 `;
 
@@ -158,27 +164,15 @@ function MobileNav({ activeLink, onLinkClick }) {
     }
   };
 
-  // https://nicolas-hoizey.com/articles/2015/02/18/viewport-height-is-taller-than-the-visible-part-of-the-document-in-some-mobile-browsers/#february-23rd-update
-  const mobileMenuSelector = '#mobile-menu';
-  const setMobileMenuHeight = () => {
-    const elem = document.querySelector(mobileMenuSelector);
-    if (elem) {
-      elem.style.minHeight = window.innerHeight + "px";
-    }
-  };
-
   useEffect(() => {
     document.addEventListener('keydown', onKeyDown);
     window.addEventListener('resize', onResize);
-    window.addEventListener("resize", setMobileMenuHeight);
 
     setFocusables();
-    setMobileMenuHeight();
 
     return () => {
       document.removeEventListener('keydown', onKeyDown);
       window.removeEventListener('resize', onResize);
-      window.removeEventListener('resize', setMobileMenuHeight);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
