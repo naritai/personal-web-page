@@ -42,7 +42,7 @@ export default function HTML(props) {
         />
         {props.headComponents}
       </head>
-      <body {...props.bodyAttributes}>
+      <body {...props.bodyAttributes} styles="min-height: 100vh">
         {props.preBodyComponents}
         <div key="body" id="___gatsby" dangerouslySetInnerHTML={{ __html: props.body }} />
         {props.postBodyComponents}

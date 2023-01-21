@@ -67,20 +67,26 @@ const StyledWrapper = styled.div`
 `;
 
 const StyledSidebar = styled.aside`
-  position: fixed;
-  height: 100vh;
-  width: min(75vw, 350px);
-  padding-top: min(40vh, 100px);
-  padding-bottom: 50px;
-  background-color: var(--main-bg-soft);
-  top: 0;
-  right: 0;
-  z-index: 10;
-  outline: 0px;
-  box-shadow: -10px 0px 30px -15px rgba(2, 23, 26, 0.7);
-  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
-  transform: translateX(${({ visible }) => (visible ? 0 : 100)}vw);
-  visibility: ${({ visible }) => (visible ? 'visible' : 'hidden')};
+  display: none;
+
+  @media only screen and (max-width: 768px) {
+    display: block;
+    position: fixed;
+    height: 100vh;
+    width: min(75vw, 350px);
+    padding-top: min(40vh, 100px);
+    padding-bottom: 50px;
+    background-color: var(--main-bg-soft);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    outline: 0px;
+    box-shadow: -10px 0px 30px -15px rgba(2, 23, 26, 0.7);
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transform: translateX(${({ visible }) => (visible ? 0 : 100)}vw);
+    visibility: ${({ visible }) => (visible ? 'visible' : 'hidden')};
+  }
 `;
 
 function MobileNav({ activeLink, onLinkClick }) {
@@ -152,21 +158,34 @@ function MobileNav({ activeLink, onLinkClick }) {
     }
   };
 
+  // https://nicolas-hoizey.com/articles/2015/02/18/viewport-height-is-taller-than-the-visible-part-of-the-document-in-some-mobile-browsers/#february-23rd-update
+  const mobileMenuSelector = '#mobile-menu';
+  const setMobileMenuHeight = () => {
+    const elem = document.querySelector(mobileMenuSelector);
+    if (elem) {
+      elem.style.minHeight = window.innerHeight + "px";
+    }
+  };
+
   useEffect(() => {
     document.addEventListener('keydown', onKeyDown);
     window.addEventListener('resize', onResize);
+    window.addEventListener("resize", setMobileMenuHeight);
 
     setFocusables();
+    setMobileMenuHeight();
 
     return () => {
       document.removeEventListener('keydown', onKeyDown);
       window.removeEventListener('resize', onResize);
+      window.removeEventListener('resize', setMobileMenuHeight);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const wrapperRef = useRef();
   useOnClickOutside(wrapperRef, () => setMenuOpen(false));
+
 
   return (
     <StyledWrapper>

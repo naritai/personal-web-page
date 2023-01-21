@@ -114,6 +114,11 @@ const GlobalStyle = createGlobalStyle`
     grid-template-columns: 100%;
   }
 
+  main {
+    min-height: 100vh;
+    width: 100%;
+  }
+
   ul {
     margin: 0;
     padding: 0;
