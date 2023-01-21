@@ -3,7 +3,7 @@ import { css } from 'styled-components';
 const variables = css`
   :root {
     --main-bg: #000000;
-    --main-bg-soft: #02171a;
+    --main-bg-soft: #132933;
     --main-text: #f6f1d1;
     --emphasize-soft: #e5c687;
     --selection-bg: #ffd4b2;

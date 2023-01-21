@@ -8,20 +8,20 @@ const useScrollDirection = ({ initialDirection, thresholdPixels, off } = {}) => 
 
   useEffect(() => {
     const threshold = thresholdPixels || 0;
-    let lastScrollY = window.scrollY;
+    let lastScrollY = window.pageYOffset;
     let ticking = false;
 
     const updateScrollDir = () => {
-      const { scrollY } = window;
+      const { pageYOffset } = window;
 
-      if (Math.abs(scrollY - lastScrollY) < threshold) {
+      if (Math.abs(pageYOffset - lastScrollY) < threshold) {
         // We haven't exceeded the threshold
         ticking = false;
         return;
       }
 
-      setScrollDir(scrollY > lastScrollY ? SCROLL_DOWN : SCROLL_UP);
-      lastScrollY = scrollY > 0 ? scrollY : 0;
+      setScrollDir(pageYOffset > lastScrollY ? SCROLL_DOWN : SCROLL_UP);
+      lastScrollY = pageYOffset > 0 ? pageYOffset : 0;
       ticking = false;
     };
 
