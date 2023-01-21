@@ -8,7 +8,7 @@ module.exports = {
   siteMetadata: {
     title: `Alex Voronetskiy`,
     description:
-      'Alex Voronetskiy is a web devloper who specializes in building dynamic and robust applications with intuitive UI.',
+      'Alex Voronetskiy is a web devloper who specializes in building dynamic and robust applications with creative UI.',
     siteUrl: `https://voronetskiy.dev`,
     twitterUsername: `@dzhumandzhu`,
     image: `/og1.png`,

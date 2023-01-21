@@ -4,6 +4,7 @@ import SpaceMonoRegularWoff from '@fonts/SpaceMono/space-mono-regular.woff';
 import SpaceMonoRegularWoff2 from '@fonts/SpaceMono/space-mono-regular.woff2';
 import BebasNeueRegularWoff from '@fonts/BebasNeue/bebas-neue-regular.woff';
 import BebasNeueRegularWoff2 from '@fonts/BebasNeue/bebas-neue-regular.woff2';
+import avatar from '@images/avatar.png';
 
 export default function HTML(props) {
   return (
@@ -38,6 +39,13 @@ export default function HTML(props) {
           href={BebasNeueRegularWoff2}
           as="font"
           type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href={avatar}
+          as="image"
+          type="image/png"
           crossOrigin="anonymous"
         />
         {props.headComponents}
