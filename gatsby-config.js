@@ -11,7 +11,7 @@ module.exports = {
       'Alex Voronetskiy is a web devloper who specializes in building dynamic and robust applications with creative UI.',
     siteUrl: `https://voronetskiy.dev`,
     twitterUsername: `@dzhumandzhu`,
-    image: `/og1.png`,
+    image: `/og.png`,
   },
   plugins: [
     'gatsby-plugin-react-helmet',

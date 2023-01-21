@@ -1,54 +1,61 @@
+<div align="center">
+  <img alt="Logo" src="https://raw.githubusercontent.com/naritai/personal-web-page/main/src/images/icon.svg" width="100" />
+</div>
+<h1 align="center">
+  voronetskiy.dev
+</h1>
 <p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
+  My first personal web site - <a href="https://voronetskiy.dev" target="_blank">voronetskiy.dev</a> built with <a href="https://www.gatsbyjs.org/" target="_blank">Gatsby</a> and hosted with <a href="https://www.netlify.com/" target="_blank">Netlify</a>
+</p>
+<p align="center">
+  <a href="https://app.netlify.com/sites/sage-druid-3b4b4b/deploys" target="_blank">
+    <img src="https://api.netlify.com/api/v1/badges/a451c8ba-3596-413a-856c-486e7a2cd353/deploy-status" alt="Netlify Status" />
   </a>
 </p>
-<h1 align="center">
-  Gatsby minimal starter
-</h1>
 
-## 🚀 Quick start
+![demo](https://raw.githubusercontent.com/naritai/personal-web-page/main/src/images/demo.png)
 
-1.  **Create a Gatsby site.**
+## 🛠 Installation & Set Up
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+1. Install the Gatsby CLI
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
+   ```sh
+   npm install -g gatsby-cli
+   ```
 
-2.  **Start developing.**
+2. Install and use the correct version of Node using [NVM](https://github.com/nvm-sh/nvm)
 
-    Navigate into your new site’s directory and start it up.
+   ```sh
+   nvm install
+   ```
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+3. Install dependencies
 
-3.  **Open the code and start customizing!**
+   ```sh
+   yarn
+   ```
 
-    Your site is now running at http://localhost:8000!
+4. Start the development server
 
-    Edit `src/pages/index.js` to see your site update in real-time!
+   ```sh
+   yarn start
+   ```
 
-4.  **Learn more**
+## 🚀 Building and Running for Production
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+1. Generate a full static production build
 
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+   ```sh
+   npm run build
+   ```
 
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+1. Preview the site as it will appear once deployed
 
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+   ```sh
+   npm run serve
+   ```
 
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
 
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+## Credits
 
-## 🚀 Quick start (Gatsby Cloud)
-
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
-
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)
+Inspired mostly from Brittany's work: [brittanychiang.com](https://brittanychiang.com/)
