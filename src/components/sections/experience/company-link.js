@@ -15,38 +15,6 @@ const StyledCompanyName = styled.h3`
 
   .company-link {
     position: relative;
-    background-color: var(--bg-emphasize);
-    background-image: var(--special-link-bg);
-    background-size: 100%;
-    background-repeat: repeat;
-    animation: rainbow-text-simple-animation-rev 0.3s ease forwards;
-    transition: color 0.3s;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-
-    /* @supports (-webkit-background-clip: text) and (-webkit-text-fill-color: transparent) {
-      background-color: var(--bg-emphasize);
-      background-image: var(--special-link-bg);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    } */
-
-    /* @supports not (-webkit-hyphens: none) { 
-      font-weight: 700;
-      background-color: var(--bg-emphasize);
-      background-image: var(--special-link-bg);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-     } */
-
-    &:hover {
-      animation: rainbow-text-simple-animation 0.3s ease-in forwards;
-      border: none;
-    }
 
     &:focus,
     &:focus-visible {
@@ -68,6 +36,20 @@ const StyledCompanyName = styled.h3`
     .link-text {
       display: inline-block;
       margin-right: 10px;
+
+      background-color: var(--bg-emphasize);
+      background-image: var(--special-link-bg);
+      background-size: 100%;
+      background-repeat: repeat;
+      transition: color 0.3s;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    &:hover:hover .link-text {
+      animation: rainbow-text-simple-animation 0.3s ease-in forwards;
+      border: none;
     }
   }
 
@@ -93,17 +75,23 @@ const StyledCompanyName = styled.h3`
   }
 
   .company-link--disabled {
-    background-color: rgba(93, 81, 81, 0.8);
-    background-image: var(--special-link-bg);
-    background-size: 100%;
-    background-repeat: repeat;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: grayscale(100%);
-    animation: none;
+
+    .link-text {
+      background-color: rgba(93, 81, 81, 0.8);
+      background-image: var(--special-link-bg);
+      background-size: 100%;
+      background-repeat: repeat;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: grayscale(100%);
+      animation: none;
+    }
+
+    &:hover:hover .link-text {
+      animation: none;
+    }
   }
 
-  .company-link--disabled:hover,
   .company-link--disabled:hover .rocket {
     animation: none;
   }
