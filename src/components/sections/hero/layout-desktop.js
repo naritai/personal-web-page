@@ -80,8 +80,6 @@ const WithFadeEffect = styled.div`
 
 function HeroDesktopLayout() {
   const [isMounted, setIsMounted] = useState(false);
-  const [isMounted2, setIsMounted2] = useState(false);
-
   const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
@@ -90,7 +88,6 @@ function HeroDesktopLayout() {
     }
 
     const timeout = setTimeout(() => setIsMounted(true), HERO_DELAY);
-    const timeout2 = setTimeout(() => setIsMounted2(true), 1500);
 
     return () => clearTimeout(timeout);
   }, [prefersReducedMotion]);
@@ -137,7 +134,7 @@ function HeroDesktopLayout() {
         target="_blank"
         rel="noreferrer"
       >
-        <span className="button-text">Resume</span>
+        <span className="button-text">Download cv</span>
       </StyledResumeButton>
     </StyledFlexWrapper>
   );
@@ -161,7 +158,7 @@ function HeroDesktopLayout() {
         <div>
           {isMounted && (
             <>
-              <Sparcle color1="#a42226" color2="#e5c687" size={50} coords={sparcle1}  />
+              <Sparcle color1="#a42226" color2="#e5c687" size={50} coords={sparcle1} />
               <Sparcle color1="#a42226" color2="#e5c687" size={80} coords={sparcle2} />
               <Sparcle color1="#a42226" color2="#e5c687" size={50} coords={sparcle3} />
               <Sparcle color1="#a42226" color2="#e5c687" size={85} coords={sparcle4} />

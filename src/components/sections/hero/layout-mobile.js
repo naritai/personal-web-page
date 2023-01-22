@@ -68,7 +68,7 @@ function HeroMobileLayout() {
         target="_blank"
         rel="noreferrer"
       >
-        <span className="button-text">Resume</span>
+        <span className="button-text">Download cv</span>
       </StyledResumeButton>
     </div>
   );
