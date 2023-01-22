@@ -89,7 +89,6 @@ const StyledSocialLinks = styled.div`
       font-size: 0.65em;
       letter-spacing: 0.1em;
       color: #e5c687;
-      cursor: pointer;
       transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
     }
 

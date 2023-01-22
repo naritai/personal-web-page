@@ -13,7 +13,6 @@ const button = css`
   font-weight: 700;
   text-transform: uppercase;
   color: #ffffff;
-  cursor: pointer;
 
   background-color: #b33b06;
   background-image: url(${buttonBgDark});

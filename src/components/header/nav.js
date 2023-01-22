@@ -90,10 +90,6 @@ const StyledLogoWrapper = styled.div`
     outline: none;
   }
 
-  a:hover {
-    cursor: unset;
-  }
-
   svg {
     margin: 0;
     padding: 0;

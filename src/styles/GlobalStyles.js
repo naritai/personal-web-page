@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import mainBackground from '@images/main-bg.jpg';
+import cursor from '@images/cursor.png';
+import cursorHover from '@images/cursor-hover.png';
 import normalize from 'normalize.css';
 import variables from './variables';
 import fonts from './fonts';
@@ -90,6 +92,12 @@ const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+
+
+    cursor: url(${cursor}), auto;
+    a {
+      cursor: url(${cursorHover}), auto;
+    }
 
     &.blur {
       overflow: hidden;
