@@ -31,12 +31,12 @@ function Details() {
       I’m a software engineer with 5+ years of experience. Focused on building robust and accessible
       products with creative UI. Blog about front-end to{' '}
       <a
-        href="https://t.me/frontendmetoo"
+        href="https://t.me/goodrefs"
         aria-label="Telegram blog"
         target="_blank"
         rel="noopener noreferrer"
       >
-        t.me/frontendmetoo
+        t.me/goodrefs
       </a>
       .
     </StyledWrapper>
