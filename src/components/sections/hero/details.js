@@ -29,7 +29,7 @@ function Details() {
   return (
     <StyledWrapper>
       I’m a software engineer with 5+ years of experience. Focused on building robust and accessible
-      products with creative UI. Blog about front-end to{' '}
+      products with creative UI. Blog to{' '}
       <a
         href="https://t.me/goodrefs"
         aria-label="Telegram blog"
