@@ -6,7 +6,8 @@ const getInitialMatch = (mq) => {
   }
   return false;
 }
-
+// Don't use for blocks with animation on the first screen 
+// When page updated they bulk into a mess for a second - visually feels like a junk
 export function useMediaQuery(query) {
   const [matches, setMatches] = useState(getInitialMatch(query));
 
