@@ -168,7 +168,7 @@ function HeroDesktopLayout() {
           {isMounted &&
             items &&
             items.map((item, i) => (
-              <WithFadeEffect delay={`0.${i + 1}s`} name="fadeUp">
+              <WithFadeEffect key={i} delay={`0.${i + 1}s`} name="fadeUp">
                 {item}
               </WithFadeEffect>
             ))}
