@@ -1,5 +1,5 @@
 ---
-date: '3'
+date: '2'
 period: '2019 - 2020'
 title: 'NORD CLAN'
 url: 'https://nordclan.com/'
